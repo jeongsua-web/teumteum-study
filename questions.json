@@ -1,0 +1,2123 @@
+[
+  {
+    "id": "2025_3_01",
+    "exam": "2025_3",
+    "number": 1,
+    "category": "프로그래밍",
+    "body": "<p>다음 Python로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">python</div><pre tabindex=\"0\"><code>a = {&quot;name&quot; : &quot;ted&quot;, &quot;phone&quot; : &quot;0101234&quot;, &quot;birth&quot; : &quot;0909&quot;}\nprint(a.get(&quot;grade&quot;, &quot;none&quot;))</code></pre>",
+    "answer": "none",
+    "explanation": "존재하지 않는 키 grade에 대해 지정한 기본값 문자열 none을 반환합니다.",
+    "concepts": [
+      {
+        "id": "dict",
+        "title": "Python 딕셔너리의 get",
+        "meaning": "딕셔너리는 키와 값을 연결합니다. d.get(키, 기본값)은 키가 있으면 그 값을, 없으면 지정한 기본값을 반환합니다.",
+        "example": "d={'name':'민수'}에서 d.get('age', 0)은 0입니다. 기본값을 생략한 d.get('age')는 None입니다.",
+        "remember": "문자열 기본값과 None은 다릅니다. get은 키가 없다고 새 항목을 자동 삽입하지 않습니다.",
+        "sources": [
+          {
+            "title": "Python · 딕셔너리와 집합",
+            "url": "https://docs.python.org/3/tutorial/datastructures.html"
+          }
+        ]
+      }
+    ],
+    "source": "2025_3/01.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_02",
+    "exam": "2025_3",
+    "number": 2,
+    "category": "데이터베이스",
+    "body": "<p>네트워크 보안에 대한 다음 설명에 해당하는 용어를 영문 약어로 쓰시오. (5점)</p>\n<blockquote>웹 서버로 들어오는 웹 트래픽을 검사하여 악의적인 코드나 공격 유형이 포함된 웹 트래픽을 차단해 주는 방화벽으로, SQL Injection이나 XSS 등과 같은 웹 공격을 탐지하고 차단한다. 일반 방화벽과는 달리 패킷의 페이로드를 직접 확인하기 때문에 외부의 공격뿐만 아니라 사전에 발견하지 못했던 내부의 위험 요소에 대한 방어가 가능하다.</blockquote>",
+    "answer": "WAF",
+    "explanation": "웹 애플리케이션 방화벽입니다. HTTP 트래픽의 웹 공격을 탐지·차단합니다.",
+    "concepts": [
+      {
+        "id": "waf",
+        "title": "WAF: 웹 애플리케이션 방화벽",
+        "meaning": "WAF는 HTTP 요청·응답을 검사해 웹 애플리케이션 공격을 탐지하고 차단하는 보안 장치·서비스입니다. SQL 삽입이나 XSS 공격 패턴 등이 검사 대상입니다.",
+        "example": "로그인 요청의 입력에 공격성 SQL 패턴이 들어오면 정책에 따라 차단하는 상황을 떠올리세요.",
+        "remember": "IP·포트 중심의 일반 방화벽과 웹 요청 내용에 초점을 둔 WAF를 구별하세요. 애플리케이션의 안전한 구현도 필요합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/02.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_03",
+    "exam": "2025_3",
+    "number": 3,
+    "category": "데이터베이스",
+    "body": "<p>데이터베이스 설계에 대한 다음 설명에 해당하는 단계를 &lt;보기&gt;에서 찾아 기호(㉠~㉤)로 쓰시오. (5점)</p>\n<ul><li>정보의 구조를 얻기 위하여 현실 세계의 무한성과 계속성을 이해하고, 다른 사람과 통신하기 위하여 현실 세계에 대한 인식을 추상적 개념으로 표현하는 과정이다.</li><li>개념 스키마 모델링과 트랜잭션 모델링을 병행 수행한다.</li><li>요구 조건 명세를 DBMS에 독립적인 E-R 다이어그램으로 작성한다.</li><li>DBMS에 독립적인 개념 스키마를 설계한다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 요구 조건 분석</li><li>㉡ 개념적 설계</li><li>㉢ 논리적 설계</li><li>㉣ 물리적 설계</li><li>㉤ 데이터베이스 구현</li></ul>",
+    "answer": "㉡ 개념적 설계",
+    "explanation": "DBMS에 독립적인 E-R 모델과 개념 스키마를 작성합니다.",
+    "concepts": [
+      {
+        "id": "dbdesign",
+        "title": "데이터베이스 설계 단계",
+        "meaning": "요구사항을 정리한 뒤 개념적 설계에서 개체·속성·관계를 E-R 모델로 표현합니다. 논리적 설계는 이를 관계형 스키마 등으로 바꾸고 물리적 설계는 저장·접근 방식을 정합니다.",
+        "example": "학생이 과목을 수강한다는 관계를 그림으로 표현→개념, 학생·과목·수강 테이블로 변환→논리, 인덱스 선택→물리입니다.",
+        "remember": "E-R 모델·DBMS 독립적 개체와 관계→개념적 설계. 개념 스키마라는 말과 관계형 테이블 정의를 같은 단계로 섞지 마세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/03.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_04",
+    "exam": "2025_3",
+    "number": 4,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 프로토콜 명칭을 영문 약어로 쓰시오. (5점)</p>\n<blockquote>데이터링크 계층의 프로토콜로, 각 프레임에 데이터 흐름을 제어하고 오류를 검출할 수 있는 비트 열을 삽입하여 전송하는 역할을 수행한다. 프레임은 I 프레임, S 프레임, U 프레임으로 구분되며, 헤더(Header)의 제어부에 이를 구분하기 위한 비트를 삽입한다. 이중 U 프레임은 데이터 전송 모드를 설정하며, 통신 방식에 따라 NRM, ARM, ABM으로 다시 구분할 수 있다.</blockquote>",
+    "answer": "HDLC",
+    "explanation": "비트 지향 데이터 링크 프로토콜로 I·S·U 프레임을 사용합니다.",
+    "concepts": [
+      {
+        "id": "hdlc",
+        "title": "HDLC와 프레임 종류",
+        "meaning": "HDLC는 비트 지향 데이터 링크 제어 프로토콜입니다. 프레임 경계를 플래그로 표시하고 흐름 제어·오류 제어에 필요한 정보를 주고받습니다.",
+        "example": "I 프레임은 정보 전송, S 프레임은 수신 확인 등 감독, U 프레임은 연결 설정 등 비번호 제어에 사용합니다.",
+        "remember": "비트 지향·I/S/U 프레임→HDLC. 프레임 구분을 문자 단위로 하는 프로토콜과 구별하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/04.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_05",
+    "exam": "2025_3",
+    "number": 5,
+    "category": "데이터베이스",
+    "body": "<p>다음은 &lt;Students&gt; 테이블을 생성하면서 성별(gender)에 &#x27;m&#x27; 또는 &#x27;f&#x27;만 입력될 수 있도록 제약조건(Constraint)을 설정하는 SQL문이다. 괄호에 들어갈 알맞은 예약어를 적어 SQL문을 완성하시오. (5점)</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>CREATE TABLE Students (\n    std_ID INT PRIMARY KEY,\n    name VARCHAR(20) NOT NULL,\n    major VARCHAR(20) REFERENCES Info(major),\n    gender VARCHAR(1),\n    CONSTRAINT const_gd (      ) (gender in (&#x27;m&#x27;, &#x27;f&#x27;))\n);</code></pre>",
+    "answer": "CHECK",
+    "explanation": "CHECK 제약조건으로 입력값의 조건을 제한합니다.",
+    "concepts": [
+      {
+        "id": "check",
+        "title": "CHECK와 IN 제약조건",
+        "meaning": "CHECK는 행이 만족해야 할 조건을 지정합니다. IN은 값이 지정된 후보 집합 안에 있는지 검사하므로 허용 목록을 표현하기 좋습니다.",
+        "example": "CHECK (직책 IN ('사원','대리'))는 지정된 두 직책만 허용하도록 제한합니다. 필수 입력까지 원하면 NOT NULL도 함께 지정해야 합니다.",
+        "remember": "CHECK는 허용 조건, IN은 후보 목록입니다. SQL의 NULL은 UNKNOWN을 만들 수 있어 CHECK만으로 NULL을 막는다고 단정하지 않습니다.",
+        "sources": [
+          {
+            "title": "PostgreSQL · 제약조건",
+            "url": "https://www.postgresql.org/docs/16/ddl-constraints.html"
+          }
+        ]
+      }
+    ],
+    "source": "2025_3/05.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_06",
+    "exam": "2025_3",
+    "number": 6,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nint main() {\n    int k[] = {1, 2, 3};\n    int *p = k + 1;\n    printf(&quot;%d &quot;, *p + *(p - 1));\n    return 0;\n}</code></pre>",
+    "answer": "3",
+    "explanation": "p는 k[1]=2를 가리키며 *(p-1)=1이므로 합은 3입니다.",
+    "concepts": [
+      {
+        "id": "pointer",
+        "title": "포인터·배열·이중 포인터",
+        "meaning": "포인터는 주소를 담는 변수입니다. &x는 x의 주소, *p는 p가 가리키는 값입니다. 배열에서 p+1은 다음 원소로 이동하며, **r은 주소를 두 번 따라갑니다.",
+        "example": "a=[4,9]이고 p=&a[0]이면 *(p+1)은 9입니다. r=&p일 때 **r=8은 a[0]을 8로 바꿉니다.",
+        "remember": "p의 주소값을 바꾸는 것과 *p의 대상 값을 바꾸는 것을 구별하세요. 포인터 연산은 원소 크기 단위로 이동합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/06.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_07",
+    "exam": "2025_3",
+    "number": 7,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 프로토콜을 영문 4글자로 쓰시오. (5점)</p>\n<blockquote>TCP/IP 기반의 인터넷 통신 서비스에서 인터넷 프로토콜(IP)에 결합되어 전송되는 프로토콜로, IP에 대해 통신 중에 발생하는 오류 처리와 전송 경로 변경, 에코 요청, 에코 응답 등을 제어하기 위한 메시지를 취급한다. 이 프로토콜을 활용한 명령어 중 대표적인 명령어가 Ping이다.</blockquote>",
+    "answer": "ICMP",
+    "explanation": "오류 보고, 에코 요청·응답 등 IP 통신의 제어 메시지를 다룹니다.",
+    "concepts": [
+      {
+        "id": "icmp",
+        "title": "ICMP의 제어 메시지",
+        "meaning": "ICMP는 IP 전달 과정에서 오류와 진단 정보를 알리는 프로토콜입니다. 목적지 도달 불가·시간 초과·에코 요청 및 응답 등이 있습니다.",
+        "example": "ping의 에코 요청·응답, TTL이 소진됐을 때의 시간 초과 알림을 연결해 보세요.",
+        "remember": "오류를 보고하는 것이지 누락 데이터를 스스로 재전송하는 프로토콜은 아닙니다. 신뢰성 제공 TCP와 구별하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/07.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_08",
+    "exam": "2025_3",
+    "number": 8,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static class test1 {\n        int func1(int a, int b) {\n            return a * 3 + b;\n        }\n    }\n    static class test2 extends test1 {\n        int func1(int a, int b) {\n            return a + b * 2;\n        }\n        int func2(int a, int b) {\n            return super.func1(a, b);\n        }\n    }\n    public static void main(String[] args) {\n        test2 t = new test2();\n        System.out.print(t.func2(2, 4));\n    }\n}</code></pre>",
+    "answer": "10",
+    "explanation": "super.func1(2,4)는 부모 구현인 2*3+4를 실행합니다.",
+    "concepts": [
+      {
+        "id": "super",
+        "title": "오버라이딩과 super",
+        "meaning": "자식 클래스는 부모의 인스턴스 메서드를 같은 시그니처로 재정의할 수 있습니다. super.메서드(...)는 부모 쪽 구현을 명시적으로 호출합니다.",
+        "example": "부모 calc가 a*b, 자식 calc가 a+b여도 자식 안에서 super.calc(2,3)을 부르면 부모 구현을 실행해 6을 얻습니다.",
+        "remember": "클래스의 생성 타입만 보고 모든 호출에 자식 구현을 적용하지 마세요. super가 붙었는지 먼저 확인합니다.",
+        "sources": [
+          {
+            "title": "Java 언어 명세 · 메서드 호출",
+            "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-15.html#jls-15.12"
+          }
+        ]
+      }
+    ],
+    "source": "2025_3/08.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_09",
+    "exam": "2025_3",
+    "number": 9,
+    "category": "네트워크",
+    "body": "<p>TCP/IP에서 사용되는 논리(IP) 주소를 물리(MAC) 주소로 변환시켜 주는 프로토콜을 쓰시오. (5점)</p>",
+    "answer": "ARP",
+    "explanation": "IPv4 주소에 대응하는 MAC 주소를 구합니다.",
+    "concepts": [
+      {
+        "id": "arp",
+        "title": "ARP와 주소 대응",
+        "meaning": "ARP는 같은 링크에서 IPv4 주소에 대응하는 MAC 주소를 알아내는 프로토콜입니다. 요청은 일반적으로 브로드캐스트하고 해당 장치가 응답합니다.",
+        "example": "같은 LAN의 192.168.1.5로 보내려는데 MAC 주소를 모르면 ARP로 묻습니다. 외부 목적지라면 보통 다음 홉인 게이트웨이의 MAC 주소를 알아냅니다.",
+        "remember": "IP→MAC은 ARP입니다. 도메인 이름→IP인 DNS, 경로 선택을 하는 라우터 기능과 구별하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/09.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_10",
+    "exam": "2025_3",
+    "number": 10,
+    "category": "데이터베이스",
+    "body": "<p>데이터베이스 테이블 구조가 다음과 같을 때, &lt;학과&gt; 테이블의 기본키가 &#x27;학과번호&#x27;일 경우 &lt;교수&gt; 테이블에서 외래키로 사용될 수 있는 속성을 쓰시오(단, 밑줄 친 속성은 기본키이다.). (5점)</p>\n<ul><li>교수(<u>교수번호</u>, 교수이름, 학과번호, 전화번호)</li><li>학과(<u>학과번호</u>, 학과명, 학과장명, 학과전화번호)</li></ul>",
+    "answer": "학과번호",
+    "explanation": "교수의 학과번호가 학과 테이블의 기본키를 참조합니다.",
+    "concepts": [
+      {
+        "id": "fk",
+        "title": "외래키와 참조 무결성",
+        "meaning": "외래키는 다른 테이블(또는 자기 테이블)의 참조 대상 키와 연결하는 열입니다. NULL이 아닌 외래키 값은 참조 대상에 존재해야 한다는 규칙이 참조 무결성입니다.",
+        "example": "학과 테이블에 학과번호 10이 있을 때 교수.학과번호=10으로 소속을 연결합니다. 학과번호 99가 없다면 그 값을 넣는 것을 제약조건이 막습니다.",
+        "remember": "참조하는 쪽의 열이 외래키입니다. 시험에서는 기본키 참조가 자주 나오며 DBMS에서는 UNIQUE 키도 참조 대상으로 허용할 수 있습니다.",
+        "sources": [
+          {
+            "title": "PostgreSQL · 외래키",
+            "url": "https://www.postgresql.org/docs/16/ddl-constraints.html#DDL-CONSTRAINTS-FK"
+          }
+        ]
+      }
+    ],
+    "source": "2025_3/10.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_11",
+    "exam": "2025_3",
+    "number": 11,
+    "category": "소프트웨어",
+    "body": "<p>다음 중 블랙박스 테스트에 해당하는 기법을 모두 골라 기호(㉠~㉦)로 쓰시오. (5점)</p>\n<ul><li>㉠ 동치 분할 검사(Equivalence Partitioning Testing)</li><li>㉡ 경계값 커버리지(Boundary Value Coverage)</li><li>㉢ 데이터 흐름 검사(Data Flow Testing)</li><li>㉣ 기초 경로 검사(Base Path Testing)</li><li>㉤ 문장 검증 커버리지(Statement Coverage)</li><li>㉥ 분기 검증 커버리지(Branch Coverage)</li><li>㉦ 조건 검증 커버리지(Condition Coverage)</li></ul>",
+    "answer": "㉠, ㉡",
+    "explanation": "동치 분할과 경계값 검사는 블랙박스 기법입니다.",
+    "concepts": [
+      {
+        "id": "boundary",
+        "title": "동치 분할과 경계값 분석",
+        "meaning": "동치 분할은 같은 방식으로 처리될 입력들을 그룹으로 나누고 대표값을 시험합니다. 경계값 분석은 오류가 나기 쉬운 구간의 끝과 바로 안팎을 집중 검사합니다.",
+        "example": "정수 1~10만 유효하면 무효·유효·무효 그룹을 나눌 수 있습니다. 경계 주변 후보는 0,1,2,9,10,11입니다.",
+        "remember": "범위·최솟값·최댓값·바로 바깥이라는 표현은 경계값의 단서입니다. 둘 다 블랙박스 기법입니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/11.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_12",
+    "exam": "2025_3",
+    "number": 12,
+    "category": "데이터베이스",
+    "body": "<p>다음의 각 무결성(Integrity)에 대해 올바른 설명을 기호(㉠~㉣)로 쓰시오. (5점)</p>\n<p>1. Unique Integrity</p>\n<p>2. Domain Integrity</p>\n<p>3. Referential Integrity</p>\n<p>4. Entity Integrity</p>\n<ul><li>㉠ 주어진 속성 값이 정의된 도메인에 속한 값이어야 한다는 규정</li><li>㉡ 테이블의 특정 속성에 대해 각 튜플들이 갖는 값들이 서로 달라야 한다는 조건</li><li>㉢ 기본 테이블의 기본키를 구성하는 어떤 속성도 Null 값이나 중복값을 가질 수 없다는 규정</li><li>㉣ 외래키 값은 참조 릴레이션의 기본키 값과 동일해야 한다는 규정</li></ul>",
+    "answer": "① ㉡  ② ㉠  ③ ㉣  ④ ㉢",
+    "explanation": "유일성 / 도메인 / 참조 / 개체 무결성 순서입니다.",
+    "concepts": [
+      {
+        "id": "integrity",
+        "title": "무결성 제약조건",
+        "meaning": "무결성은 데이터의 정확성과 일관성을 유지하는 규칙입니다. 개체 무결성은 기본키의 NULL·중복을 금지하고, 참조 무결성은 테이블 사이의 참조 관계를 지킵니다.",
+        "example": "학번을 기본키로 정하면 비어 있거나 중복된 학번을 막습니다. CHECK(점수 BETWEEN 0 AND 100)는 점수의 허용 범위를 검사합니다.",
+        "remember": "기본키→개체, 외래키→참조, 자료형·허용 범위→도메인, 중복 금지→유일성을 연결하세요. UNIQUE의 NULL 처리는 DBMS 설정에 따라 다를 수 있습니다.",
+        "sources": [
+          {
+            "title": "PostgreSQL · 제약조건",
+            "url": "https://www.postgresql.org/docs/16/ddl-constraints.html"
+          }
+        ]
+      }
+    ],
+    "source": "2025_3/12.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_13",
+    "exam": "2025_3",
+    "number": 13,
+    "category": "소프트웨어",
+    "body": "<p>애플리케이션 테스트에 대한 다음 설명에서 괄호(①, ②)에 들어갈 알맞은 답을 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<blockquote>애플리케이션 테스트는 애플리케이션에 잠재되어 있는 결함을 찾아내는 일련의 행위 또는 절차이다. 소프트웨어가 기능을 정확히 수행하는지 ( ① )하고, 개발된 소프트웨어가 고객의 요구사항을 만족시키는지 ( ② )한다.</blockquote>\n<p>&lt;보기&gt;</p>\n<ul><li>Accreditation</li><li>Authorization</li><li>Validation</li><li>Certification</li><li>Verification</li><li>Authentication</li><li>Investigation</li><li>Inspection</li></ul>",
+    "answer": "① Verification  ② Validation",
+    "explanation": "명세대로 구현했는지 검증하고 고객 요구를 충족하는지 확인합니다.",
+    "concepts": [
+      {
+        "id": "vv",
+        "title": "Verification과 Validation",
+        "meaning": "Verification은 명세에 맞게 산출물을 만들었는지 검증합니다. Validation은 완성된 제품이 사용자의 실제 요구와 사용 목적을 충족하는지 확인합니다.",
+        "example": "명세의 할인 계산식을 정확히 구현했는가→Verification. 실제 매장에서 필요한 할인 업무를 해결하는가→Validation입니다.",
+        "remember": "명세 준수와 사용자 요구 충족이라는 기준을 나눠 기억하세요. 둘을 단순히 테스트 시점만으로 구별하지 않습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/13.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_14",
+    "exam": "2025_3",
+    "number": 14,
+    "category": "네트워크",
+    "body": "<p>TCP(Transmission Control Protocol)에서의 연결 해제 과정을 다음 &lt;보기&gt;를 참조하여 순서대로 기호(㉠~㉣)를 쓰시오. (5점)</p>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 수신자가 송신자에게 ACK 세그먼트를 전송한다.</li><li>㉡ 수신자가 송신자에게 FIN 세그먼트를 전송한다.</li><li>㉢ 송신자가 수신자에게 ACK 세그먼트를 전송한다.</li><li>㉣ 송신자가 수신자에게 FIN 세그먼트를 전송한다.</li></ul>",
+    "answer": "㉣ → ㉠ → ㉡ → ㉢",
+    "explanation": "FIN → ACK → FIN → ACK의 4단계 연결 해제입니다.",
+    "concepts": [
+      {
+        "id": "tcpclose",
+        "title": "TCP 연결 해제",
+        "meaning": "TCP 연결은 양쪽 송신 방향을 각각 닫습니다. 한쪽이 FIN을 보내면 상대가 ACK하고, 상대도 전송을 마치면 FIN을 보내며 마지막 ACK로 확인합니다.",
+        "example": "A→B FIN, B→A ACK, B→A FIN, A→B ACK가 전형적인 4단계 흐름입니다.",
+        "remember": "연결 설정의 SYN→SYN/ACK→ACK와 구별하세요. 실제 통신에서는 ACK와 FIN이 합쳐지는 등 패킷 형태가 달라질 수 있습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/14.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_15",
+    "exam": "2025_3",
+    "number": 15,
+    "category": "데이터베이스",
+    "body": "<p>다음 &lt;학생&gt; 테이블에서 &#x27;학년&#x27;이 3 이상인 학생들이 수강하는 과목을 중복을 제거하여 검색하고자 한다. &lt;처리조건&gt;을 참고하여 적합한 SQL문을 작성하시오. (5점)</p>\n<p>&lt;학생&gt;</p>\n<div class=\"table-wrap\"><table><tr><th>학번</th><th>이름</th><th>학년</th><th>과목</th></tr><tr><td>9815932</td><td>김태산</td><td>3</td><td>경영정보시스템</td></tr><tr><td>9914511</td><td>박명복</td><td>2</td><td>경제학개론</td></tr><tr><td>0014652</td><td>이익명</td><td>4</td><td>국제경영</td></tr><tr><td>9916425</td><td>김혜리</td><td>2</td><td>경제학개론</td></tr><tr><td>9815945</td><td>이지영</td><td>3</td><td>인적자원관리</td></tr><tr><td>0114933</td><td>최마루</td><td>1</td><td>국제경영</td></tr></table></div>\n<p>&lt;처리조건&gt;</p>\n<ul><li>최소한의 코드로 작성될 수 있도록 SQL문을 구성한다.</li><li>명령문 마지막의 세미콜론(;)은 생략이 가능하다.</li><li>인용 부호가 필요한 경우 작은따옴표(&#x27;)를 사용한다.</li></ul>",
+    "answer": "SELECT DISTINCT 과목 FROM 학생 WHERE 학년 >= 3;",
+    "explanation": "DISTINCT로 중복 과목을 제거하고 WHERE로 3학년 이상을 선택합니다.",
+    "concepts": [
+      {
+        "id": "aggregate",
+        "title": "SELECT·DISTINCT·COUNT의 차이",
+        "meaning": "SELECT는 조건에 맞는 행에서 열을 조회하고 DISTINCT는 결과의 중복을 제거합니다. COUNT(*)는 행 수, COUNT(열)은 NULL이 아닌 값 수, COUNT(DISTINCT 열)은 중복을 뺀 값 수입니다.",
+        "example": "학과가 A,A,B인 세 행에서 SELECT 학과는 3행, DISTINCT 학과는 2행입니다. COUNT(DISTINCT 학과)는 숫자 2가 들어 있는 1행을 반환합니다.",
+        "remember": "집계값과 결과 테이블의 행 수는 다릅니다. GROUP BY 없는 일반 집계 쿼리는 전체를 집계해 한 행으로 반환합니다.",
+        "sources": []
+      },
+      {
+        "id": "conditions",
+        "title": "SQL의 조건과 정렬",
+        "meaning": "WHERE는 행을 걸러내고 AND는 두 조건 모두, OR는 하나 이상 만족해야 합니다. BETWEEN a AND b는 양 끝값을 포함하며 ORDER BY의 ASC는 오름차순입니다.",
+        "example": "WHERE 점수 BETWEEN 70 AND 90 AND 이름 NOT LIKE '김%'는 70~90점이면서 김으로 시작하지 않는 이름을 찾습니다. %는 임의 길이, _는 한 글자입니다.",
+        "remember": "BETWEEN의 AND는 범위 문법입니다. 여러 조건을 연결하는 AND와 역할을 구별하고 NOT의 적용 범위를 확인하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/15.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_16",
+    "exam": "2025_3",
+    "number": 16,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        int[] arr1 = {1, 2, 3};\n        int[] arr2 = arr1;\n        arr2[1] = arr1[2];\n        System.out.print(arr1[1]);\n    }\n}</code></pre>",
+    "answer": "3",
+    "explanation": "arr1과 arr2는 같은 배열을 참조하므로 두 번째 원소가 3으로 바뀝니다.",
+    "concepts": [
+      {
+        "id": "reference",
+        "title": "객체·배열의 참조 공유",
+        "meaning": "Java의 객체·배열 변수는 객체 자체가 아닌 참조값을 담습니다. b=a는 객체 복제가 아니라 같은 객체를 가리키도록 참조값을 복사하는 동작입니다.",
+        "example": "int[] a={4,5}; int[] b=a; b[0]=9;라면 a[0]도 9입니다. 두 화살표가 같은 배열 상자를 가리킨다고 그려보세요.",
+        "remember": "new가 실행돼야 새 객체가 만들어집니다. 참조 변수 개수와 실제 객체 개수를 구별하세요.",
+        "sources": [
+          {
+            "title": "Java 언어 명세 · 참조형",
+            "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.3"
+          }
+        ]
+      }
+    ],
+    "source": "2025_3/16.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_17",
+    "exam": "2025_3",
+    "number": 17,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nint test(int x, int y) {\n    return x + y;\n}\n\nint main(void) {\n    int a = 2, b = 5;\n    int (*testp)(int, int) = test;\n    printf(&quot;%d\\n&quot;, testp(b, a - 1));\n    return 0;\n}</code></pre>",
+    "answer": "6",
+    "explanation": "함수 포인터로 test(5,1)을 호출하므로 6입니다.",
+    "concepts": [
+      {
+        "id": "functionptr",
+        "title": "C 함수 포인터",
+        "meaning": "함수 포인터는 호출할 함수의 주소를 저장합니다. int (*fp)(int,int)는 int 두 개를 받아 int를 반환하는 함수를 가리키는 변수입니다.",
+        "example": "fp=add; 후 fp(2,4)는 add(2,4)를 호출합니다. 인수는 호출문에 적힌 순서대로 매개변수에 대응시킵니다.",
+        "remember": "선언의 (*fp) 괄호가 중요합니다. 변수 초기값과 실제로 전달된 인수를 혼동하지 마세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/17.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_18",
+    "exam": "2025_3",
+    "number": 18,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        final int TT = 3;\n        int other = TT;\n        other += 2;\n        System.out.printf(&quot;%d&quot;, TT);\n    }\n}</code></pre>",
+    "answer": "3",
+    "explanation": "other를 변경해도 final 변수 TT의 값 3은 유지됩니다.",
+    "concepts": [
+      {
+        "id": "final",
+        "title": "Java final과 기본형 값 복사",
+        "meaning": "final 변수는 한 번 값이 정해지면 다시 대입할 수 없습니다. int 같은 기본형을 다른 변수에 대입하면 값이 복사되므로 복사본 변경은 원본에 영향을 주지 않습니다.",
+        "example": "final int A=4; int b=A; b+=2; 이후 A는 4이고 b는 6입니다.",
+        "remember": "final 참조 변수는 다른 객체로 재대입할 수 없다는 뜻입니다. 그 객체의 내부 상태까지 항상 불변이 되는 것은 아닙니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/18.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_19",
+    "exam": "2025_3",
+    "number": 19,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nstruct test {\n    int x;\n    int y;\n};\n\nint main(void) {\n    struct test t = {4, 7};\n    struct test *p = &amp;t;\n    printf(&quot;%d\\n&quot;, p-&gt;y - p-&gt;x);\n    return 0;\n}</code></pre>",
+    "answer": "3",
+    "explanation": "p->y-p->x = 7-4 = 3입니다.",
+    "concepts": [
+      {
+        "id": "struct",
+        "title": "구조체와 멤버 접근",
+        "meaning": "C의 구조체는 여러 자료를 하나의 값으로 묶습니다. 구조체 변수는 점(.)으로, 구조체를 가리키는 포인터는 화살표(->)로 멤버에 접근합니다.",
+        "example": "p가 구조체 t를 가리키면 p->x와 t.x, (*p).x는 같은 멤버를 뜻합니다. %.2f는 실수를 소수 둘째 자리까지 출력합니다.",
+        "remember": "멤버마다 값을 따로 기록하세요. 구조체 값의 복사와 구조체 주소를 통한 원본 변경을 구별합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/19.md",
+    "caution": false
+  },
+  {
+    "id": "2025_3_20",
+    "exam": "2025_3",
+    "number": 20,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        int[] s = {98, 76, 54, 25, 45, 67, 32};\n        int n = s.length;\n        int ax = s[0];\n        int in = s[0];\n        for (int i = 1; i &lt; n; i++) {\n            if (s[i] &gt; ax) {\n                ax = s[i];\n            }\n            if (s[i] &lt; in) {\n                in = s[i];\n            }\n        }\n        System.out.println(ax + in);\n    }\n}</code></pre>",
+    "answer": "123",
+    "explanation": "최댓값 98과 최솟값 25를 더합니다.",
+    "concepts": [
+      {
+        "id": "minmax",
+        "title": "배열의 최댓값·최솟값 찾기",
+        "meaning": "첫 원소를 현재 최댓값과 최솟값으로 놓고 나머지를 하나씩 비교하며 갱신합니다. 모든 원소를 한 번씩 읽으므로 시간 복잡도는 O(n)입니다.",
+        "example": "[6,2,9]에서 초기 최대·최소는 6입니다. 2를 만나 최소=2, 9를 만나 최대=9로 갱신합니다.",
+        "remember": "최댓값과 최솟값은 독립적으로 추적하세요. 첫 원소로 초기화하면 음수만 있는 배열도 올바르게 처리할 수 있습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_3/20.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_01",
+    "exam": "2025_2",
+    "number": 1,
+    "category": "데이터베이스",
+    "body": "<p>다음에서 데이터베이스(Database)의 특징을 모두 골라 기호(㉠~㉤)로 쓰시오. (5점)</p>\n<ul><li>㉠ 실시간 접근성</li><li>㉡ 계속적인 변화</li><li>㉢ 동시 공용</li><li>㉣ 주소 기반 참조</li><li>㉤ 내용에 의한 참조</li></ul>",
+    "answer": "㉠, ㉡, ㉢, ㉤",
+    "explanation": "실시간 접근성, 계속적인 변화, 동시 공용, 내용에 의한 참조가 특징입니다.",
+    "concepts": [
+      {
+        "id": "dbfeatures",
+        "title": "데이터베이스의 주요 특징",
+        "meaning": "데이터베이스는 여러 사용자가 공유하는 관련 데이터의 모음입니다. 실시간 접근성, 계속적인 변화, 동시 공용, 내용에 의한 참조가 대표적인 특징입니다.",
+        "example": "여러 직원이 동시에 현재 재고를 조회·수정하고, 저장 위치 대신 상품코드 조건으로 물건을 찾는 상황을 떠올리세요.",
+        "remember": "실시간은 요구에 맞게 적시에 응답한다는 뜻입니다. 내용 참조는 물리 주소를 직접 지정하기보다 데이터 값으로 검색하는 것입니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/01.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_02",
+    "exam": "2025_2",
+    "number": 2,
+    "category": "데이터베이스",
+    "body": "<p>다음에서 릴레이션(Relation)의 특징을 모두 골라 기호(㉠~㉤)로 쓰시오. (5점)</p>\n<ul><li>㉠ 릴레이션에서 튜플은 중복되지 않는다.</li><li>㉡ 릴레이션에서 튜플의 순서는 유의미하다.</li><li>㉢ 릴레이션에서 속성의 순서는 유의미하다.</li><li>㉣ 릴레이션에서 속성값은 원자 값을 쓸 수 없다.</li><li>㉤ 릴레이션에서 속성값은 중복될 수 없다.</li></ul>",
+    "answer": "㉠",
+    "explanation": "튜플은 중복되지 않으며 순서는 의미가 없습니다. 속성값은 원자값이고 열 사이 같은 값은 허용됩니다.",
+    "concepts": [
+      {
+        "id": "relation",
+        "title": "릴레이션·튜플·속성",
+        "meaning": "관계형 모델에서 테이블은 릴레이션, 행은 튜플, 열은 속성입니다. 차수(degree)는 속성 수, 카디널리티(cardinality)는 튜플 수입니다.",
+        "example": "학번·이름 두 열과 학생 세 명의 행이 있으면 차수 2, 카디널리티 3입니다. 관계형 모델의 튜플은 순서가 없고 중복되지 않습니다.",
+        "remember": "SQL 조회는 DISTINCT가 없으면 중복 행을 반환할 수 있습니다. 이론적 릴레이션의 성질과 SQL 결과의 동작을 구별하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/02.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_03",
+    "exam": "2025_2",
+    "number": 3,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static class A {\n        static String nu() { return &quot;A&quot;; }\n        String mo() { return &quot;a&quot;; }\n    }\n    static class B extends A {\n        static String nu() { return &quot;B&quot;; }\n        String mo() { return &quot;b&quot;; }\n    }\n    public static void main(String[] args) {\n        A tester = new B();\n        System.out.println(tester.nu() + tester.mo());\n    }\n}</code></pre>",
+    "answer": "Ab",
+    "explanation": "정적 메서드는 선언 타입 A, 인스턴스 메서드는 실제 객체 B에 따라 결정됩니다.",
+    "concepts": [
+      {
+        "id": "static",
+        "title": "Java의 static 메서드와 오버라이딩",
+        "meaning": "static 메서드는 클래스에 속하며 참조 변수의 선언 타입으로 선택됩니다. 오버라이딩된 인스턴스 메서드는 실제 객체의 타입에 따라 선택됩니다.",
+        "example": "Parent p=new Child();에서 p.staticMethod()는 Parent 쪽, p.instanceMethod()는 Child가 재정의한 쪽을 실행할 수 있습니다.",
+        "remember": "선언 타입과 실제 생성 타입을 각각 적으세요. static 메서드는 오버라이딩이 아니라 숨김(hiding)으로 설명합니다.",
+        "sources": [
+          {
+            "title": "Java 언어 명세 · 클래스",
+            "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html"
+          }
+        ]
+      }
+    ],
+    "source": "2025_2/03.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_04",
+    "exam": "2025_2",
+    "number": 4,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nint fn(int *a, int *b) {\n    *a = *a + *b;\n    return (*b = *a - *b);\n}\nint main() {\n    int x = 2;\n    int y = 3;\n    printf(&quot;%d&quot;, fn(&amp;x, &amp;y) + y);\n    return 0;\n}</code></pre>",
+    "answer": "단일 출력값을 확정할 수 없음",
+    "explanation": "fn()은 y를 변경하지만 +의 다른 피연산자도 y를 읽습니다. C의 평가 순서에 의존하는 코드이므로 특정 결과를 표준 정답으로 단정하지 않습니다. 원문·공식 정답을 확인하세요.",
+    "concepts": [
+      {
+        "id": "ceval",
+        "title": "C의 평가 순서와 부수 효과",
+        "meaning": "연산자 우선순위는 식이 어떻게 묶이는지 정할 뿐, 모든 피연산자의 실행 순서를 정하지 않습니다. 함수 호출이 외부 값을 바꾸면 다른 피연산자의 읽기와 순서 관계를 따져야 합니다.",
+        "example": "f()가 전역 g를 바꾸는 f()+g는 g를 호출 전후 언제 읽는지에 따라 값이 달라질 수 있습니다. 여러 문장으로 나누면 의도를 분명히 할 수 있습니다.",
+        "remember": "무조건 왼쪽부터 실행한다고 풀지 마세요. 함수 호출의 순서 미지정과 같은 객체의 순서 없는 읽기·수정으로 생기는 정의되지 않은 동작은 구별해야 합니다.",
+        "sources": []
+      },
+      {
+        "id": "pointer",
+        "title": "포인터·배열·이중 포인터",
+        "meaning": "포인터는 주소를 담는 변수입니다. &x는 x의 주소, *p는 p가 가리키는 값입니다. 배열에서 p+1은 다음 원소로 이동하며, **r은 주소를 두 번 따라갑니다.",
+        "example": "a=[4,9]이고 p=&a[0]이면 *(p+1)은 9입니다. r=&p일 때 **r=8은 a[0]을 8로 바꿉니다.",
+        "remember": "p의 주소값을 바꾸는 것과 *p의 대상 값을 바꾸는 것을 구별하세요. 포인터 연산은 원소 크기 단위로 이동합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/04.md",
+    "caution": true
+  },
+  {
+    "id": "2025_2_05",
+    "exam": "2025_2",
+    "number": 5,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 용어를 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<ul><li>HTTP 프로토콜을 통해 클라이언트로부터 직접 요청을 받아 처리한 후 결과를 클라이언트에 다시 보내는 역할을 한다.</li><li>클라이언트가 요청하는 자원(Resources)은 URL 형태로 받아 내부 파일 시스템과 매핑하여 처리한다.</li><li>대표적인 것으로는 아파치(Apache), 엔진엑스(nginx), MS의 IIS(Internet Information Services) 등이 있다.</li></ul>\n<p>&lt;보기&gt;</p>\n<div class=\"table-wrap\"><table><tr><th></th><th></th><th></th></tr><tr><td>WAS</td><td>Load Balancer</td><td>DBMS</td></tr><tr><td>DBMS</td><td>Web Server</td><td>Proxy Servert</td></tr></table></div>",
+    "answer": "Web Server",
+    "explanation": "HTTP 요청을 받아 웹 자원을 제공하는 서버입니다.",
+    "concepts": [
+      {
+        "id": "http",
+        "title": "HTTP와 웹 서버",
+        "meaning": "HTTP는 클라이언트의 요청과 서버의 응답으로 웹 자원을 주고받는 응용 계층 프로토콜입니다. 웹 서버는 요청을 받아 자원이나 오류 등의 응답을 제공합니다.",
+        "example": "브라우저가 GET /index.html을 요청하면 서버가 상태 코드와 HTML 본문을 반환합니다. HTTPS는 HTTP 통신을 TLS로 보호합니다.",
+        "remember": "HTTP는 통신 규칙, 웹 서버는 그 규칙으로 응답하는 소프트웨어·시스템입니다. HTML 문서 형식과도 구별합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/05.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_06",
+    "exam": "2025_2",
+    "number": 6,
+    "category": "네트워크",
+    "body": "<p>인터넷 프로토콜에 대한 다음 설명에서 괄호에 공통으로 들어갈 알맞은 답을 영문 약어로 쓰시오. (5점)</p>\n<ul><li>(      ) 주소는 인터넷에 연결된 모든 컴퓨터의 자원을 구분하기 위한 고유한 주소이다.</li><li>(      )는 패킷 주소를 해석하고 경로를 결정하여 다음 호스트로 전송한다.</li><li>(      )는 OSI 7계층의 네트워크 계층에 해당한다.</li></ul>",
+    "answer": "IP",
+    "explanation": "IP는 네트워크 계층에서 주소 지정과 패킷 전달을 담당합니다.",
+    "concepts": [
+      {
+        "id": "ip",
+        "title": "IP의 역할",
+        "meaning": "IP는 네트워크 계층에서 논리 주소를 사용해 네트워크 사이에 패킷을 전달합니다. 자체적으로 전달 성공이나 순서·재전송을 보장하지 않는 최선형 서비스입니다.",
+        "example": "IP가 목적지 주소를 붙여 전달을 시도하면 TCP는 그 위에서 누락·순서 등을 관리합니다.",
+        "remember": "IP→주소·경로 전달, TCP→신뢰성 있는 전송, ARP→같은 링크의 IPv4 주소와 MAC 대응을 구별하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/06.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_07",
+    "exam": "2025_2",
+    "number": 7,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static int x = f();\n    static int f() {\n        System.out.print(&quot;A&quot;);\n        return 1;\n    }\n    static {\n        x++;\n    }\n    public static void main(String[] args) {\n        System.out.print(x);\n    }\n}</code></pre>",
+    "answer": "A2",
+    "explanation": "정적 필드 초기화에서 A를 출력하고 x=1이 된 뒤 정적 블록에서 x=2가 됩니다.",
+    "concepts": [
+      {
+        "id": "init",
+        "title": "Java 정적 초기화 순서",
+        "meaning": "클래스가 초기화될 때 정적 필드 초기화식과 static 블록이 소스에 나타난 순서대로 실행됩니다. 해당 초기화가 끝난 뒤 main 본문이 실행됩니다.",
+        "example": "static int x=f(); 다음에 static { x++; }가 있으면 f의 출력·반환값 저장을 먼저 처리하고 x를 증가시킨 뒤 main을 봅니다.",
+        "remember": "main에 적힌 출력만 보지 마세요. 필드 초기화 중 호출되는 함수의 출력도 결과에 포함됩니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/07.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_08",
+    "exam": "2025_2",
+    "number": 8,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\ntypedef struct {\n    int x;\n} Struct;\n\nvoid change(Struct *a, Struct b) {\n    a-&gt;x += b.x;\n    b.x = 100;\n    a = &amp;b;\n    a-&gt;x = 200;\n}\n\nint main() {\n    Struct b1 = {3};\n    Struct b2 = {4};\n    change(&amp;b1, b2);\n    printf(&quot;%d &quot;, b1.x);\n    return 0;\n}</code></pre>",
+    "answer": "7",
+    "explanation": "a->x += b.x가 원본 b1을 7로 바꿉니다. 이후 a를 지역 복사본 b로 바꿔도 b1에는 영향이 없습니다.",
+    "concepts": [
+      {
+        "id": "passvalue",
+        "title": "매개변수 복사와 원본 변경",
+        "meaning": "C와 Java의 매개변수는 값으로 전달됩니다. C는 주소값을, Java는 객체 참조값을 복사해 받을 수 있으므로 그 값을 따라 원본 내용에 접근할 수 있습니다.",
+        "example": "p[0]=9는 가리키는 배열의 내용을 바꾸지만 p=다른배열은 함수의 지역 매개변수만 바꿉니다. C에서 구조체를 값으로 넘기면 구조체 내용도 복사됩니다.",
+        "remember": "대상의 내용 변경과 지역 매개변수 재대입을 구별하세요. 참조값을 전달한다는 말이 변수 자체를 참조로 전달한다는 뜻은 아닙니다.",
+        "sources": []
+      },
+      {
+        "id": "struct",
+        "title": "구조체와 멤버 접근",
+        "meaning": "C의 구조체는 여러 자료를 하나의 값으로 묶습니다. 구조체 변수는 점(.)으로, 구조체를 가리키는 포인터는 화살표(->)로 멤버에 접근합니다.",
+        "example": "p가 구조체 t를 가리키면 p->x와 t.x, (*p).x는 같은 멤버를 뜻합니다. %.2f는 실수를 소수 둘째 자리까지 출력합니다.",
+        "remember": "멤버마다 값을 따로 기록하세요. 구조체 값의 복사와 구조체 주소를 통한 원본 변경을 구별합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/08.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_09",
+    "exam": "2025_2",
+    "number": 9,
+    "category": "소프트웨어",
+    "body": "<p>애플리케이션 테스트에 대한 다음 설명에서 괄호(①, ②)에 들어갈 알맞은 용어를 쓰시오. (5점)</p>\n<ul><li>( ① ) 박스 테스트는 소프트웨어가 수행할 특정 기능을 알기 위해서 각 기능이 완전히 작동되는 것을 입증하는 테스트로, 기능 테스트라고도 한다. 사용자의 요구사항 명세를 보면서 테스트하며, 주로 구현된 기능을 테스트한다.</li><li>( ② ) 박스 테스트는 모듈의 원시 코드를 오픈시킨 상태에서 원시 코드의 논리적인 모든 경로를 테스트하여 테스트 케이스를 설계하는 방법이다.</li></ul>",
+    "answer": "① 블랙  ② 화이트",
+    "explanation": "요구사항·기능을 검사하면 블랙박스, 내부 코드 경로를 검사하면 화이트박스입니다.",
+    "concepts": [
+      {
+        "id": "testing",
+        "title": "블랙박스와 화이트박스 테스트",
+        "meaning": "블랙박스는 내부 구현보다 입력과 기대 출력, 요구 기능을 봅니다. 화이트박스는 코드의 문장·분기·조건·반복 경로가 실행되는지 봅니다.",
+        "example": "나이 입력을 미성년·성년 그룹으로 나누거나 경계 나이를 검사하면 블랙박스입니다. if의 양쪽 경로 실행 여부를 확인하면 화이트박스입니다.",
+        "remember": "동치 분할·경계값·원인-효과→블랙박스, 기초 경로·조건·루프→화이트박스로 묶어 기억하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/09.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_10",
+    "exam": "2025_2",
+    "number": 10,
+    "category": "소프트웨어",
+    "body": "<p>다음 설명에 해당하는 용어를 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<ul><li>소프트웨어의 개발 과정에서 소프트웨어의 변경 사항을 관리하기 위해 개발된 일련의 활동이다.</li><li>소프트웨어 개발의 전체 비용을 줄이고, 개발 과정의 여러 방해 요인이 최소화되도록 보증하는 것을 목적으로 한다.</li><li>이를 통해 가시성과 추적성을 보장함으로써 소프트웨어의 생산성과 품질을 높일 수 있다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>품질 보증</li><li>요구사항 관리</li><li>형상 관리</li><li>테스트 관리</li><li>위험 관리</li><li>프로젝트 관리</li></ul>",
+    "answer": "형상 관리",
+    "explanation": "변경 사항을 식별·통제·추적하는 활동입니다.",
+    "concepts": [
+      {
+        "id": "config",
+        "title": "형상 관리",
+        "meaning": "형상 관리는 소프트웨어 구성 항목과 변경을 식별·통제하고 상태·이력을 추적하는 활동입니다. 코드뿐 아니라 요구사항·설계서·빌드 설정도 대상이 됩니다.",
+        "example": "출시 버전의 코드와 문서 조합을 기준선으로 정하고 변경 요청·승인·이력을 관리하는 상황입니다.",
+        "remember": "버전 관리는 형상 관리의 일부입니다. 변경 통제·상태 보고·감사까지 설명하면 형상 관리를 떠올리세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/10.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_11",
+    "exam": "2025_2",
+    "number": 11,
+    "category": "데이터베이스",
+    "body": "<p>다음은 &lt;성적&gt; 테이블에서 점수가 80 이상 90 이하인 모든 튜플을 조회하는 두 가지 방법을 보여주는 &lt;SQL문&gt;이다. 괄호(①, ②)에 알맞은 답을 적어 &lt;SQL문&gt;을 완성하시오. (5점)</p>\n<p>&lt;SQL문&gt;</p>\n<p>방법 1</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT * FROM 성적 WHERE 점수 &gt;= 80 ( ① ) 점수 &lt;= 90;</code></pre>\n<p>방법 2</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT * FROM 성적 WHERE 점수 ( ② ) 80 AND 90;</code></pre>",
+    "answer": "① AND  ② BETWEEN",
+    "explanation": "BETWEEN은 양 끝값을 포함합니다.",
+    "concepts": [
+      {
+        "id": "conditions",
+        "title": "SQL의 조건과 정렬",
+        "meaning": "WHERE는 행을 걸러내고 AND는 두 조건 모두, OR는 하나 이상 만족해야 합니다. BETWEEN a AND b는 양 끝값을 포함하며 ORDER BY의 ASC는 오름차순입니다.",
+        "example": "WHERE 점수 BETWEEN 70 AND 90 AND 이름 NOT LIKE '김%'는 70~90점이면서 김으로 시작하지 않는 이름을 찾습니다. %는 임의 길이, _는 한 글자입니다.",
+        "remember": "BETWEEN의 AND는 범위 문법입니다. 여러 조건을 연결하는 AND와 역할을 구별하고 NOT의 적용 범위를 확인하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/11.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_12",
+    "exam": "2025_2",
+    "number": 12,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 알맞은 용어를 쓰시오. (5점)</p>\n<ul><li>컴퓨터와 컴퓨터 또는 컴퓨터와 인터넷 사이에서 파일을 주고받을 수 있도록 하는 원격 파일 전송 프로토콜이다.</li><li>파일의 전송(Upload)과 수신(Download), 삭제, 이름 변경 등의 작업을 할 수 있다.</li><li>그림 파일, 동영상 파일, 실행 파일, 압축된 형태의 파일을 전송할 때에는 Binary 모드를, 텍스트 파일을 전송할 때에는 ASCII 모드를 사용한다.</li><li>일반적으로 20, 21번의 포트 번호를 사용한다.</li></ul>",
+    "answer": "FTP",
+    "explanation": "제어 연결은 21번, 전통적인 능동 모드 데이터 연결은 20번 포트를 사용합니다.",
+    "concepts": [
+      {
+        "id": "ftp",
+        "title": "FTP의 제어 연결과 데이터 연결",
+        "meaning": "FTP는 파일 전송을 위한 응용 계층 프로토콜입니다. 명령·응답용 제어 연결과 실제 파일을 보내는 데이터 연결을 구분합니다.",
+        "example": "기본 제어 포트는 TCP 21입니다. 전통적인 능동 모드에서 서버 데이터 연결의 출발 포트는 TCP 20이며, 수동 모드는 협상한 다른 포트를 씁니다.",
+        "remember": "21→제어, 20→능동 모드 데이터. 모든 FTP 데이터 전송이 항상 20번을 쓴다고 외우지 마세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/12.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_13",
+    "exam": "2025_2",
+    "number": 13,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 네트워크 관련 명령어를 쓰시오. (5점)</p>\n<ul><li>ICMP 기능을 이용하여 원격 컴퓨터가 현재 네트워크에 연결되어 정상적으로 작동하고 있는지 알아보는 서비스이다.</li><li>TCP/IP 프로토콜을 사용하는 네트워크에서 다른 호스트 컴퓨터에 IP 데이터그램을 전송하여 정상적으로 도착하면 해당 컴퓨터는 올바르게 작동하는 것이다.</li><li>명령 프롬프트 창에 &#x27;X 211.11.14.177&#x27;이나 &#x27;X www.gilbut.co.kr&#x27; 형식으로 입력한다.</li></ul>",
+    "answer": "ping",
+    "explanation": "ICMP 에코 요청·응답으로 대상의 응답 여부를 확인합니다.",
+    "concepts": [
+      {
+        "id": "trace",
+        "title": "ping과 경로 추적",
+        "meaning": "ping은 대상이 ICMP 에코 요청에 응답하는지 확인합니다. tracert(Windows)·traceroute는 패킷의 TTL 등을 이용해 목적지까지의 중간 경로를 살펴봅니다.",
+        "example": "대상 응답 확인은 ping, 어느 라우터 구간을 거치는지 확인하는 작업은 tracert로 구별합니다.",
+        "remember": "응답이 없다고 반드시 장비가 꺼진 것은 아닙니다. 방화벽이 응답을 차단할 수도 있습니다.",
+        "sources": []
+      },
+      {
+        "id": "icmp",
+        "title": "ICMP의 제어 메시지",
+        "meaning": "ICMP는 IP 전달 과정에서 오류와 진단 정보를 알리는 프로토콜입니다. 목적지 도달 불가·시간 초과·에코 요청 및 응답 등이 있습니다.",
+        "example": "ping의 에코 요청·응답, TTL이 소진됐을 때의 시간 초과 알림을 연결해 보세요.",
+        "remember": "오류를 보고하는 것이지 누락 데이터를 스스로 재전송하는 프로토콜은 아닙니다. 신뢰성 제공 TCP와 구별하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/13.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_14",
+    "exam": "2025_2",
+    "number": 14,
+    "category": "데이터베이스",
+    "body": "<p>데이터베이스에 대한 다음 설명에서 괄호(①~③)에 들어갈 알맞은 답을 쓰시오. (5점)</p>\n<p>스키마는 데이터베이스의 구조와 제약 조건에 관한 전반적인 명세를 기술한 것이다.</p>\n<ul><li>( ① ) 스키마 : 사용자나 응용 프로그래머가 각 개인의 입장에서 필요로 하는 데이터베이스의 논리적 구조를 정의한 것이다.</li><li>( ② ) 스키마 : 데이터베이스의 전체적인 논리적 구조이며, 모든 응용 프로그램이나 사용자들이 필요로 하는 데이터를 종합한 조직 전체의 데이터베이스로, 하나만 존재한다.</li><li>( ③ ) 스키마 : 물리적 저장장치의 입장에서 본 데이터베이스 구조로, 실제로 저장될 레코드의 형식, 저장 데이터 항목의 표현 방법, 내부 레코드의 물리적 순서 등을 나타낸다.</li></ul>",
+    "answer": "① 외부  ② 개념  ③ 내부",
+    "explanation": "개인별 논리 뷰 / 전체 논리 구조 / 물리 저장 구조입니다.",
+    "concepts": [
+      {
+        "id": "schema",
+        "title": "외부·개념·내부 스키마",
+        "meaning": "3단계 스키마는 사용자별 관점인 외부, 전체 데이터의 논리 구조인 개념, 실제 저장 구조인 내부로 나눕니다.",
+        "example": "학생용 성적 조회 뷰→외부, 학교 전체 학생·수강·과목 관계→개념, 파일 배치·인덱스 같은 저장 방식→내부입니다.",
+        "remember": "개인 관점→외부 / 전체 논리→개념 / 물리 저장→내부. 사용자마다 다른 외부 스키마를 둘 수 있습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/14.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_15",
+    "exam": "2025_2",
+    "number": 15,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static void func(int[] a) {\n        a[0]++;\n        a = new int[]{5};\n    }\n    public static void main(String[] args) {\n        int[] arr = {2};\n        func(arr);\n        System.out.println(arr[0]);\n    }\n}</code></pre>",
+    "answer": "3",
+    "explanation": "첫 원소 증가는 원본 배열에 반영됩니다. 매개변수에 새 배열을 대입해도 원본 참조는 바뀌지 않습니다.",
+    "concepts": [
+      {
+        "id": "passvalue",
+        "title": "매개변수 복사와 원본 변경",
+        "meaning": "C와 Java의 매개변수는 값으로 전달됩니다. C는 주소값을, Java는 객체 참조값을 복사해 받을 수 있으므로 그 값을 따라 원본 내용에 접근할 수 있습니다.",
+        "example": "p[0]=9는 가리키는 배열의 내용을 바꾸지만 p=다른배열은 함수의 지역 매개변수만 바꿉니다. C에서 구조체를 값으로 넘기면 구조체 내용도 복사됩니다.",
+        "remember": "대상의 내용 변경과 지역 매개변수 재대입을 구별하세요. 참조값을 전달한다는 말이 변수 자체를 참조로 전달한다는 뜻은 아닙니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/15.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_16",
+    "exam": "2025_2",
+    "number": 16,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    int result = 0;\n    int test() {\n        try {\n            return 1;\n        } finally {\n            result = 2;\n        }\n    }\n    public static void main(String[] args) {\n        Main p = new Main();\n        System.out.print(p.test());\n    }\n}</code></pre>",
+    "answer": "1",
+    "explanation": "return 값 1이 먼저 결정되고 finally가 result를 2로 바꿉니다. 반환값은 1입니다.",
+    "concepts": [
+      {
+        "id": "finally",
+        "title": "Java의 return과 finally",
+        "meaning": "try에서 return을 만나면 반환할 값을 먼저 계산한 뒤 finally를 실행합니다. finally가 정상적으로 끝나면 미리 정한 값이 반환됩니다.",
+        "example": "try { return x; } finally { x=9; }에서 x가 정수 4였다면 반환값은 4입니다. 필드 x의 최종 값과 반환값은 다를 수 있습니다.",
+        "remember": "finally 자체가 return하거나 예외를 던지는 경우에는 결과가 달라집니다. 이 문제처럼 정상 종료하는 finally인지 확인하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/16.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_17",
+    "exam": "2025_2",
+    "number": 17,
+    "category": "프로그래밍",
+    "body": "<p>다음 Python로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">python</div><pre tabindex=\"0\"><code>a = [1, 2]\nb = a\na = a + [3]\nb.append(4)\nprint(len(set(a) &amp; set(b)))</code></pre>",
+    "answer": "2",
+    "explanation": "a=[1,2,3], b=[1,2,4]가 되어 집합의 교집합은 {1,2}입니다.",
+    "concepts": [
+      {
+        "id": "pythonlist",
+        "title": "Python의 리스트 재대입과 집합",
+        "meaning": "b=a는 같은 리스트를 가리키게 합니다. a=a+[값]은 새 리스트를 만들어 a에 연결하고, append는 기존 리스트를 직접 바꿉니다. set은 중복을 제거하며 &는 교집합입니다.",
+        "example": "a=[1]; b=a; a=a+[2]; b.append(3)이면 a는 [1,2], b는 [1,3]입니다. set(a)&set(b)는 {1}입니다.",
+        "remember": "새 리스트 생성과 기존 리스트 변경을 화살표로 그리세요. 집합의 길이는 중복을 제거한 공통 원소 수입니다.",
+        "sources": [
+          {
+            "title": "Python · 자료구조",
+            "url": "https://docs.python.org/3/tutorial/datastructures.html"
+          }
+        ]
+      }
+    ],
+    "source": "2025_2/17.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_18",
+    "exam": "2025_2",
+    "number": 18,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nvoid func(int *p) {\n    int temp[] = {0, 1, 2};\n    p = temp;\n    p[0] = 9;\n}\n\nint main() {\n    int arr[] = {3, 4, 5};\n    func(arr);\n    printf(&quot;%d&quot;, arr[0]);\n    return 0;\n}</code></pre>",
+    "answer": "3",
+    "explanation": "p만 지역 배열 temp를 가리키게 바뀌므로 원래 arr은 유지됩니다.",
+    "concepts": [
+      {
+        "id": "passvalue",
+        "title": "매개변수 복사와 원본 변경",
+        "meaning": "C와 Java의 매개변수는 값으로 전달됩니다. C는 주소값을, Java는 객체 참조값을 복사해 받을 수 있으므로 그 값을 따라 원본 내용에 접근할 수 있습니다.",
+        "example": "p[0]=9는 가리키는 배열의 내용을 바꾸지만 p=다른배열은 함수의 지역 매개변수만 바꿉니다. C에서 구조체를 값으로 넘기면 구조체 내용도 복사됩니다.",
+        "remember": "대상의 내용 변경과 지역 매개변수 재대입을 구별하세요. 참조값을 전달한다는 말이 변수 자체를 참조로 전달한다는 뜻은 아닙니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/18.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_19",
+    "exam": "2025_2",
+    "number": 19,
+    "category": "데이터베이스",
+    "body": "<p>키(Key)에 대한 다음 설명에서 괄호에 들어갈 알맞은 키의 종류를 쓰시오. (5점)</p>\n<p>다른 릴레이션의 기본키를 참조하는 속성 또는 속성들의 집합을 의미하는 키로, 참조되는 릴레이션의 기본키와 대응되어 릴레이션 간에 참조 관계를 표현하는데 중요한 도구이다.</p>\n<ul><li>&lt;학생&gt;: <u>학번</u>, 주민등록번호, 성명</li><li>&lt;수강&gt;: <u>학번</u>, <u>과목명</u></li><li>참조 관계: &lt;수강&gt;의 학번 → &lt;학생&gt;의 학번</li></ul>\n<p>&lt;수강&gt; 릴레이션의 학번은 &lt;학생&gt; 릴레이션의 기본키인 학번을 참조하고 있으므로 &lt;수강&gt; 릴레이션에서 학번은 (      )가 된다.</p>",
+    "answer": "외래키 (Foreign Key)",
+    "explanation": "다른 릴레이션의 기본키를 참조하는 키입니다.",
+    "concepts": [
+      {
+        "id": "fk",
+        "title": "외래키와 참조 무결성",
+        "meaning": "외래키는 다른 테이블(또는 자기 테이블)의 참조 대상 키와 연결하는 열입니다. NULL이 아닌 외래키 값은 참조 대상에 존재해야 한다는 규칙이 참조 무결성입니다.",
+        "example": "학과 테이블에 학과번호 10이 있을 때 교수.학과번호=10으로 소속을 연결합니다. 학과번호 99가 없다면 그 값을 넣는 것을 제약조건이 막습니다.",
+        "remember": "참조하는 쪽의 열이 외래키입니다. 시험에서는 기본키 참조가 자주 나오며 DBMS에서는 UNIQUE 키도 참조 대상으로 허용할 수 있습니다.",
+        "sources": [
+          {
+            "title": "PostgreSQL · 외래키",
+            "url": "https://www.postgresql.org/docs/16/ddl-constraints.html#DDL-CONSTRAINTS-FK"
+          }
+        ]
+      }
+    ],
+    "source": "2025_2/19.md",
+    "caution": false
+  },
+  {
+    "id": "2025_2_20",
+    "exam": "2025_2",
+    "number": 20,
+    "category": "네트워크",
+    "body": "<p>IP 주소는 네트워크 부분의 길이에 따라 A, B, C, D, E 클래스로 구성되어 있다. 다음 괄호(①~③)에 들어갈 알맞은 클래스를 쓰시오. (5점)</p>\n<div class=\"table-wrap\"><table><tr><th>구분</th><th>첫 번째 8비트</th><th>두 번째 8비트</th><th>세 번째 8비트</th><th>네 번째 8비트</th></tr><tr><td>①</td><td>1 / 1 / 0 / 5bit (네트워크 ID)</td><td>8bit (네트워크 ID)</td><td>8bit (네트워크 ID)</td><td>8bit (호스트 ID)</td></tr><tr><td>②</td><td>1 / 0 / 6bit (네트워크 ID)</td><td>8bit (네트워크 ID)</td><td>8bit (호스트 ID)</td><td>8bit (호스트 ID)</td></tr><tr><td>③</td><td>0 / 7bit (네트워크 ID)</td><td>8bit (호스트 ID)</td><td>8bit (호스트 ID)</td><td>8bit (호스트 ID)</td></tr></table></div>",
+    "answer": "① C  ② B  ③ A",
+    "explanation": "클래스 접두 비트는 C=110, B=10, A=0입니다.",
+    "concepts": [
+      {
+        "id": "ipclass",
+        "title": "클래스 기반 IPv4 주소",
+        "meaning": "과거의 클래스 구분은 첫 옥텟의 상위 비트로 네트워크 크기를 나눕니다. A는 0, B는 10, C는 110으로 시작합니다.",
+        "example": "첫 옥텟 기준 A는 통상 1~126, B는 128~191, C는 192~223으로 암기합니다. 127 대역은 루프백에 사용됩니다.",
+        "remember": "클래스 문제용 구분입니다. 현대의 실제 네트워크 크기는 주로 CIDR 접두 길이(/24 등)로 판단합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_2/20.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_01",
+    "exam": "2025_1",
+    "number": 1,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 알맞은 용어를 영문 약어 4글자로 쓰시오. (5점)</p>\n<ul><li>월드 와이드 웹(WWW)에서 HTML 문서를 송수신 하기 위한 표준 프로토콜이다.</li><li>서비스를 요청(Request)하거나 응답(Response)하는 프로토콜 구조를 가지며, GET과 POST 메소드를 통해 메시지를 주고 받는다.</li><li>포트 번호는 80번을 사용한다.</li></ul>",
+    "answer": "HTTP",
+    "explanation": "HTML 등 웹 자원을 요청·응답으로 전달하는 프로토콜입니다.",
+    "concepts": [
+      {
+        "id": "http",
+        "title": "HTTP와 웹 서버",
+        "meaning": "HTTP는 클라이언트의 요청과 서버의 응답으로 웹 자원을 주고받는 응용 계층 프로토콜입니다. 웹 서버는 요청을 받아 자원이나 오류 등의 응답을 제공합니다.",
+        "example": "브라우저가 GET /index.html을 요청하면 서버가 상태 코드와 HTML 본문을 반환합니다. HTTPS는 HTTP 통신을 TLS로 보호합니다.",
+        "remember": "HTTP는 통신 규칙, 웹 서버는 그 규칙으로 응답하는 소프트웨어·시스템입니다. HTML 문서 형식과도 구별합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/01.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_02",
+    "exam": "2025_1",
+    "number": 2,
+    "category": "데이터베이스",
+    "body": "<p>데이터베이스에 대한 다음 설명에서 괄호에 공통으로 들어갈 알맞은 답을 쓰시오. (5점)</p>\n<ul><li>(      )은 응용 프로그램 내에 데이터베이스에서 사용하는 데이터를 정의하거나 질의하는 SQL 문장을 내포하여 프로그램이 실행될 때 함께 실행되도록 호스트 프로그램 언어로 만든 프로그램에 삽입된 SQL이다.</li><li>(      ) 실행문은 호스트 언어에서 실행문이 나타날 수 있는 곳이면 프로그램의 어느 곳에서나 사용할 수 있다.</li></ul>",
+    "answer": "내장 SQL (Embedded SQL)",
+    "explanation": "호스트 언어의 프로그램 안에 삽입하는 SQL입니다.",
+    "concepts": [
+      {
+        "id": "embedded",
+        "title": "내장 SQL",
+        "meaning": "내장 SQL은 C 같은 호스트 언어의 프로그램 안에 SQL을 삽입해 사용하는 방식입니다. 프로그램 변수와 SQL 사이에서 데이터를 주고받습니다.",
+        "example": "C 프로그램에 EXEC SQL SELECT ... INTO :변수 ... 형태로 적고 전처리해 실행하는 방식이 대표적입니다.",
+        "remember": "SQL을 호스트 언어에 삽입→내장 SQL. 실행 중 문자열로 문장을 구성하는 동적 SQL과는 다른 분류 기준입니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/02.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_03",
+    "exam": "2025_1",
+    "number": 3,
+    "category": "데이터베이스",
+    "body": "<p>다음 &lt;회원&gt; 테이블의 차수(Degree)와 카디널리티(Cardinality)를 쓰시오. (5점)</p>\n<p>&lt;회원&gt;</p>\n<div class=\"table-wrap\"><table><tr><th>이름</th><th>주소</th><th>성별</th></tr><tr><td>최시연</td><td>마포</td><td>여</td></tr><tr><td>윤정식</td><td>서대문</td><td>남</td></tr><tr><td>이상희</td><td>성북</td><td>남</td></tr><tr><td>김향기</td><td>노원</td><td>여</td></tr></table></div>\n<ul><li>① 차수(Degree):</li><li>② 카디널리티(Cardinality):</li></ul>",
+    "answer": "① 3  ② 4",
+    "explanation": "차수는 열(속성)의 수, 카디널리티는 행(튜플)의 수입니다.",
+    "concepts": [
+      {
+        "id": "relation",
+        "title": "릴레이션·튜플·속성",
+        "meaning": "관계형 모델에서 테이블은 릴레이션, 행은 튜플, 열은 속성입니다. 차수(degree)는 속성 수, 카디널리티(cardinality)는 튜플 수입니다.",
+        "example": "학번·이름 두 열과 학생 세 명의 행이 있으면 차수 2, 카디널리티 3입니다. 관계형 모델의 튜플은 순서가 없고 중복되지 않습니다.",
+        "remember": "SQL 조회는 DISTINCT가 없으면 중복 행을 반환할 수 있습니다. 이론적 릴레이션의 성질과 SQL 결과의 동작을 구별하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/03.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_04",
+    "exam": "2025_1",
+    "number": 4,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 알맞은 용어를 쓰시오. (5점)</p>\n<ul><li>이더넷(Ethernet)의 물리적 구조와 토큰 링(Token Ring)의 논리적 전송 방식으로 결합한 상태로, 물리적으로는 버스형으로 연결되어 있으나 실제 동작은 논리적으로 구성된 링 형태로 수행된다.</li><li>동축 케이블을 전송매체로 사용하며, 실시간 처리가 요구되는 공장 자동화와 같은 응용에 적용된다.</li></ul>",
+    "answer": "토큰 버스 (Token Bus)",
+    "explanation": "물리적 버스와 논리적 링을 결합합니다.",
+    "concepts": [
+      {
+        "id": "token",
+        "title": "토큰 버스",
+        "meaning": "토큰 방식은 송신 권한을 나타내는 토큰을 가진 장치만 전송하는 방식입니다. 토큰 버스는 물리적으로 버스에 연결하고 논리적으로 정한 링 순서대로 토큰을 전달합니다.",
+        "example": "장치들이 같은 선로에 연결돼 있어도 토큰은 A→C→B→A처럼 정해진 순서로 넘길 수 있습니다.",
+        "remember": "물리 버스 + 논리 링→토큰 버스. 물리적 연결 모양과 매체 접근 순서를 따로 보세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/04.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_05",
+    "exam": "2025_1",
+    "number": 5,
+    "category": "소프트웨어",
+    "body": "<p>다음 설명에 해당하는 스케줄링 기법을 쓰시오. (5점)</p>\n<ul><li>시분할 시스템(Time Sharing System)을 위해 고안된 방식으로, FCFS(FIFO) 알고리즘을 선점 형태로 변형한 기법이다.</li><li>FCFS 기법과 같이 준비상태 큐에 먼저 들어온 프로세스가 먼저 CPU를 할당받지만 각 프로세스는 시간 할당량(Time Slice, Quantum) 동안만 실행한 후 실행이 완료되지 않으면 다음 프로세스에게 CPU를 넘겨주고 준비상태 큐의 가장 뒤로 배치된다.</li><li>할당되는 시간의 크기가 작으면 작은 프로세스들에게 유리하다.</li></ul>",
+    "answer": "라운드 로빈 (Round Robin, RR)",
+    "explanation": "정해진 시간 할당량만큼 CPU를 번갈아 할당합니다.",
+    "concepts": [
+      {
+        "id": "rr",
+        "title": "라운드 로빈 스케줄링",
+        "meaning": "라운드 로빈은 준비 큐의 프로세스에 시간 할당량(time quantum)만큼 CPU를 차례로 주는 선점형 스케줄링입니다. 끝내지 못하면 큐 뒤로 돌아갑니다.",
+        "example": "A와 B가 대기하고 할당량이 2라면 A 2단위→B 2단위→남은 A 순으로 실행할 수 있습니다.",
+        "remember": "할당량이 너무 작으면 문맥 교환 부담이 커지고, 매우 크면 FCFS처럼 동작합니다. 먼저 도착했다고 끝날 때까지 독점하지 않습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/05.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_06",
+    "exam": "2025_1",
+    "number": 6,
+    "category": "네트워크",
+    "body": "<p>다음 설명에서 괄호(①, ②)에 들어갈 알맞은 답을 쓰시오. (5점)</p>\n<ul><li>( ① ): 기업에서 자체적으로 서버, 네트워크 등 IT 인프라를 직접 보유하고 관리 및 운영하는 방식이다.</li><li>( ② ): TCP/IP의 네트워크 관리 프로토콜로, 라우터나 허브 등 네트워크 기기의 네트워크 정보를 네트워크 관리 시스템에 보내는데 사용되며, 에이전트(Agent)는 161번 포트를, 관리 시스템(Manager)은 162번 포트를 사용한다.</li></ul>",
+    "answer": "① 온프레미스 (On-premises)  ② SNMP",
+    "explanation": "자체 인프라 운영은 온프레미스, 네트워크 장비 관리는 SNMP입니다.",
+    "concepts": [
+      {
+        "id": "onprem",
+        "title": "온프레미스와 클라우드",
+        "meaning": "온프레미스는 조직이 자체 시설의 서버·스토리지·네트워크를 직접 구축하고 운영하는 방식입니다. 클라우드는 제공자의 자원을 서비스로 이용합니다.",
+        "example": "회사 전산실에 서버를 구매해 설치하고 직접 유지보수하면 온프레미스입니다. 필요할 때 가상 서버를 서비스로 빌리면 클라우드 방식입니다.",
+        "remember": "소유·설치 위치·운영 책임이 단서입니다. 온프레미스라고 네트워크 관리 프로토콜이 달라지는 것은 아닙니다.",
+        "sources": []
+      },
+      {
+        "id": "snmp",
+        "title": "SNMP와 네트워크 관리",
+        "meaning": "SNMP는 관리자가 장비의 상태 정보를 조회하거나 설정하고, 장비가 이벤트를 알릴 때 쓰는 프로토콜입니다. 관리 대상 정보는 MIB 형태로 표현합니다.",
+        "example": "관리 서버가 라우터의 트래픽 수치를 조회하고 장비가 장애 알림(Trap)을 보내는 상황입니다. 일반적인 UDP 포트는 요청 161, 트랩 수신 162입니다.",
+        "remember": "SNMP는 장비 관리, SMTP는 전자우편 전송입니다. 약자 한 글자 차이를 주의하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/06.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_07",
+    "exam": "2025_1",
+    "number": 7,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        B a = new B(3);\n        B b = new B(3);\n        B[] bs = {a, b};\n        B temp = bs[0];\n        bs[1] = bs[0];\n        bs[0] = temp;\n        bs[0].a += bs[1].a;\n        System.out.print(bs[0].a);\n    }\n}\nclass B {\n    int a;\n    B(int a) {\n        this.a = a;\n    }\n}</code></pre>",
+    "answer": "6",
+    "explanation": "bs[0]과 bs[1]이 같은 객체 a를 가리켜 3+3이 됩니다.",
+    "concepts": [
+      {
+        "id": "reference",
+        "title": "객체·배열의 참조 공유",
+        "meaning": "Java의 객체·배열 변수는 객체 자체가 아닌 참조값을 담습니다. b=a는 객체 복제가 아니라 같은 객체를 가리키도록 참조값을 복사하는 동작입니다.",
+        "example": "int[] a={4,5}; int[] b=a; b[0]=9;라면 a[0]도 9입니다. 두 화살표가 같은 배열 상자를 가리킨다고 그려보세요.",
+        "remember": "new가 실행돼야 새 객체가 만들어집니다. 참조 변수 개수와 실제 객체 개수를 구별하세요.",
+        "sources": [
+          {
+            "title": "Java 언어 명세 · 참조형",
+            "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.3"
+          }
+        ]
+      }
+    ],
+    "source": "2025_1/07.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_08",
+    "exam": "2025_1",
+    "number": 8,
+    "category": "데이터베이스",
+    "body": "<p>SQL에서 DDL(Data Define Language)은 DB 구조, 데이터 형식, 접근 방식 등 DB를 구축하거나 수정할 목적으로 사용하는 언어이다. 괄호(①~③)에 들어갈 알맞은 DDL의 종류를 쓰시오. (5점)</p>\n<ul><li>( ① ): 스키마, 도메인, 테이블, 뷰, 인덱스 등을 정의함</li><li>( ② ): 테이블에 대한 정의를 변경함</li><li>( ③ ): 스키마, 도메인, 테이블, 뷰, 인덱스 등을 삭제함</li></ul>",
+    "answer": "① CREATE  ② ALTER  ③ DROP",
+    "explanation": "정의 / 변경 / 삭제의 DDL 명령입니다.",
+    "concepts": [
+      {
+        "id": "ddl",
+        "title": "DDL: CREATE·ALTER·DROP",
+        "meaning": "DDL은 테이블 같은 데이터베이스 객체의 구조를 정의하는 언어입니다. CREATE는 생성, ALTER는 구조 변경, DROP은 객체 삭제를 수행합니다.",
+        "example": "CREATE TABLE 학생(...); → ALTER TABLE 학생 ADD 이메일 ...; → DROP TABLE 학생; 순서로 생성·변경·삭제를 대응시킬 수 있습니다.",
+        "remember": "구조 삭제 DROP과 행 삭제 DELETE를 구별하세요. CREATE·ALTER·DROP→DDL, INSERT·UPDATE·DELETE→DML입니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/08.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_09",
+    "exam": "2025_1",
+    "number": 9,
+    "category": "소프트웨어",
+    "body": "<p>애플리케이션 테스트에 대한 다음 설명에 해당하는 테스트 기법을 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<ul><li>단위 테스트가 완료된 모듈들을 결합하여 하나의 시스템으로 완성시키는 과정에서의 테스트를 의미한다.</li><li>모듈 간 또는 통합된 컴포넌트 간의 상호 작용 오류를 검사한다.</li><li>단위 테스트가 끝난 모듈을 통합하는 과정에서 발생하는 오류 및 결함을 찾는 테스트이다.</li><li>비점진적 방식과 점진적 방식으로 구분할 수 있다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>Unit Test</li><li>Integration Test</li><li>System Test</li><li>Acceptance Test</li><li>User Test</li><li>Beta Test</li><li>Alpha Test</li><li>Blackbox Test</li></ul>",
+    "answer": "Integration Test",
+    "explanation": "모듈 간 상호작용을 확인하는 통합 테스트입니다.",
+    "concepts": [
+      {
+        "id": "integration",
+        "title": "통합 테스트·드라이버·스텁",
+        "meaning": "통합 테스트는 모듈을 연결했을 때 인터페이스와 데이터 전달이 맞는지 확인합니다. 상향식은 아래 모듈부터, 하향식은 위 모듈부터 결합합니다.",
+        "example": "아래 모듈을 시험하려고 대신 호출하는 상위 코드는 드라이버입니다. 위 모듈이 호출할 하위 기능을 임시로 흉내 내는 코드는 스텁입니다.",
+        "remember": "상향식→드라이버, 하향식→스텁. 단위 테스트는 개별 모듈, 통합 테스트는 모듈 사이 연결에 집중합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/09.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_10",
+    "exam": "2025_1",
+    "number": 10,
+    "category": "소프트웨어",
+    "body": "<p>다음에 제시된 내용에서 UNIX 시스템의 구성 요소인 쉘(Shell)의 특징을 모두 골라 기호(㉠~㉤)로 쓰시오. (5점)</p>\n<ul><li>㉠ 사용자의 명령어를 인식하여 프로그램을 호출하고 명령을 수행하는 명령어 해석기이다.</li><li>㉡ 주기억장치에 상주하지 않고, 명령어가 포함된 파일 형태로 존재하며 보조 기억장치에서 교체 처리가 가능하다.</li><li>㉢ 컴퓨터가 부팅될 때 주기억장치에 적재된 후 상주하면서 실행된다.</li><li>㉣ 하드웨어를 보호하고, 프로그램과 하드웨어 간의 인터페이스 역할을 담당한다.</li><li>㉤ 프로세스 관리, 기억장치 관리, 파일 관리, 데이터 전송 및 변환 등 여러 가지 기능을 수행한다.</li></ul>",
+    "answer": "㉠, ㉡",
+    "explanation": "명령어 해석과 교체 가능한 프로그램은 쉘의 특징입니다. 나머지는 커널에 해당합니다.",
+    "concepts": [
+      {
+        "id": "shell",
+        "title": "커널과 쉘",
+        "meaning": "커널은 CPU·메모리·장치 등 자원을 관리하는 운영체제의 핵심입니다. 쉘은 사용자 명령을 해석하고 프로그램 실행을 요청하는 인터페이스입니다.",
+        "example": "쉘에 파일 조회 명령을 입력하면 명령 해석과 실행 요청은 쉘이, 실제 파일·장치 자원 접근 관리는 커널이 담당합니다.",
+        "remember": "명령 해석·교체 가능한 사용자 프로그램→쉘, 프로세스·메모리·자원 관리→커널을 연결하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/10.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_11",
+    "exam": "2025_1",
+    "number": 11,
+    "category": "데이터베이스",
+    "body": "<p>다음 &lt;사원&gt; 테이블의 정의문과 &lt;조건&gt;을 참고하여 괄호(①, ②)에 들어갈 알맞은 답을 쓰시오. (5점)</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>CREATE TABLE 사원\n    (직원코드 NUMBER NOT NULL,\n     성명 CHAR(10) UNIQUE,\n     직책 CHAR(10) ( ① ) (직책 ( ② ) (&#x27;사원&#x27;, &#x27;대리&#x27;, &#x27;과장&#x27;, &#x27;팀장&#x27;)),\n     연봉 NUMBER);</code></pre>\n<p>&lt;조건&gt;</p>\n<ul><li>&#x27;직원코드&#x27; 속성은 NULL을 갖지 않는다.</li><li>&#x27;성명&#x27; 속성은 중복 값을 허용하지 않는다.</li><li>&#x27;직책&#x27; 속성에는 &#x27;사원&#x27;, &#x27;대리&#x27;, &#x27;과장&#x27;, &#x27;팀장&#x27; 중 하나의 값만 저장할 수 있다.</li></ul>",
+    "answer": "① CHECK  ② IN",
+    "explanation": "CHECK (직책 IN (...))으로 허용값을 제한합니다.",
+    "concepts": [
+      {
+        "id": "check",
+        "title": "CHECK와 IN 제약조건",
+        "meaning": "CHECK는 행이 만족해야 할 조건을 지정합니다. IN은 값이 지정된 후보 집합 안에 있는지 검사하므로 허용 목록을 표현하기 좋습니다.",
+        "example": "CHECK (직책 IN ('사원','대리'))는 지정된 두 직책만 허용하도록 제한합니다. 필수 입력까지 원하면 NOT NULL도 함께 지정해야 합니다.",
+        "remember": "CHECK는 허용 조건, IN은 후보 목록입니다. SQL의 NULL은 UNKNOWN을 만들 수 있어 CHECK만으로 NULL을 막는다고 단정하지 않습니다.",
+        "sources": [
+          {
+            "title": "PostgreSQL · 제약조건",
+            "url": "https://www.postgresql.org/docs/16/ddl-constraints.html"
+          }
+        ]
+      }
+    ],
+    "source": "2025_1/11.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_12",
+    "exam": "2025_1",
+    "number": 12,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 네트워크 관련 장비를 &lt;보기&gt;에서 찾아 기호(㉠~㉥)로 쓰시오. (5점)</p>\n<ul><li>( ① )는 거리가 증가할수록 감쇠하는 디지털 신호의 장거리 전송을 위해 수신한 신호를 재생시키거나 출력 전압을 높여 전송하는 장치이다.</li><li>( ② )는 LAN과 LAN을 연결하거나 LAN 안에서의 컴퓨터 그룹을 연결하는 장치로, 네트워크의 수많은 단말기들에 의해 발생되는 트래픽 병목 현상을 줄일 수 있다.</li><li>( ③ )는 브리지와 같이 LAN과 LAN의 연결 기능에 데이터 전송의 최적 경로를 선택하는 기능이 추가된 장치로, 네트워크 계층까지의 프로토콜 구조가 다른 네트워크 간의 연결을 위해 프로토콜 변환 기능을 수행한다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 브리지</li><li>㉡ 게이트웨이</li><li>㉢ 리피터</li><li>㉣ 허브</li><li>㉤ 스위치</li><li>㉥ 라우터</li></ul>",
+    "answer": "① ㉢  ② ㉠  ③ ㉥",
+    "explanation": "신호 재생은 리피터, LAN 연결은 브리지, 경로 선택은 라우터입니다.",
+    "concepts": [
+      {
+        "id": "osi",
+        "title": "OSI 계층과 네트워크 장비",
+        "meaning": "OSI 7계층은 물리→데이터 링크→네트워크→전송→세션→표현→응용 순서입니다. 2계층은 프레임·MAC, 3계층은 패킷·IP, 4계층은 종단 간 전송을 다룹니다.",
+        "example": "신호 재생 리피터는 1계층, 브리지·일반적인 L2 스위치는 2계층, 라우터는 3계층입니다.",
+        "remember": "프레임·MAC·브리지라는 단서는 데이터 링크입니다. 장비 이름보다 문제에서 설명하는 기능을 먼저 보세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/12.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_13",
+    "exam": "2025_1",
+    "number": 13,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        int[] arr = {1, 2, 3};\n        int sum = 0;\n        for (int i = 0; i &lt; arr.length; i++) {\n            sum += arr[arr[i] - i];\n        }\n        System.out.println(sum);\n    }\n}</code></pre>",
+    "answer": "6",
+    "explanation": "각 i에서 arr[i]-i가 모두 1이므로 arr[1]=2를 세 번 더합니다.",
+    "concepts": [
+      {
+        "id": "array",
+        "title": "배열 인덱스 추적",
+        "meaning": "배열은 인덱스로 원소에 접근합니다. arr[arr[i]-i]처럼 중첩된 표현은 안쪽 arr[i]를 읽고 계산한 값을 바깥 인덱스로 사용합니다.",
+        "example": "a=[2,0,1]에서 a[a[0]]은 먼저 a[0]=2를 읽은 뒤 a[2]=1을 읽습니다.",
+        "remember": "i / a[i] / 계산된 인덱스 / 선택된 값 / 누적합을 열로 나눠 적으세요. 값과 위치를 섞지 않습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/13.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_14",
+    "exam": "2025_1",
+    "number": 14,
+    "category": "데이터베이스",
+    "body": "<p>데이터베이스의 무결성에 대한 다음 설명에서 괄호에 들어갈 알맞은 답을 쓰시오. (5점)</p>\n<p>무결성이란 데이터베이스에 저장된 데이터 값과 그것이 표현하는 현실 세계의 실제 값이 일치하는 정확성을 의미한다. 무결성 제약 조건은 데이터베이스에 들어 있는 데이터의 정확성을 보장하기 위해 부정확한 자료가 데이터베이스 내에 저장되는 것을 방지하기 위한 제약 조건을 말한다.</p>\n<p>&lt;회원&gt;</p>\n<div class=\"table-wrap\"><table><tr><th>이름</th><th>주민번호</th><th>주소</th></tr><tr><td>kim</td><td>800212-2******</td><td>서울</td></tr><tr><td>choi</td><td>820911-1******</td><td>경기</td></tr><tr><td>kang</td><td>750815-1******</td><td>인천</td></tr></table></div>\n<p>&lt;결제&gt;</p>\n<div class=\"table-wrap\"><table><tr><th>결제번호</th><th>주문 상품</th><th>회원</th></tr><tr><td>1</td><td>rxe-123</td><td>choi</td></tr><tr><td>2</td><td>dp-01</td><td>kim</td></tr><tr><td>3</td><td>qiv-433</td><td>kang</td></tr></table></div>\n<p>위의 두 테이블에서는 &lt;결제&gt; 테이블의 &#x27;회원&#x27; 속성이 &lt;회원&gt; 테이블의 &#x27;이름&#x27; 속성을 참조하는 외래키이므로 (      ) 무결성 제약 조건이 준수되어야 한다.</p>",
+    "answer": "참조",
+    "explanation": "외래키가 참조하는 값과의 일관성을 보장합니다.",
+    "concepts": [
+      {
+        "id": "fk",
+        "title": "외래키와 참조 무결성",
+        "meaning": "외래키는 다른 테이블(또는 자기 테이블)의 참조 대상 키와 연결하는 열입니다. NULL이 아닌 외래키 값은 참조 대상에 존재해야 한다는 규칙이 참조 무결성입니다.",
+        "example": "학과 테이블에 학과번호 10이 있을 때 교수.학과번호=10으로 소속을 연결합니다. 학과번호 99가 없다면 그 값을 넣는 것을 제약조건이 막습니다.",
+        "remember": "참조하는 쪽의 열이 외래키입니다. 시험에서는 기본키 참조가 자주 나오며 DBMS에서는 UNIQUE 키도 참조 대상으로 허용할 수 있습니다.",
+        "sources": [
+          {
+            "title": "PostgreSQL · 외래키",
+            "url": "https://www.postgresql.org/docs/16/ddl-constraints.html#DDL-CONSTRAINTS-FK"
+          }
+        ]
+      }
+    ],
+    "source": "2025_1/14.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_15",
+    "exam": "2025_1",
+    "number": 15,
+    "category": "네트워크",
+    "body": "<p>경로 제어에 대한 다음 설명에 해당하는 프로토콜을 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<ul><li>거리 벡터 라우팅 프로토콜이라고 불리며, 최단 경로 탐색에 Bellman-Ford 알고리즘을 사용한다.</li><li>소규모 자율 시스템(AS) 내에서 효율적인 방법이다.</li><li>최대 홉(Hop) 수를 15로 제한하므로 15를 초과하는 자율 시스템은 구축할 수 없다.</li><li>라우팅 정보를 30초마다 네트워크 내의 모든 라우터에 알리며, 180초 이내에 새로운 라우팅 정보가 수신되지 않으면 해당 경로를 이상 상태로 간주한다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>IGP</li><li>OSPF</li><li>BGP</li><li>EGP</li><li>AODV</li><li>DRP</li><li>ICMP</li><li>RIP</li></ul>",
+    "answer": "RIP",
+    "explanation": "거리 벡터, Bellman-Ford, 최대 15홉이 단서입니다.",
+    "concepts": [
+      {
+        "id": "rip",
+        "title": "RIP와 거리 벡터 라우팅",
+        "meaning": "RIP는 이웃 라우터와 거리 정보를 교환하는 거리 벡터 방식의 라우팅 프로토콜입니다. Bellman-Ford 원리를 사용하고 홉 수를 경로 비용으로 봅니다.",
+        "example": "라우터를 2개 지나는 경로와 4개 지나는 경로라면 홉 기준 비용은 각각 2와 4입니다. RIP는 최대 15홉까지 유효하고 16은 도달 불가입니다.",
+        "remember": "거리 벡터·Bellman-Ford·홉 수·15→RIP. 대역폭을 직접 비교하는 척도로 혼동하지 마세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/15.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_16",
+    "exam": "2025_1",
+    "number": 16,
+    "category": "소프트웨어",
+    "body": "<p>사용자 인터페이스(UI)는 상호작용의 수단 및 방식에 따라 다음과 같이 구분된다. 괄호(①~④)에 들어갈 알맞은 용어를 &lt;보기&gt;에서 찾아 기호(㉠~㉥)로 쓰시오. (5점)</p>\n<ul><li>( ① ): 아이콘이나 메뉴를 마우스로 선택하여 작업을 수행하는 그래픽 환경의 인터페이스이다.</li><li>( ② ): 인터넷이나 웹 브라우저에서 웹 페이지를 조작하는 인터페이스이다.</li><li>( ③ ): 명령과 출력이 텍스트 형태로 이뤄지는 인터페이스이다.</li><li>( ④ ): 텍스트와 기호를 사용하여 정보를 표시하고 상호작용하는 텍스트 기반 인터페이스이다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ CLI</li><li>㉡ TUI</li><li>㉢ GUI</li><li>㉣ WUI</li></ul>\n<blockquote>전사 참고: 문제 지시문에는 기호 범위가 ㉠~㉥으로 인쇄되어 있으나, 사진의 보기는 ㉠~㉣ 네 개이다.</blockquote>",
+    "answer": "① ㉢  ② ㉣  ③ ㉠  ④ ㉡",
+    "explanation": "GUI / WUI / CLI / TUI 순서입니다.",
+    "concepts": [
+      {
+        "id": "ui",
+        "title": "GUI·WUI·CLI·TUI",
+        "meaning": "사용자 인터페이스는 사람과 시스템이 상호작용하는 방식입니다. GUI는 그래픽, WUI는 웹, CLI는 명령행, 시험에서 TUI는 주로 터치 인터페이스를 뜻합니다.",
+        "example": "아이콘 클릭→GUI, 브라우저 웹 화면→WUI, 명령어 입력→CLI, 손가락 터치→Touch UI로 연결합니다.",
+        "remember": "TUI는 문맥에 따라 Text UI도 뜻합니다. 약자만 보지 말고 문제의 설명과 보기에서 의미를 확인하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/16.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_17",
+    "exam": "2025_1",
+    "number": 17,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint partition(int* arr, int left, int right) {\n    int pivot = arr[(left + right) / 2];\n    int tmp;\n    while (left &lt;= right) {\n        while (arr[left] &lt; pivot)\n            left++;\n        while (arr[right] &gt; pivot)\n            right--;\n        if (left &lt;= right) {\n            tmp = arr[left];\n            arr[left] = arr[right];\n            arr[right] = tmp;\n            left++;\n            right--;\n        }\n    }\n    return left;\n}\n\nvoid sort(int* arr, int left, int right) {\n    int pivot;\n    if (left &lt; right) {\n        pivot = partition(arr, left, right);\n        sort(arr, left, pivot - 1);\n        sort(arr, pivot, right);\n    }\n}\n\nint main() {\n    int arr[] = {1, 22, 5, 43, 19, 57, 75, 8, 27, 13};\n    sort(arr, 0, 9);\n    for (int i = 0; i &lt; 10; i++) {\n        if (i % 2 == 1) {\n            printf(&quot;%d &quot;, arr[i]);\n        }\n    }\n    return 0;\n}</code></pre>",
+    "answer": "5 13 22 43 75",
+    "explanation": "정렬 결과는 1,5,8,13,19,22,27,43,57,75이며 홀수 인덱스를 출력합니다.",
+    "concepts": [
+      {
+        "id": "sort",
+        "title": "정렬 결과와 출력 위치",
+        "meaning": "비교·교환을 반복하는 정렬은 원소의 위치를 바꿉니다. 퀵 정렬은 기준값(pivot)을 중심으로 구간을 나누고 작은 구간을 다시 정렬합니다.",
+        "example": "정렬된 배열이 [2,4,6,8]일 때 홀수 인덱스 1,3의 값은 4,8입니다. 배열의 첫 인덱스는 0입니다.",
+        "remember": "정렬 전체가 끝난 뒤 출력하는지, 바깥 반복마다 출력하는지 확인하세요. 홀수 인덱스와 홀수 값은 다릅니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/17.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_18",
+    "exam": "2025_1",
+    "number": 18,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nstruct A {\n    int x;\n    int y;\n    int temp;\n};\n\nint main() {\n    struct A data = {5, 3};\n    struct A *p;\n    p = &amp;data;\n    p-&gt;temp = p-&gt;temp = p-&gt;x * p-&gt;y + 2;\n    printf(&quot;%d&quot;, p-&gt;temp);\n    return 0;\n}</code></pre>",
+    "answer": "17 (의도된 계산 기준)",
+    "explanation": "x*y+2는 5*3+2=17입니다. 원문에는 temp에 대한 대입이 중복되어 있어 정상적인 단일 대입식으로 볼 때의 참고 답입니다.",
+    "concepts": [
+      {
+        "id": "struct",
+        "title": "구조체와 멤버 접근",
+        "meaning": "C의 구조체는 여러 자료를 하나의 값으로 묶습니다. 구조체 변수는 점(.)으로, 구조체를 가리키는 포인터는 화살표(->)로 멤버에 접근합니다.",
+        "example": "p가 구조체 t를 가리키면 p->x와 t.x, (*p).x는 같은 멤버를 뜻합니다. %.2f는 실수를 소수 둘째 자리까지 출력합니다.",
+        "remember": "멤버마다 값을 따로 기록하세요. 구조체 값의 복사와 구조체 주소를 통한 원본 변경을 구별합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/18.md",
+    "caution": true
+  },
+  {
+    "id": "2025_1_19",
+    "exam": "2025_1",
+    "number": 19,
+    "category": "소프트웨어",
+    "body": "<p>테스트 기법 중 다음과 같이 &#x27;평가 점수표&#x27;를 미리 정해 놓은 후 각 영역의 경계에 해당하는 입력값을 넣고, 예상되는 출력값이 나오는지 실제 값과 비교하는 명세 기반 테스트 기법을 &lt;보기&gt;에서 찾아 기호(㉠~㉣)로 쓰시오. (5점)</p>\n<p>&lt;평가점수표&gt;</p>\n<div class=\"table-wrap\"><table><tr><th>평가점수</th><th>성적등급</th></tr><tr><td>90~100</td><td>A</td></tr><tr><td>80~89</td><td>B</td></tr><tr><td>70~79</td><td>C</td></tr><tr><td>0~69</td><td>D</td></tr></table></div>\n<p>&lt;케이스&gt;</p>\n<div class=\"table-wrap\"><table><tr><th>테스트 케이스</th><th>입력값</th><th>예상 결과값</th><th>실제 결과값</th></tr><tr><td>1</td><td>-1</td><td>오류</td><td>오류</td></tr><tr><td>2</td><td>0</td><td>D</td><td>D</td></tr><tr><td>3</td><td>69</td><td>D</td><td>D</td></tr><tr><td>4</td><td>70</td><td>C</td><td>C</td></tr><tr><td>5</td><td>79</td><td>C</td><td>C</td></tr><tr><td>6</td><td>80</td><td>B</td><td>B</td></tr><tr><td>7</td><td>89</td><td>B</td><td>B</td></tr><tr><td>8</td><td>90</td><td>A</td><td>A</td></tr><tr><td>9</td><td>100</td><td>A</td><td>A</td></tr><tr><td>10</td><td>101</td><td>오류</td><td>오류</td></tr></table></div>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ Equivalence Partitioning Testing</li><li>㉡ Comparison Testing</li><li>㉢ Boundary Value Analysis</li><li>㉣ Cause-Effect Graphing Testing</li></ul>",
+    "answer": "㉢ Boundary Value Analysis",
+    "explanation": "구간의 경계와 바로 바깥 값을 검사하는 경계값 분석입니다.",
+    "concepts": [
+      {
+        "id": "boundary",
+        "title": "동치 분할과 경계값 분석",
+        "meaning": "동치 분할은 같은 방식으로 처리될 입력들을 그룹으로 나누고 대표값을 시험합니다. 경계값 분석은 오류가 나기 쉬운 구간의 끝과 바로 안팎을 집중 검사합니다.",
+        "example": "정수 1~10만 유효하면 무효·유효·무효 그룹을 나눌 수 있습니다. 경계 주변 후보는 0,1,2,9,10,11입니다.",
+        "remember": "범위·최솟값·최댓값·바로 바깥이라는 표현은 경계값의 단서입니다. 둘 다 블랙박스 기법입니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/19.md",
+    "caution": false
+  },
+  {
+    "id": "2025_1_20",
+    "exam": "2025_1",
+    "number": 20,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint main() {\n    int a = 5;\n    int b = 8;\n    int *p = &amp;a;\n    int *q = &amp;b;\n    int **r = &amp;p;\n    **r += *q;\n    printf(&quot;%d&quot;, a);\n    return 0;\n}</code></pre>",
+    "answer": "13",
+    "explanation": "r→p→a를 통해 a에 b의 값 8을 더합니다.",
+    "concepts": [
+      {
+        "id": "pointer",
+        "title": "포인터·배열·이중 포인터",
+        "meaning": "포인터는 주소를 담는 변수입니다. &x는 x의 주소, *p는 p가 가리키는 값입니다. 배열에서 p+1은 다음 원소로 이동하며, **r은 주소를 두 번 따라갑니다.",
+        "example": "a=[4,9]이고 p=&a[0]이면 *(p+1)은 9입니다. r=&p일 때 **r=8은 a[0]을 8로 바꿉니다.",
+        "remember": "p의 주소값을 바꾸는 것과 *p의 대상 값을 바꾸는 것을 구별하세요. 포인터 연산은 원소 크기 단위로 이동합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2025_1/20.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_01",
+    "exam": "2024_3",
+    "number": 1,
+    "category": "네트워크",
+    "body": "<p>다음 &lt;보기&gt;에서 라우터(Router)의 역할에 해당하는 것을 모두 골라 기호(㉠~㉥)로 쓰시오. (5점)</p>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 목적지 주소 확인</li><li>㉡ 라우팅 소스 정보 확인</li><li>㉢ 경로 설정</li><li>㉣ 경로 탐색</li><li>㉤ 라우팅 정보 유지 및 검증</li><li>㉥ 패킷 전송</li></ul>",
+    "answer": "원문·정답표 확인 필요",
+    "explanation": "라우터의 목적지 확인, 경로 탐색·설정, 라우팅 정보 유지, 패킷 전달이 핵심입니다. 보기의 “라우팅 소스 정보 확인”은 표현이 불명확하여 공식 정답 확인 후 자가 채점하세요.",
+    "concepts": [
+      {
+        "id": "router",
+        "title": "라우터와 경로 선택",
+        "meaning": "라우터는 IP 목적지와 라우팅 테이블을 참고해 패킷의 다음 전달 지점을 결정하는 네트워크 계층 장비입니다. 라우팅 정보 학습과 실제 전달을 구별할 수 있습니다.",
+        "example": "목적지가 다른 네트워크에 있으면 라우터가 일치하는 경로를 찾아 다음 홉으로 보냅니다. 일반적으로 가장 긴 접두 길이가 일치하는 경로를 우선합니다.",
+        "remember": "라우터→IP·경로 선택, 스위치→MAC·프레임 전달을 연결하세요. 원문 보기의 표현이 불명확하면 공식 자료를 확인합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/01.md",
+    "caution": true
+  },
+  {
+    "id": "2024_3_02",
+    "exam": "2024_3",
+    "number": 2,
+    "category": "네트워크",
+    "body": "<p>인터넷 프로토콜에 대한 다음 설명에서 괄호(①, ②)에 들어갈 알맞은 답을 영문 약어로 쓰시오. (5점)</p>\n<ul><li>( ① ): 파일 전송 프로토콜을 지원하고, 양방향 연결(Full Duplex Connection)형 서비스를 제공하는 프로토콜이다. 신뢰성 있는 경로를 확립하고 메시지 전송을 감독하며, 패킷의 분실, 손상, 지연이나 순서가 틀린 것 등이 발생할 때 투명성이 보장되는 통신을 제공한다. 대용량의 데이터 또는 중요한 데이터 전송에 사용하고 3-Way-Handshaking을 통해서 신뢰성 있는 통신이 가능하다.</li><li>( ② ): 간이 파일 전송 프로토콜(TFTP)을 지원하고, 데이터 전송 전에 연결을 설정하지 않는 비연결형 서비스를 제공하는 프로토콜이다. 상대적으로 단순한 헤더 구조를 가지므로, 오버헤드가 적고, 흐름 제어나 순서 제어가 없어 전송 속도가 빠르다. 실시간 전송에 유리하여, 신뢰성보다는 속도가 중요시되는 네트워크에서 사용된다.</li></ul>",
+    "answer": "① TCP  ② UDP",
+    "explanation": "TCP는 연결 지향·신뢰성 중심, UDP는 비연결형·낮은 오버헤드가 특징입니다.",
+    "concepts": [
+      {
+        "id": "tcpudp",
+        "title": "TCP와 UDP",
+        "meaning": "TCP는 연결을 맺고 순서 보장·재전송·흐름 제어 등으로 신뢰성 있는 바이트 스트림을 제공합니다. UDP는 연결 설정 없이 데이터그램을 보내며 전달·순서를 보장하지 않습니다.",
+        "example": "파일을 빠짐없이 받는 일이 중요할 때 TCP의 신뢰성이 유용합니다. 지연이 민감한 통신은 UDP 위에서 필요한 제어를 별도로 구현하기도 합니다.",
+        "remember": "TCP→연결·신뢰성, UDP→비연결·낮은 오버헤드. UDP가 모든 상황에서 더 빠르다고 단정하지 마세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/02.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_03",
+    "exam": "2024_3",
+    "number": 3,
+    "category": "네트워크",
+    "body": "<p>OSI 7계층에 대한 다음 설명에 해당하는 계층을 쓰시오. (5점)</p>\n<blockquote>두 개의 인접한 개방 시스템들 간에 신뢰성 있고 효율적인 정보 전송을 할 수 있도록 시스템 간 연결 설정과 유지 및 종료를 담당하는 계층으로, 프레임의 시작과 끝을 구분하기 위한 프레임의 동기화 기능과 오류의 검출과 회복을 위한 오류 제어 기능을 제공한다. HDLC, LAPB, LLC, MAC, LAPD, PPP 등의 표준이 있으며, 관련 장비에는 랜카드, 브리지, 스위치 등이 있다.</blockquote>",
+    "answer": "데이터 링크 계층",
+    "explanation": "프레임, MAC, 브리지, 스위치가 핵심 단서입니다.",
+    "concepts": [
+      {
+        "id": "osi",
+        "title": "OSI 계층과 네트워크 장비",
+        "meaning": "OSI 7계층은 물리→데이터 링크→네트워크→전송→세션→표현→응용 순서입니다. 2계층은 프레임·MAC, 3계층은 패킷·IP, 4계층은 종단 간 전송을 다룹니다.",
+        "example": "신호 재생 리피터는 1계층, 브리지·일반적인 L2 스위치는 2계층, 라우터는 3계층입니다.",
+        "remember": "프레임·MAC·브리지라는 단서는 데이터 링크입니다. 장비 이름보다 문제에서 설명하는 기능을 먼저 보세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/03.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_04",
+    "exam": "2024_3",
+    "number": 4,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nunion Number {\n    int intV;\n    int floatV;\n};\nstruct data {\n    union Number n1;\n    union Number n2;\n    char isInt;\n};\nvoid func(struct data *a) {\n    if (a-&gt;isInt) {\n        a-&gt;n1.intV += a-&gt;n2.intV;\n    }\n    else {\n        a-&gt;n1.floatV += a-&gt;n2.floatV;\n    }\n}\nint main() {\n    struct data a = {{.intV = 5}, {.floatV = 3.5}, 1};\n    func(&amp;a);\n    printf(&quot;%d&quot;, a.n1.intV);\n    return 0;\n}</code></pre>",
+    "answer": "8 (전사된 코드 기준)",
+    "explanation": "floatV도 int로 선언되어 있어 3.5가 3으로 변환됩니다. 5+3=8입니다. 원문 오타 가능성이 있어 자료 확인이 필요합니다.",
+    "concepts": [
+      {
+        "id": "union",
+        "title": "공용체와 실제 선언 타입",
+        "meaning": "구조체 멤버는 각자의 저장 공간을 갖지만 공용체(union) 멤버는 같은 공간을 공유합니다. 변수 이름이 아니라 선언된 타입이 저장과 계산 방식을 결정합니다.",
+        "example": "int price = 2.9;라면 표현 가능한 범위에서 소수 부분을 버려 2를 저장합니다. 이름이 floatValue여도 int로 선언됐다면 정수형입니다.",
+        "remember": "union의 서로 다른 멤버를 번갈아 읽는 코드는 표현 방식에 주의해야 합니다. 이 문제에서는 우선 원문에 실제 적힌 타입을 확인하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/04.md",
+    "caution": true
+  },
+  {
+    "id": "2024_3_05",
+    "exam": "2024_3",
+    "number": 5,
+    "category": "데이터베이스",
+    "body": "<p>다음은 &lt;학생&gt;과 &lt;학과&gt; 테이블에서 &#x27;학과코드&#x27; 값이 같은 튜플을 JOIN하는 &lt;SQL&gt; 문이다. 괄호에 들어갈 알맞은 예약어를 &lt;보기&gt;에서 찾아 기호(㉠~㉥)로 쓰시오. (5점)</p>\n<p>&lt;SQL&gt; 문</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT 학번, 이름, 학생.학과코드, 학과명\nFROM 학생 JOIN 학과\n(      )(학과코드);</code></pre>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ WHERE</li><li>㉡ ON</li><li>㉢ IN</li><li>㉣ USING</li><li>㉤ LIKE</li><li>㉥ DISTINCT</li></ul>",
+    "answer": "㉣ USING",
+    "explanation": "두 테이블에서 이름이 같은 조인 열을 USING(열)로 지정합니다.",
+    "concepts": [
+      {
+        "id": "join",
+        "title": "SQL 조인과 USING",
+        "meaning": "조인은 두 테이블의 관련 행을 연결합니다. ON에는 일반적인 조인 조건을 쓰고, USING에는 양쪽 테이블에서 이름이 같은 조인 열을 지정합니다.",
+        "example": "학생 JOIN 학과 USING(학과번호)는 양쪽의 학과번호가 같은 행을 연결합니다. ON 학생.학과번호=학과.학과번호로도 표현할 수 있습니다.",
+        "remember": "USING(열이름)에는 비교식이 아닌 공통 열 이름이 들어갑니다. INNER JOIN은 일치하는 행만, OUTER JOIN은 미일치 행도 지정한 쪽에서 보존합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/05.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_06",
+    "exam": "2024_3",
+    "number": 6,
+    "category": "데이터베이스",
+    "body": "<p>SQL 문에서 집계 함수는 GROUP BY절에 지정된 그룹별로 속성의 값을 집계할 때 사용되는데, 이 중 지정된 조건과 일치하는 튜플의 개수를 반환하는 집계 함수는 무엇인지 쓰시오. (5점)</p>",
+    "answer": "COUNT",
+    "explanation": "행의 개수를 계산하는 집계 함수입니다.",
+    "concepts": [
+      {
+        "id": "aggregate",
+        "title": "SELECT·DISTINCT·COUNT의 차이",
+        "meaning": "SELECT는 조건에 맞는 행에서 열을 조회하고 DISTINCT는 결과의 중복을 제거합니다. COUNT(*)는 행 수, COUNT(열)은 NULL이 아닌 값 수, COUNT(DISTINCT 열)은 중복을 뺀 값 수입니다.",
+        "example": "학과가 A,A,B인 세 행에서 SELECT 학과는 3행, DISTINCT 학과는 2행입니다. COUNT(DISTINCT 학과)는 숫자 2가 들어 있는 1행을 반환합니다.",
+        "remember": "집계값과 결과 테이블의 행 수는 다릅니다. GROUP BY 없는 일반 집계 쿼리는 전체를 집계해 한 행으로 반환합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/06.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_07",
+    "exam": "2024_3",
+    "number": 7,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        int i = 17;\n        i += 1;\n        i -= 2;\n        i *= 3;\n        i /= 4;\n        i %= 5;\n        System.out.print(i);\n    }\n}</code></pre>",
+    "answer": "2",
+    "explanation": "17→18→16→48→12→2 순서로 바뀝니다.",
+    "concepts": [
+      {
+        "id": "assignment",
+        "title": "복합 대입과 정수 연산",
+        "meaning": "단순 변수에 대한 x += n은 x = x + n처럼 현재 값으로 계산한 뒤 다시 저장합니다. 정수끼리의 나눗셈은 소수 부분을 버리고 %는 나머지를 구합니다.",
+        "example": "int x=9에서 x/=2이면 4, 이어서 x%=3이면 1입니다. 각 줄의 결과가 다음 줄의 입력이 됩니다.",
+        "remember": "처음 값을 모든 줄에 반복 적용하지 말고 줄마다 갱신하세요. 음수가 있는 나눗셈은 해당 언어의 규칙을 확인합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/07.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_08",
+    "exam": "2024_3",
+    "number": 8,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 알맞은 용어를 쓰시오. (5점)</p>\n<ul><li>컴퓨터와 컴퓨터 또는 컴퓨터와 인터넷 사이에서 파일을 주고받을 수 있도록 하는 원격 파일 전송 프로토콜이다.</li><li>파일의 전송(Upload)과 수신(Download), 삭제, 이름 변경 등의 작업을 할 수 있다.</li><li>그림 파일, 동영상 파일, 실행 파일, 압축된 형태의 파일을 전송할 때에는 Binary 모드를, 텍스트 파일을 전송할 때에는 ASCII 모드를 사용한다.</li><li>기본적인 포트 번호는 21번이다.</li></ul>",
+    "answer": "FTP",
+    "explanation": "파일 전송 프로토콜이며 제어 연결의 기본 포트는 21입니다.",
+    "concepts": [
+      {
+        "id": "ftp",
+        "title": "FTP의 제어 연결과 데이터 연결",
+        "meaning": "FTP는 파일 전송을 위한 응용 계층 프로토콜입니다. 명령·응답용 제어 연결과 실제 파일을 보내는 데이터 연결을 구분합니다.",
+        "example": "기본 제어 포트는 TCP 21입니다. 전통적인 능동 모드에서 서버 데이터 연결의 출발 포트는 TCP 20이며, 수동 모드는 협상한 다른 포트를 씁니다.",
+        "remember": "21→제어, 20→능동 모드 데이터. 모든 FTP 데이터 전송이 항상 20번을 쓴다고 외우지 마세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/08.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_09",
+    "exam": "2024_3",
+    "number": 9,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nvoid swap(int *ptr1, int *ptr2) {\n    int temp = *ptr1;\n    *ptr1 = *ptr2;\n    *ptr2 = temp;\n}\nvoid func(int *arr, int n) {\n    int *ptr1 = &amp;arr[0];\n    int *ptr2 = &amp;arr[n-1];\n    while (ptr1 &lt; ptr2) {\n        swap(ptr1, ptr2);\n        ptr1++;\n        ptr2--;\n    }\n}\nint main() {\n    int arr[] = {1, 2, 3, 4, 5};\n    func(arr, 5);\n    printf(&quot;%d&quot;, arr[2]);\n    return 0;\n}</code></pre>",
+    "answer": "3",
+    "explanation": "배열을 뒤집으면 5,4,3,2,1이며 가운데 값은 3입니다.",
+    "concepts": [
+      {
+        "id": "pointer",
+        "title": "포인터·배열·이중 포인터",
+        "meaning": "포인터는 주소를 담는 변수입니다. &x는 x의 주소, *p는 p가 가리키는 값입니다. 배열에서 p+1은 다음 원소로 이동하며, **r은 주소를 두 번 따라갑니다.",
+        "example": "a=[4,9]이고 p=&a[0]이면 *(p+1)은 9입니다. r=&p일 때 **r=8은 a[0]을 8로 바꿉니다.",
+        "remember": "p의 주소값을 바꾸는 것과 *p의 대상 값을 바꾸는 것을 구별하세요. 포인터 연산은 원소 크기 단위로 이동합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/09.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_10",
+    "exam": "2024_3",
+    "number": 10,
+    "category": "데이터베이스",
+    "body": "<p>다음은 &lt;Student&gt; 테이블의 &#x27;ssn&#x27; 속성에 대해, 중복을 허용하지 않도록 “Stud_idx”라는 이름으로 인덱스를 정의하는 SQL문이다. 괄호(①, ②)에 알맞은 예약어를 적어 &lt;SQL&gt; 문을 완성하시오. (5점)</p>\n<p>&lt;SQL&gt; 문</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>CREATE ( ① ) ( ② ) Stud_idx ON Student (ssn);</code></pre>",
+    "answer": "① UNIQUE  ② INDEX",
+    "explanation": "CREATE UNIQUE INDEX로 중복 없는 인덱스를 정의합니다.",
+    "concepts": [
+      {
+        "id": "index",
+        "title": "인덱스와 UNIQUE",
+        "meaning": "인덱스는 원하는 행을 빠르게 찾기 위한 별도의 탐색 구조입니다. UNIQUE 인덱스는 검색을 돕는 동시에 지정한 열 조합의 중복을 제한합니다.",
+        "example": "CREATE UNIQUE INDEX idx_id ON 학생(학번);은 학번에 유일 인덱스를 만드는 문장입니다.",
+        "remember": "인덱스는 저장 공간과 변경 시 유지 비용도 필요합니다. UNIQUE는 중복 제한이며 기본키처럼 항상 NOT NULL을 뜻하지는 않습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/10.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_11",
+    "exam": "2024_3",
+    "number": 11,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint main() {\n    int sum = 0;\n    int i = 0;\n    for (i = 0; i &lt;= 10; i++) {\n        if (i % 2 != 0)\n            continue;\n        sum += i;\n    }\n    printf(&quot;%d&quot;, i + sum);\n}</code></pre>",
+    "answer": "41",
+    "explanation": "짝수 합은 30이고 반복 종료 시 i는 11입니다.",
+    "concepts": [
+      {
+        "id": "loop",
+        "title": "반복문과 continue",
+        "meaning": "for 반복문은 초기화 → 조건 확인 → 본문 → 증감 순서로 실행합니다. continue는 현재 회차의 남은 본문을 건너뛰고 다음 회차로 진행합니다.",
+        "example": "i=1부터 i<=3까지 반복하면 본문은 1,2,3에서 실행됩니다. 반복 밖에서도 같은 i를 쓸 수 있다면 종료 직후 i는 4입니다.",
+        "remember": "반복 횟수, 누적값, 종료 시 변수값을 따로 적으세요. continue는 반복 전체를 끝내는 break와 다릅니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/11.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_12",
+    "exam": "2024_3",
+    "number": 12,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 알맞은 용어를 쓰시오. (5점)</p>\n<ul><li>데이터가 전송되는 기본 단위로, 데이터를 일정한 크기로 분할한 후 송·수신측 주소와 제어 정보 등을 부가하여 만든 데이터 블록을 의미한다.</li><li>미국 국방부에서 개발한 ARPAnet에서 사용하는 네트워크 교환 방식이다.</li></ul>",
+    "answer": "패킷 (Packet)",
+    "explanation": "주소와 제어 정보를 덧붙인 데이터 전송 단위입니다.",
+    "concepts": [
+      {
+        "id": "packet",
+        "title": "패킷과 캡슐화",
+        "meaning": "통신 데이터는 계층을 내려가며 주소·제어 정보가 붙은 단위로 전달됩니다. 엄밀한 계층 구분에서 IP의 단위는 패킷, 데이터 링크의 단위는 프레임입니다.",
+        "example": "웹 데이터가 TCP 세그먼트에 담기고, 다시 IP 패킷과 이더넷 프레임에 담기는 모습을 겹봉투로 생각할 수 있습니다.",
+        "remember": "데이터+헤더라는 구조를 떠올리세요. 문제의 일반적 패킷 설명과 계층별 정확한 전송 단위 명칭을 구별합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/12.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_13",
+    "exam": "2024_3",
+    "number": 13,
+    "category": "소프트웨어",
+    "body": "<p>다음 설명에 해당하는 알맞은 용어를 쓰시오. (5점)</p>\n<ul><li>컨테이너 기술을 자동화하여 쉽게 사용할 수 있게 하는 오픈소스 프로젝트이다.</li><li>소프트웨어 컨테이너 안에 응용 프로그램들을 배치시키는 일을 자동화 해주는 역할을 수행한다.</li></ul>",
+    "answer": "도커 (Docker)",
+    "explanation": "컨테이너 기반 응용 프로그램의 배포와 실행을 돕습니다.",
+    "concepts": [
+      {
+        "id": "docker",
+        "title": "도커와 컨테이너",
+        "meaning": "컨테이너는 애플리케이션과 실행에 필요한 파일을 묶어 격리된 프로세스로 실행하는 방식입니다. Docker는 이미지 생성·배포·실행을 지원하는 도구입니다.",
+        "example": "같은 이미지로 개발 환경과 서버에서 프로그램을 실행하면 설치 차이로 생기는 문제를 줄일 수 있습니다. 이미지는 실행 재료, 컨테이너는 실행된 인스턴스입니다.",
+        "remember": "가상 머신은 게스트 OS를 포함하고 컨테이너는 일반적으로 호스트 커널을 공유합니다. 컨테이너를 작은 가상 머신과 완전히 같은 것으로 보지 마세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/13.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_14",
+    "exam": "2024_3",
+    "number": 14,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint factorial(int n, int from, int to, int temp) {\n    if (n == 0) {\n        return 0;\n    }\n    else {\n        return factorial(n-1, from, temp, to)+1 + factorial(n-1, temp, to, from);\n    }\n}\n\nint main() {\n    int n = 3;\n    printf(&quot;%d&quot;, factorial(n, 3, 2, 1));\n    return 0;\n}</code></pre>\n<blockquote>전사 참고: 손가락에 가려진 return 줄 끝은 사용자가 제공한 원문으로 확인하여 반영했다.</blockquote>",
+    "answer": "7",
+    "explanation": "f(0)=0, f(n)=2f(n-1)+1이므로 1,3,7입니다.",
+    "concepts": [
+      {
+        "id": "recursion",
+        "title": "재귀 호출과 점화식",
+        "meaning": "재귀는 함수가 더 작은 입력으로 자신을 호출하는 방식입니다. 끝나는 조건과 한 단계의 계산 규칙을 찾으면 복잡한 호출도 표로 줄일 수 있습니다.",
+        "example": "f(0)=0, f(n)=2f(n-1)+1이면 f(1)=1, f(2)=3, f(3)=7입니다. 하노이 탑 이동 횟수도 같은 점화식을 가집니다.",
+        "remember": "함수 이름만 보고 팩토리얼이라고 판단하지 마세요. 실제 return 식과 종료 조건이 계산을 결정합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/14.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_15",
+    "exam": "2024_3",
+    "number": 15,
+    "category": "데이터베이스",
+    "body": "<p>다음 설명에 해당하는 SQL 명령어를 쓰시오. (5점)</p>\n<ul><li>변경되었으나 아직 COMMIT되지 않은 모든 내용들을 취소하고 데이터베이스를 이전 상태로 되돌리는 명령어이다.</li><li>트랜잭션 전체가 성공적으로 끝나지 못하면 일부 변경된 내용만 데이터베이스에 반영되는 비일관성(Inconsistency) 상태가 될 수 있기 때문에 일부분만 완료된 트랜잭션에는 이 명령이 수행되어야 한다.</li></ul>",
+    "answer": "ROLLBACK",
+    "explanation": "아직 커밋하지 않은 변경을 취소합니다.",
+    "concepts": [
+      {
+        "id": "transaction",
+        "title": "트랜잭션·COMMIT·ROLLBACK",
+        "meaning": "트랜잭션은 한 덩어리로 성공하거나 취소되어야 하는 데이터 작업 단위입니다. COMMIT은 변경을 확정하고 ROLLBACK은 아직 확정하지 않은 변경을 취소합니다.",
+        "example": "계좌 A에서 차감한 뒤 B에 입금하는 도중 문제가 나면 둘 다 취소해 일관성을 지켜야 합니다.",
+        "remember": "원자성·일관성·격리성·지속성(ACID)을 연결하세요. 이미 COMMIT된 변경을 일반적인 ROLLBACK으로 되돌릴 수는 없습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/15.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_16",
+    "exam": "2024_3",
+    "number": 16,
+    "category": "데이터베이스",
+    "body": "<p>&lt;인사팀&gt; 테이블의 튜플의 수(인원 수)가 총 20개이고, 그 중 3개의 나이대가 20대, 6개의 나이대가 30대, 나머지는 나이대가 40대일 때, 다음 &lt;SQL&gt; 문으로 검색될 수 있는 튜플의 개수(인원 수)를 괄호(①, ②)에 쓰시오. (5점)</p>\n<p>&lt;SQL&gt;</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT 이름 FROM 인사팀 WHERE 나이 BETWEEN 35 AND 49;</code></pre>\n<p>결과: ( ① )명 이상, ( ② )명 이하</p>",
+    "answer": "① 11  ② 17",
+    "explanation": "40대 11명은 모두 포함됩니다. 30대 6명 중 35~39세인 인원에 따라 최대 17명입니다.",
+    "concepts": [
+      {
+        "id": "conditions",
+        "title": "SQL의 조건과 정렬",
+        "meaning": "WHERE는 행을 걸러내고 AND는 두 조건 모두, OR는 하나 이상 만족해야 합니다. BETWEEN a AND b는 양 끝값을 포함하며 ORDER BY의 ASC는 오름차순입니다.",
+        "example": "WHERE 점수 BETWEEN 70 AND 90 AND 이름 NOT LIKE '김%'는 70~90점이면서 김으로 시작하지 않는 이름을 찾습니다. %는 임의 길이, _는 한 글자입니다.",
+        "remember": "BETWEEN의 AND는 범위 문법입니다. 여러 조건을 연결하는 AND와 역할을 구별하고 NOT의 적용 범위를 확인하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/16.md",
+    "caution": false
+  },
+  {
+    "id": "2024_3_17",
+    "exam": "2024_3",
+    "number": 17,
+    "category": "소프트웨어",
+    "body": "<p>다음 설명에 해당하는 알맞은 테스트 커버리지를 쓰시오. (5점)</p>\n<blockquote>소스 코드의 조건문에 포함된 개별 조건식의 결과가 True인 경우와 False인 경우가 한 번 이상 수행되도록 테스트 케이스를 설계한다.</blockquote>",
+    "answer": "조건 커버리지 (Condition Coverage)",
+    "explanation": "개별 조건식마다 참·거짓 결과를 각각 한 번 이상 수행합니다.",
+    "concepts": [
+      {
+        "id": "coverage",
+        "title": "조건 커버리지와 결정 커버리지",
+        "meaning": "조건 커버리지는 복합 조건 안의 각 개별 조건이 참·거짓을 한 번 이상 갖게 합니다. 결정 커버리지는 if 등의 전체 판단 결과가 참·거짓을 모두 갖게 합니다.",
+        "example": "A OR B에 (참,거짓), (거짓,참)을 넣으면 A·B 각각의 참·거짓은 충족하지만 전체 결과는 항상 참입니다.",
+        "remember": "개별 조건의 결과와 전체 식의 결과를 구별하세요. 조건 커버리지가 결정 커버리지를 항상 보장하지는 않습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_3/17.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_01",
+    "exam": "2024_2",
+    "number": 1,
+    "category": "네트워크",
+    "body": "<p>다음은 패리티 비트(Parity Bit)에 대한 설명이다. 각 괄호(①~④)에 들어갈 알맞은 내용을 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<ul><li>홀수 패리티 검사에서 ( ① )의 개수는 홀수이고, 짝수 패리티 검사에서 ( ② )의 개수는 짝수이다.</li><li>패리티 비트는 2Bit 이상 짝수 개수에서 오류가 발생되면, 검출할 수 ( ③ ), 수정도 ( ④ )하다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>1</li><li>2</li><li>3</li><li>4</li><li>가능</li><li>불가능</li><li>있으며</li><li>없으며</li></ul>",
+    "answer": "① 1  ② 1  ③ 없으며  ④ 불가능",
+    "explanation": "패리티는 1의 개수의 홀짝을 검사합니다. 짝수 개 비트가 뒤집히면 홀짝이 유지되어 오류를 검출하지 못합니다.",
+    "concepts": [
+      {
+        "id": "parity",
+        "title": "패리티 비트와 오류 검출",
+        "meaning": "데이터에 검사 비트 하나를 덧붙여 1의 개수를 짝수 또는 홀수로 맞추는 방법입니다. 수신 측에서 약속한 홀짝이 깨졌는지 확인합니다.",
+        "example": "데이터 101은 1이 두 개입니다. 짝수 패리티라면 검사 비트는 0, 홀수 패리티라면 1입니다.",
+        "remember": "홀수 개의 비트 반전은 검출하지만 짝수 개의 반전은 놓칩니다. 오류 위치를 찾아 고치는 기능은 없습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/01.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_02",
+    "exam": "2024_2",
+    "number": 2,
+    "category": "데이터베이스",
+    "body": "<p>데이터베이스의 정규화(Normalization) 과정에서 테이블 R이 제1정규형이고, 기본키가 아닌 모든 속성이 기본키에 대하여 완전 함수적 종속을 만족하는 정규형은 무엇인지 쓰시오. (5점)</p>",
+    "answer": "제2정규형 (2NF)",
+    "explanation": "1NF에서 부분 함수 종속을 제거하면 2NF입니다.",
+    "concepts": [
+      {
+        "id": "normal",
+        "title": "정규화와 부분 함수 종속",
+        "meaning": "정규화는 데이터 중복과 삽입·수정·삭제 이상을 줄이도록 테이블을 나누는 과정입니다. 1NF는 속성값이 원자값이고, 2NF는 여기에 부분 함수 종속이 없어야 합니다.",
+        "example": "(학번, 과목)이 키인 수강 테이블에서 학생이름이 학번만으로 결정되면 키의 일부에 종속됩니다. 학생 정보와 수강 정보를 분리합니다.",
+        "remember": "1NF → 부분 종속 제거 → 2NF → 이행 종속 제거 → 3NF 순서로 기억하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/02.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_03",
+    "exam": "2024_2",
+    "number": 3,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nint main() {\n    int i = 3;\n    int j = 5;\n    printf(&quot;%d&quot;, (i | j) - (i &amp; j));\n    return 0;\n}</code></pre>",
+    "answer": "6",
+    "explanation": "3 | 5 = 7, 3 & 5 = 1이므로 7 - 1 = 6입니다.",
+    "concepts": [
+      {
+        "id": "bits",
+        "title": "비트 AND와 OR",
+        "meaning": "비트 연산은 정수를 이진수로 바꾼 뒤 같은 자릿수끼리 계산합니다. &는 두 비트가 모두 1일 때, |는 하나라도 1일 때 1입니다.",
+        "example": "6=110, 3=011이므로 6 & 3=010(2), 6 | 3=111(7)입니다.",
+        "remember": "&·|는 비트 연산이고 &&·||는 논리 연산입니다. 각 연산 결과를 먼저 구한 뒤 바깥의 산술식을 계산하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/03.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_04",
+    "exam": "2024_2",
+    "number": 4,
+    "category": "프로그래밍",
+    "body": "<p>다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Test {\n    int A(int a, int b) {\n        System.out.print(a+b);\n        return a*b;\n    }\n    public static void main(String[] args) {\n        Test a = new Test();\n        System.out.print(a.A(5,5));\n    }\n}</code></pre>",
+    "answer": "1025",
+    "explanation": "A() 안에서 10을 먼저 출력하고, 반환값 25를 이어서 출력합니다.",
+    "concepts": [
+      {
+        "id": "calls",
+        "title": "함수 호출과 출력 순서",
+        "meaning": "함수를 호출하면 함수 본문이 실행되고, return 값이 호출한 위치로 돌아옵니다. 함수 안의 출력과 반환값을 출력하는 동작은 서로 별개입니다.",
+        "example": "f()가 먼저 X를 출력하고 7을 반환할 때 print(f()) 형태는 X 다음에 7을 출력합니다. 자동으로 공백이 붙는지는 출력 함수를 확인합니다.",
+        "remember": "출력된 문자열과 반환값을 다른 칸에 적어 추적하세요. print와 println의 줄바꿈도 구별합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/04.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_05",
+    "exam": "2024_2",
+    "number": 5,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nstruct number {\n    float i;\n    float j;\n};\n\nint main() {\n    struct number a = {3.0, 4.0};\n    struct number b = {4.0, 5.0};\n    printf(&quot;%.2f 그리고 %.2f&quot;, a.i + b.i, a.j + b.j);\n}</code></pre>",
+    "answer": "7.00 그리고 9.00",
+    "explanation": "각 구조체의 i끼리, j끼리 더하고 소수 둘째 자리까지 출력합니다.",
+    "concepts": [
+      {
+        "id": "struct",
+        "title": "구조체와 멤버 접근",
+        "meaning": "C의 구조체는 여러 자료를 하나의 값으로 묶습니다. 구조체 변수는 점(.)으로, 구조체를 가리키는 포인터는 화살표(->)로 멤버에 접근합니다.",
+        "example": "p가 구조체 t를 가리키면 p->x와 t.x, (*p).x는 같은 멤버를 뜻합니다. %.2f는 실수를 소수 둘째 자리까지 출력합니다.",
+        "remember": "멤버마다 값을 따로 기록하세요. 구조체 값의 복사와 구조체 주소를 통한 원본 변경을 구별합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/05.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_06",
+    "exam": "2024_2",
+    "number": 6,
+    "category": "데이터베이스",
+    "body": "<p>다음 설명의 괄호에 들어갈 알맞은 용어를 쓰시오. (5점)</p>\n<ul><li>기본 테이블의 기본키를 구성하는 어떤 속성도 널(Null) 값이나 중복값을 가질 수 없다는 규정이다.</li><li>관계 데이터 모델에서는 릴레이션에 포함되어 있는 튜플들을 유일하게 구별해주고 각 튜플에 쉽게 접근할 수 있도록 릴레이션마다 기본키를 정의하는데, 기본키를 구성하는 속성 전체나 일부가 널(Null) 값이 되면 튜플의 유일성을 판단할 수 없어 기본키의 본래 목적을 상실하게 된다. 이를 (      ) 무결성 제약조건이라고 한다.</li></ul>",
+    "answer": "개체",
+    "explanation": "기본키의 NULL 및 중복을 금지하는 제약입니다.",
+    "concepts": [
+      {
+        "id": "integrity",
+        "title": "무결성 제약조건",
+        "meaning": "무결성은 데이터의 정확성과 일관성을 유지하는 규칙입니다. 개체 무결성은 기본키의 NULL·중복을 금지하고, 참조 무결성은 테이블 사이의 참조 관계를 지킵니다.",
+        "example": "학번을 기본키로 정하면 비어 있거나 중복된 학번을 막습니다. CHECK(점수 BETWEEN 0 AND 100)는 점수의 허용 범위를 검사합니다.",
+        "remember": "기본키→개체, 외래키→참조, 자료형·허용 범위→도메인, 중복 금지→유일성을 연결하세요. UNIQUE의 NULL 처리는 DBMS 설정에 따라 다를 수 있습니다.",
+        "sources": [
+          {
+            "title": "PostgreSQL · 제약조건",
+            "url": "https://www.postgresql.org/docs/16/ddl-constraints.html"
+          }
+        ]
+      }
+    ],
+    "source": "2024_2/06.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_07",
+    "exam": "2024_2",
+    "number": 7,
+    "category": "프로그래밍",
+    "body": "<p>다음은 구구단의 3단을 출력하는 코드를 C 언어로 구현한 것이다. 괄호에 알맞은 수식을 채워 코드를 완성하시오. (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nint main() {\n    int n = 3;\n    for (int i = 1; i &lt;= 9; i++) {\n        printf(&quot;%d*%d=%d\\n&quot;, n, i, (      ));\n    }\n}</code></pre>",
+    "answer": "n * i",
+    "explanation": "3과 1~9를 곱합니다.",
+    "concepts": [
+      {
+        "id": "loop",
+        "title": "반복문과 continue",
+        "meaning": "for 반복문은 초기화 → 조건 확인 → 본문 → 증감 순서로 실행합니다. continue는 현재 회차의 남은 본문을 건너뛰고 다음 회차로 진행합니다.",
+        "example": "i=1부터 i<=3까지 반복하면 본문은 1,2,3에서 실행됩니다. 반복 밖에서도 같은 i를 쓸 수 있다면 종료 직후 i는 4입니다.",
+        "remember": "반복 횟수, 누적값, 종료 시 변수값을 따로 적으세요. continue는 반복 전체를 끝내는 break와 다릅니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/07.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_08",
+    "exam": "2024_2",
+    "number": 8,
+    "category": "네트워크",
+    "body": "<p>MS-DOS에서 인터넷 서버까지의 경로를 추적하는 명령어로, IP 주소, 목적지까지 거치는 경로(장비의 수)의 수, 각 구간 사이의 데이터 왕복 속도를 알아볼 수 있는 명령어는 무엇인지 쓰시오. (5점)</p>\n<p>&lt;명령 프롬프트 예시&gt;</p>\n<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>Microsoft Windows [Version 10.0.19045.4780]\n(c) Microsoft Corporation. All rights reserved.\n\nC:\\Users\\[사용자명]&gt; [빈칸] gilbut.co.kr\n\n최대 30홉 이상의\ngilbut.co.kr [49.236.151.220](으)로 가는 경로 추적:\n\n  1    &lt;1 ms    &lt;1 ms    &lt;1 ms    192.168.0.1</code></pre>",
+    "answer": "tracert",
+    "explanation": "Windows의 경로 추적 명령어입니다.",
+    "concepts": [
+      {
+        "id": "trace",
+        "title": "ping과 경로 추적",
+        "meaning": "ping은 대상이 ICMP 에코 요청에 응답하는지 확인합니다. tracert(Windows)·traceroute는 패킷의 TTL 등을 이용해 목적지까지의 중간 경로를 살펴봅니다.",
+        "example": "대상 응답 확인은 ping, 어느 라우터 구간을 거치는지 확인하는 작업은 tracert로 구별합니다.",
+        "remember": "응답이 없다고 반드시 장비가 꺼진 것은 아닙니다. 방화벽이 응답을 차단할 수도 있습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/08.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_09",
+    "exam": "2024_2",
+    "number": 9,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nint main() {\n    int n1 = 11;\n    int n2 = 0;\n    int* p = NULL;\n    p = &amp;n1;\n    n2 = *p + n1;\n    printf(&quot;%d&quot;, *p-n1+n2);\n}</code></pre>",
+    "answer": "22",
+    "explanation": "p는 n1을 가리킵니다. n2=22, *p-n1=0입니다.",
+    "concepts": [
+      {
+        "id": "pointer",
+        "title": "포인터·배열·이중 포인터",
+        "meaning": "포인터는 주소를 담는 변수입니다. &x는 x의 주소, *p는 p가 가리키는 값입니다. 배열에서 p+1은 다음 원소로 이동하며, **r은 주소를 두 번 따라갑니다.",
+        "example": "a=[4,9]이고 p=&a[0]이면 *(p+1)은 9입니다. r=&p일 때 **r=8은 a[0]을 8로 바꿉니다.",
+        "remember": "p의 주소값을 바꾸는 것과 *p의 대상 값을 바꾸는 것을 구별하세요. 포인터 연산은 원소 크기 단위로 이동합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/09.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_10",
+    "exam": "2024_2",
+    "number": 10,
+    "category": "소프트웨어",
+    "body": "<p>다음 &lt;보기&gt;에 나열된 애플리케이션 테스트를 블랙박스 테스트와 화이트박스 테스트로 구분하여 기호(㉠~㉥)로 쓰시오. (5점)</p>\n<ul><li>㉠ 기초 경로 검사</li><li>㉡ 동치 분할 검사</li><li>㉢ 루프 검사</li><li>㉣ 조건 검사</li><li>㉤ 경계값 분석</li><li>㉥ 원인-효과 그래프 검사</li></ul>\n<p>답</p>\n<ul><li>① 블랙박스 테스트:</li><li>② 화이트박스 테스트:</li></ul>",
+    "answer": "① ㉡, ㉤, ㉥  ② ㉠, ㉢, ㉣",
+    "explanation": "동치 분할·경계값·원인-효과는 블랙박스, 기초 경로·루프·조건은 화이트박스 기법입니다.",
+    "concepts": [
+      {
+        "id": "testing",
+        "title": "블랙박스와 화이트박스 테스트",
+        "meaning": "블랙박스는 내부 구현보다 입력과 기대 출력, 요구 기능을 봅니다. 화이트박스는 코드의 문장·분기·조건·반복 경로가 실행되는지 봅니다.",
+        "example": "나이 입력을 미성년·성년 그룹으로 나누거나 경계 나이를 검사하면 블랙박스입니다. if의 양쪽 경로 실행 여부를 확인하면 화이트박스입니다.",
+        "remember": "동치 분할·경계값·원인-효과→블랙박스, 기초 경로·조건·루프→화이트박스로 묶어 기억하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/10.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_11",
+    "exam": "2024_2",
+    "number": 11,
+    "category": "데이터베이스",
+    "body": "<p>학생(STUDENT) 테이블에 전기과 학생이 50명, 전산과 학생이 100명, 전자과 학생이 50명 있다고 할 때, 다음 SQL문 ①, ②, ③의 실행 결과로 표시되는 튜플의 수를 쓰시오. (단, DEPT 필드는 학과를 의미한다.) (5점)</p>\n<p>&lt;SQL문&gt;</p>\n<p>①</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT DEPT FROM STUDENT;</code></pre>\n<p>②</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT DISTINCT DEPT FROM STUDENT;</code></pre>\n<p>③</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT COUNT(DISTINCT DEPT) FROM STUDENT WHERE DEPT = &#x27;전산과&#x27;;</code></pre>",
+    "answer": "① 200  ② 3  ③ 1",
+    "explanation": "첫 쿼리는 200행, 두 번째는 3행입니다. 세 번째는 집계 결과를 담은 한 행을 반환합니다.",
+    "concepts": [
+      {
+        "id": "aggregate",
+        "title": "SELECT·DISTINCT·COUNT의 차이",
+        "meaning": "SELECT는 조건에 맞는 행에서 열을 조회하고 DISTINCT는 결과의 중복을 제거합니다. COUNT(*)는 행 수, COUNT(열)은 NULL이 아닌 값 수, COUNT(DISTINCT 열)은 중복을 뺀 값 수입니다.",
+        "example": "학과가 A,A,B인 세 행에서 SELECT 학과는 3행, DISTINCT 학과는 2행입니다. COUNT(DISTINCT 학과)는 숫자 2가 들어 있는 1행을 반환합니다.",
+        "remember": "집계값과 결과 테이블의 행 수는 다릅니다. GROUP BY 없는 일반 집계 쿼리는 전체를 집계해 한 행으로 반환합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/11.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_12",
+    "exam": "2024_2",
+    "number": 12,
+    "category": "데이터베이스",
+    "body": "<p>다음 &lt;처리조건&gt;에 부합하는 &lt;SQL문&gt;이 완성되도록 괄호(①~③)에 적합한 명령어를 쓰시오. (5점)</p>\n<p>&lt;처리조건&gt;</p>\n<ul><li>&lt;사원&gt; 테이블에 이름이 “윤정희”, 부서가 “영업부”, 주소가 “마포구”인 사원의 정보를 입력하시오.</li><li>&lt;사원&gt; 테이블에서 이름이 “임선호”인 사원의 부서를 “기획부”로 변경하시오.</li></ul>\n<p>&lt;SQL문&gt;</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>INSERT ( ① ) 사원 (이름, 부서, 주소) ( ② ) (&#x27;윤정희&#x27;, &#x27;영업부&#x27;, &#x27;마포구&#x27;);\nUPDATE 사원 ( ③ ) 부서 = &#x27;기획부&#x27; WHERE 이름 = &#x27;임선호&#x27;;</code></pre>",
+    "answer": "① INTO  ② VALUES  ③ SET",
+    "explanation": "INSERT INTO … VALUES … / UPDATE … SET … 형태입니다.",
+    "concepts": [
+      {
+        "id": "dml",
+        "title": "INSERT와 UPDATE",
+        "meaning": "INSERT는 새 행을 넣고 UPDATE는 기존 행을 수정하는 데이터 조작 명령입니다. INSERT INTO 테이블(열) VALUES(값), UPDATE 테이블 SET 열=값 형태로 씁니다.",
+        "example": "INSERT INTO 학생(학번, 이름) VALUES(1, '민수'); / UPDATE 학생 SET 이름='수진' WHERE 학번=1;",
+        "remember": "INSERT에는 INTO·VALUES, UPDATE에는 SET을 연결하세요. UPDATE에서 WHERE를 생략하면 모든 행이 수정 대상이 됩니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/12.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_13",
+    "exam": "2024_2",
+    "number": 13,
+    "category": "데이터베이스",
+    "body": "<p>다음 &lt;처리조건&gt;에 부합하는 &lt;SQL문&gt;이 완성되도록 괄호(①~③)에 적합한 명령어를 쓰시오. (5점)</p>\n<p>&lt;처리조건&gt;</p>\n<ul><li>&lt;회원&gt; 테이블에서 성별이 “여”이면서 등급이 “GOLD”인 회원의 정보를 검색하시오.</li><li>&lt;회원&gt; 테이블에서 회원들의 구매내역을 검색하되, 가입년도를 기준으로 오름차순 정렬하여 검색하시오.</li><li>&lt;회원&gt; 테이블에서 이름이 “김”으로 시작하지 않는 회원들을 검색하시오.</li></ul>\n<p>&lt;SQL문&gt;</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT * FROM 회원 WHERE 성별 = &#x27;여&#x27; ( ① ) 등급 = &#x27;GOLD&#x27;;\nSELECT * FROM 회원 ORDER BY 가입년도 ( ② );\nSELECT * FROM 회원 WHERE 이름 ( ③ ) LIKE &#x27;김%&#x27;;</code></pre>",
+    "answer": "① AND  ② ASC  ③ NOT",
+    "explanation": "두 조건 동시 만족은 AND, 오름차순은 ASC, 패턴 제외는 NOT LIKE입니다.",
+    "concepts": [
+      {
+        "id": "conditions",
+        "title": "SQL의 조건과 정렬",
+        "meaning": "WHERE는 행을 걸러내고 AND는 두 조건 모두, OR는 하나 이상 만족해야 합니다. BETWEEN a AND b는 양 끝값을 포함하며 ORDER BY의 ASC는 오름차순입니다.",
+        "example": "WHERE 점수 BETWEEN 70 AND 90 AND 이름 NOT LIKE '김%'는 70~90점이면서 김으로 시작하지 않는 이름을 찾습니다. %는 임의 길이, _는 한 글자입니다.",
+        "remember": "BETWEEN의 AND는 범위 문법입니다. 여러 조건을 연결하는 AND와 역할을 구별하고 NOT의 적용 범위를 확인하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/13.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_14",
+    "exam": "2024_2",
+    "number": 14,
+    "category": "네트워크",
+    "body": "<p>다음은 IPv4 주소가 사용하는 네트워크 상에서의 전송 방식에 관한 설명이다. 괄호(①~③)에 들어갈 알맞은 전송 방식을 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<ul><li>( ① )는 한 번의 송신으로 메시지나 정보를 목표한 여러 컴퓨터에 동시에 그룹 단위로 전송하는 것을 말한다. 이 때 망 접속 형태가 요구할 경우에 한해, 자동으로 라우터와 같은 다른 네트워크 요소들에 메시지의 복사본이 생성된다. 인터넷 텔레비전, 응용 프로그램 용도로 사용된다.</li><li>( ② )는 송신 호스트가 전송한 데이터가 네트워크에 연결된 모든 호스트에게 전송되는 것을 말한다. 주소는 주로 FFFFFFFF = 255.255.255.255 형태가 사용된다.</li><li>( ③ )는 고유 주소로 식별된 하나의 네트워크 목적지에 1:1로(one-to-one) 트래픽 또는 메시지를 전송하는 것을 말한다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>유니캐스트</li><li>단일캐스트</li><li>브로드캐스트</li><li>복합캐스트</li><li>애니캐스트</li><li>랜덤캐스트</li><li>멀티캐스트</li></ul>",
+    "answer": "① 멀티캐스트  ② 브로드캐스트  ③ 유니캐스트",
+    "explanation": "그룹 전송 / 전체 전송 / 1:1 전송 순서입니다.",
+    "concepts": [
+      {
+        "id": "transmission",
+        "title": "유니캐스트·브로드캐스트·멀티캐스트",
+        "meaning": "유니캐스트는 특정 수신자 한 명, 브로드캐스트는 같은 브로드캐스트 영역 전체, 멀티캐스트는 특정 그룹에 보내는 방식입니다.",
+        "example": "한 사람에게 편지 보내기→유니캐스트, 반 전체 공지→브로드캐스트, 동아리 가입자 공지→멀티캐스트로 비유할 수 있습니다.",
+        "remember": "1:1 / 영역 내 전체 / 선택한 그룹을 구별하세요. 멀티캐스트를 아무 대상에게 보내는 브로드캐스트와 혼동하지 않습니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/14.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_15",
+    "exam": "2024_2",
+    "number": 15,
+    "category": "네트워크",
+    "body": "<p>다음 설명에 해당하는 알맞은 용어를 쓰시오. (5점)</p>\n<ul><li>TCP/IP의 네트워크 관리 프로토콜로, 라우터나 허브 등 네트워크 기기의 네트워크 정보를 네트워크 관리 시스템에 보내는데 사용된다.</li><li>이 프로토콜을 사용하는 대표적인 장비에는 프린터, UPS, CCTV 등이 있다.</li><li>에이전트(Agent)는 161번 포트를 사용하고, 관리 시스템(Manager)은 162번 포트를 사용한다.</li></ul>",
+    "answer": "SNMP",
+    "explanation": "네트워크 관리 프로토콜입니다. 요청은 일반적으로 UDP 161, 트랩 수신은 UDP 162를 씁니다.",
+    "concepts": [
+      {
+        "id": "snmp",
+        "title": "SNMP와 네트워크 관리",
+        "meaning": "SNMP는 관리자가 장비의 상태 정보를 조회하거나 설정하고, 장비가 이벤트를 알릴 때 쓰는 프로토콜입니다. 관리 대상 정보는 MIB 형태로 표현합니다.",
+        "example": "관리 서버가 라우터의 트래픽 수치를 조회하고 장비가 장애 알림(Trap)을 보내는 상황입니다. 일반적인 UDP 포트는 요청 161, 트랩 수신 162입니다.",
+        "remember": "SNMP는 장비 관리, SMTP는 전자우편 전송입니다. 약자 한 글자 차이를 주의하세요.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/15.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_16",
+    "exam": "2024_2",
+    "number": 16,
+    "category": "프로그래밍",
+    "body": "<p>다음 Python로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">python</div><pre tabindex=\"0\"><code>x = [1, -1, 0, 1, -1]\nfor n in x:\n    if(n == -1): continue\n    print(n, end=&quot;&quot;)</code></pre>",
+    "answer": "101",
+    "explanation": "-1은 continue로 건너뛰고 1, 0, 1을 붙여 출력합니다.",
+    "concepts": [
+      {
+        "id": "loop",
+        "title": "반복문과 continue",
+        "meaning": "for 반복문은 초기화 → 조건 확인 → 본문 → 증감 순서로 실행합니다. continue는 현재 회차의 남은 본문을 건너뛰고 다음 회차로 진행합니다.",
+        "example": "i=1부터 i<=3까지 반복하면 본문은 1,2,3에서 실행됩니다. 반복 밖에서도 같은 i를 쓸 수 있다면 종료 직후 i는 4입니다.",
+        "remember": "반복 횟수, 누적값, 종료 시 변수값을 따로 적으세요. continue는 반복 전체를 끝내는 break와 다릅니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/16.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_17",
+    "exam": "2024_2",
+    "number": 17,
+    "category": "프로그래밍",
+    "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오. (단, 출력문의 출력 서식을 준수하시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\n\nint main() {\n    int a[5] = {3, 4, 5, 10, 2};\n    int *p = a;\n    int i, j, temp;\n    for (i = 0; i &lt; 5; i++) {\n        for (j = i+1; j &lt; 5; j++) {\n            if (*(p+i) &gt; *(p+j)) {\n                temp = *(p+i);\n                *(p+i) = *(p+j);\n                *(p+j) = temp;\n            }\n        }\n        printf(&quot;%d &quot;, *(p+i));\n    }\n}</code></pre>",
+    "answer": "2 3 4 5 10",
+    "explanation": "현재 위치보다 작은 원소를 앞으로 옮기면서 오름차순 정렬합니다.",
+    "concepts": [
+      {
+        "id": "sort",
+        "title": "정렬 결과와 출력 위치",
+        "meaning": "비교·교환을 반복하는 정렬은 원소의 위치를 바꿉니다. 퀵 정렬은 기준값(pivot)을 중심으로 구간을 나누고 작은 구간을 다시 정렬합니다.",
+        "example": "정렬된 배열이 [2,4,6,8]일 때 홀수 인덱스 1,3의 값은 4,8입니다. 배열의 첫 인덱스는 0입니다.",
+        "remember": "정렬 전체가 끝난 뒤 출력하는지, 바깥 반복마다 출력하는지 확인하세요. 홀수 인덱스와 홀수 값은 다릅니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/17.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_18",
+    "exam": "2024_2",
+    "number": 18,
+    "category": "네트워크",
+    "body": "<p>IP 주소(IPv4)는 인터넷에 연결된 모든 컴퓨터 자원을 구분하기 위한 주소로, 8비트씩 4부분, 총 32비트로 구성된다. 또한 IP 주소는 네트워크 부분의 길이에 따라 A 클래스에서 E 클래스까지 5개의 클래스로 구분하는데, 네트워크 부분의 길이가 16비트이며, 128~191로 시작하고 나머지 16비트가 호스트 부분인 클래스는 무엇인지 쓰시오. (5점)</p>",
+    "answer": "B 클래스",
+    "explanation": "클래스 기반 IPv4에서 B 클래스의 첫 옥텟은 128~191입니다.",
+    "concepts": [
+      {
+        "id": "ipclass",
+        "title": "클래스 기반 IPv4 주소",
+        "meaning": "과거의 클래스 구분은 첫 옥텟의 상위 비트로 네트워크 크기를 나눕니다. A는 0, B는 10, C는 110으로 시작합니다.",
+        "example": "첫 옥텟 기준 A는 통상 1~126, B는 128~191, C는 192~223으로 암기합니다. 127 대역은 루프백에 사용됩니다.",
+        "remember": "클래스 문제용 구분입니다. 현대의 실제 네트워크 크기는 주로 CIDR 접두 길이(/24 등)로 판단합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/18.md",
+    "caution": false
+  },
+  {
+    "id": "2024_2_19",
+    "exam": "2024_2",
+    "number": 19,
+    "category": "소프트웨어",
+    "body": "<p>단위 테스트에서 테스트의 대상이 되는 하위 모듈을 호출하고, 매개 변수(Parameter)를 전달하는 가상의 모듈로, 상향식 테스트에서 사용되는 것은 무엇인지 쓰시오. (5점)</p>",
+    "answer": "테스트 드라이버 (Test Driver)",
+    "explanation": "상향식 통합에서 상위 호출 모듈을 대신합니다.",
+    "concepts": [
+      {
+        "id": "integration",
+        "title": "통합 테스트·드라이버·스텁",
+        "meaning": "통합 테스트는 모듈을 연결했을 때 인터페이스와 데이터 전달이 맞는지 확인합니다. 상향식은 아래 모듈부터, 하향식은 위 모듈부터 결합합니다.",
+        "example": "아래 모듈을 시험하려고 대신 호출하는 상위 코드는 드라이버입니다. 위 모듈이 호출할 하위 기능을 임시로 흉내 내는 코드는 스텁입니다.",
+        "remember": "상향식→드라이버, 하향식→스텁. 단위 테스트는 개별 모듈, 통합 테스트는 모듈 사이 연결에 집중합니다.",
+        "sources": []
+      }
+    ],
+    "source": "2024_2/19.md",
+    "caution": false
+  }
+]
