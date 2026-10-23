@@ -1,5 +1,5 @@
-const CACHE='teumteum-v4-spoiler-free-hints';
-const ASSETS=['./','./index.html','./style.css?v=hints4','./app.js?v=hints4','./exam.js?v=hints4','./mock-exams.json','./questions.json','./icon.svg','./manifest.webmanifest'];
+const CACHE='teumteum-v5-exclude-known';
+const ASSETS=['./','./index.html','./style.css?v=quick5','./app.js?v=quick5','./exam.js?v=quick5','./mock-exams.json','./questions.json','./icon.svg','./manifest.webmanifest'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('teumteum-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==location.origin)return;e.respondWith(fetch(e.request).then(r=>{if(r.ok&&r.type!=='opaqueredirect'){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return r}).catch(()=>caches.match(e.request).then(r=>r||(e.request.mode==='navigate'?caches.match('./index.html'):Response.error()))))});
