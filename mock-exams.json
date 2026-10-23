@@ -1,0 +1,780 @@
+[
+  {
+    "id": "1",
+    "title": "예상기출문제 1회",
+    "questions": [
+      {
+        "id": "mock_1_01",
+        "number": 1,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint main(void) {\n    unsigned int a = 10, b = 6;\n    printf(&quot;%u %u&quot;, (a &amp; b) &lt;&lt; 1, a ^ b);\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>4 12</code></pre>",
+        "explanation": "<p><code>10 &amp; 6</code>은 2이므로 왼쪽으로 1비트 이동하면 4이다. <code>1010 XOR 0110</code>은 <code>1100</code>, 즉 12이다.</p>",
+        "parts": [
+          "4 12"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/1회/01.md"
+      },
+      {
+        "id": "mock_1_02",
+        "number": 2,
+        "body": "<p>다음 설명의 괄호(①, ②)에 들어갈 프로토콜을 영문 약어로 쓰시오. (5점)</p>\n<ul><li>( ① ): 통신 전에 연결을 설정하며, 바이트 스트림의 순서 보장과 재전송, 흐름 제어를 제공한다.</li><li>( ② ): 연결 설정 없이 데이터그램을 전송하며, 프로토콜 자체에서 재전송이나 도착 순서를 보장하지 않는다. TFTP가 사용하는 전송 계층 프로토콜이다.</li></ul>",
+        "answer": "<p>① TCP</p>\n<p>② UDP</p>",
+        "explanation": "<p>TCP는 연결형·신뢰성 있는 전송을 제공한다. UDP는 비연결형이며 신뢰성 처리가 필요하면 응용 프로그램에서 별도로 구현한다.</p>",
+        "parts": [
+          "TCP",
+          "UDP"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/02.md"
+      },
+      {
+        "id": "mock_1_03",
+        "number": 3,
+        "body": "<p>다음 &lt;성적&gt; 테이블에 대해 SQL문을 실행했을 때 출력되는 ① 전체수, ② 점수수, ③ 학과수의 값을 순서대로 쓰시오. (단, NULL은 값이 없음을 나타낸다.) (5점)</p>\n<div class=\"table-wrap\"><table><tr><th>학번</th><th>학과</th><th>점수</th></tr><tr><td>1</td><td>전산</td><td>90</td></tr><tr><td>2</td><td>전산</td><td>NULL</td></tr><tr><td>3</td><td>전자</td><td>80</td></tr><tr><td>4</td><td>전자</td><td>80</td></tr><tr><td>5</td><td>전기</td><td>NULL</td></tr></table></div>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT COUNT(*) AS 전체수,\n       COUNT(점수) AS 점수수,\n       COUNT(DISTINCT 학과) AS 학과수\nFROM 성적;</code></pre>",
+        "answer": "<p>① 5</p>\n<p>② 3</p>\n<p>③ 3</p>",
+        "explanation": "<p><code>COUNT(*)</code>는 모든 행을 세고, <code>COUNT(점수)</code>는 NULL이 아닌 값만 센다. 학과의 서로 다른 값은 전산·전자·전기 3개이다. 결과 행의 개수가 아니라 각 집계값을 묻는다.</p>",
+        "parts": [
+          "5",
+          "3",
+          "3"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/03.md"
+      },
+      {
+        "id": "mock_1_04",
+        "number": 4,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static void change(int[] a) {\n        a[1] += a[0];\n        a = new int[]{9, 9};\n        a[0]++;\n    }\n    public static void main(String[] args) {\n        int[] x = {3, 5};\n        int[] y = x;\n        change(y);\n        System.out.print(x[0] + &quot; &quot; + y[1]);\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>3 8</code></pre>",
+        "explanation": "<p>처음에는 x, y, 매개변수 a가 같은 배열을 참조하므로 두 번째 원소가 8이 된다. a에 새 배열을 대입해도 x와 y의 참조는 바뀌지 않는다.</p>",
+        "parts": [
+          "3 8"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/1회/04.md"
+      },
+      {
+        "id": "mock_1_05",
+        "number": 5,
+        "body": "<p>릴레이션 수강(학번, 과목코드, 학생명, 과목명, 점수)의 유일한 후보키는 (학번, 과목코드)이다. 모든 속성값은 원자값이며, 다음 함수 종속이 성립한다. (5점)</p>\n<ul><li>학번 → 학생명</li><li>과목코드 → 과목명</li><li>(학번, 과목코드) → 점수</li></ul>\n<p>학생명과 과목명이 복합키의 일부에 종속되는 문제를 없애기 위해 학생(학번, 학생명), 과목(과목코드, 과목명), 수강(학번, 과목코드, 점수)으로 분해하였다.</p>\n<ul><li>① 제거한 함수 종속의 종류는 무엇인가?</li><li>② 제1정규형에서 이 종속을 제거하여 만족시키는 다음 정규형은 무엇인가?</li></ul>",
+        "answer": "<p>① 부분 함수 종속</p>\n<p>② 제2정규형(2NF)</p>",
+        "explanation": "<p>비주요 속성이 복합 후보키의 일부에만 종속되는 것이 부분 함수 종속이다. 이를 제거하여 모든 비주요 속성이 후보키에 완전 함수 종속되도록 하는 단계가 2NF이다.</p>",
+        "parts": [
+          "부분 함수 종속",
+          "제2정규형(2NF)"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/05.md"
+      },
+      {
+        "id": "mock_1_06",
+        "number": 6,
+        "body": "<p>다음 Python 3로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">python</div><pre tabindex=\"0\"><code>scores = {&quot;kim&quot;: 70, &quot;lee&quot;: 85}\nscores[&quot;kim&quot;] += 10\ntotal = 0\nfor name in [&quot;kim&quot;, &quot;park&quot;, &quot;lee&quot;]:\n    total += scores.get(name, 5)\nprint(total)</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>170</code></pre>",
+        "explanation": "<p>kim은 80, 없는 키 park는 기본값 5, lee는 85이므로 합은 170이다.</p>",
+        "parts": [
+          "170"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/1회/06.md"
+      },
+      {
+        "id": "mock_1_07",
+        "number": 7,
+        "body": "<p>회원 가입 프로그램은 만 나이가 정수 14 이상 65 이하인 경우에만 가입을 허용한다. 테스터는 입력값 13, 14, 15, 64, 65, 66을 사용하여 허용 범위의 양 끝과 그 주변을 검사하였다. 다음 &lt;보기&gt;에서 이 테스트 기법을 골라 기호로 쓰시오. (5점)</p>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 기초 경로 검사</li><li>㉡ 경계값 분석</li><li>㉢ 루프 검사</li><li>㉣ 데이터 흐름 검사</li></ul>",
+        "answer": "<p>㉡ 경계값 분석</p>",
+        "explanation": "<p>입력 영역의 경계와 경계 바로 안팎의 값을 집중적으로 검사하는 명세 기반 기법이다.</p>",
+        "parts": [
+          "㉡ 경계값 분석"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/07.md"
+      },
+      {
+        "id": "mock_1_08",
+        "number": 8,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nstruct Item { int price; int count; };\nvoid update(struct Item *a, struct Item b) {\n    a-&gt;count += b.count;\n    b.price = 100;\n    a-&gt;price += 2;\n}\nint main(void) {\n    struct Item x = {10, 2};\n    struct Item y = {20, 3};\n    update(&amp;x, y);\n    printf(&quot;%d %d %d&quot;, x.price, x.count, y.price);\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>12 5 20</code></pre>",
+        "explanation": "<p>포인터 a로 수정한 x는 price=12, count=5가 된다. b는 y의 복사본이므로 b.price를 바꿔도 y.price는 20이다.</p>",
+        "parts": [
+          "12 5 20"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/1회/08.md"
+      },
+      {
+        "id": "mock_1_09",
+        "number": 9,
+        "body": "<p>다음 상황의 괄호(①, ②)에 들어갈 프로토콜을 영문 약어로 쓰시오. (5점)</p>\n<ul><li>같은 이더넷 LAN에 있는 IPv4 호스트에 프레임을 보내려 한다. 알고 있는 목적지 IPv4 주소에 대응하는 MAC 주소를 알아내기 위해 ( ① )를 사용한다.</li><li>목적지 호스트의 응답 여부를 확인하는 ping 명령은 Echo Request와 Echo Reply라는 ( ② ) 메시지를 사용한다.</li></ul>",
+        "answer": "<p>① ARP</p>\n<p>② ICMP</p>",
+        "explanation": "<p>ARP는 같은 링크에서 IPv4 주소에 대응하는 MAC 주소를 알아낸다. ICMP는 오류 보고와 진단 메시지를 제공하며 ping의 에코 메시지에도 사용된다.</p>",
+        "parts": [
+          "ARP",
+          "ICMP"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/09.md"
+      },
+      {
+        "id": "mock_1_10",
+        "number": 10,
+        "body": "<p>다음 &lt;처리조건&gt;을 만족하도록 SQL문의 괄호(①~③)에 알맞은 예약어를 쓰시오. (5점)</p>\n<p>&lt;처리조건&gt;</p>\n<ul><li>상품번호는 기본키이다.</li><li>등급은 NULL을 허용하지 않으며, &#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27; 중 하나만 허용한다.</li><li>수량은 NULL을 허용하지 않으며, 0 이상이어야 한다.</li></ul>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>CREATE TABLE 상품 (\n    상품번호 INT PRIMARY KEY,\n    등급 CHAR(1) NOT NULL ( ① ) (등급 ( ② ) (&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;)),\n    수량 INT NOT NULL ( ③ ) (수량 &gt;= 0)\n);</code></pre>",
+        "answer": "<p>① CHECK</p>\n<p>② IN</p>\n<p>③ CHECK</p>",
+        "explanation": "<p><code>CHECK</code>는 행이 만족해야 할 조건을 정의하고 <code>IN</code>은 지정한 값 목록에 포함되는지 검사한다. NULL 금지는 별도의 NOT NULL로 명시하였다.</p>",
+        "parts": [
+          "CHECK",
+          "IN",
+          "CHECK"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/10.md"
+      },
+      {
+        "id": "mock_1_11",
+        "number": 11,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static class Parent {\n        int calc(int n) { return n + 2; }\n    }\n    static class Child extends Parent {\n        int calc(int n) { return n * 3; }\n        int total(int n) { return super.calc(n) + calc(n); }\n    }\n    public static void main(String[] args) {\n        Child c = new Child();\n        Parent p = c;\n        System.out.print(p.calc(4) + &quot; &quot; + c.total(4));\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>12 18</code></pre>",
+        "explanation": "<p>p가 참조하는 실제 객체는 Child이므로 p.calc(4)는 12이다. total은 부모 메서드의 6과 자식 메서드의 12를 더하여 18을 반환한다.</p>",
+        "parts": [
+          "12 18"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/1회/11.md"
+      },
+      {
+        "id": "mock_1_12",
+        "number": 12,
+        "body": "<p>다음 기능에 해당하는 OSI 7계층의 이름을 각각 쓰시오. (5점)</p>\n<ul><li>① 인접 노드 사이에서 프레임 단위로 데이터를 전달하며, MAC 주소와 프레임 오류 검출을 다룬다.</li><li>② 서로 다른 네트워크 사이에서 논리 주소를 바탕으로 패킷의 경로를 결정한다.</li><li>③ 종단 간 프로세스의 통신을 제공하며, TCP와 UDP가 이 계층에 해당한다.</li></ul>",
+        "answer": "<p>① 데이터 링크 계층</p>\n<p>② 네트워크 계층</p>\n<p>③ 전송 계층</p>",
+        "explanation": "<p>프레임·MAC은 2계층, 패킷·논리 주소·라우팅은 3계층, TCP·UDP는 4계층에 해당한다.</p>",
+        "parts": [
+          "데이터 링크 계층",
+          "네트워크 계층",
+          "전송 계층"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/12.md"
+      },
+      {
+        "id": "mock_1_13",
+        "number": 13,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint main(void) {\n    int a[] = {2, 4, 6, 8};\n    int *p = a + 1;\n    int **q = &amp;p;\n    **q += 3;\n    (*q)++;\n    **q += a[1];\n    printf(&quot;%d %d&quot;, a[1], *p);\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>7 13</code></pre>",
+        "explanation": "<p>처음 p는 a[1]을 가리켜 4가 7로 바뀐다. (*q)++는 p를 a[2]로 이동시킨다. 이후 a[2]는 6+7=13이 된다.</p>",
+        "parts": [
+          "7 13"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/1회/13.md"
+      },
+      {
+        "id": "mock_1_14",
+        "number": 14,
+        "body": "<p>다음 테이블에서 부서명이 &#x27;개발&#x27;인 사원의 이름과 부서명을 조회하는 SQL문을 작성하시오. 결과는 사원번호의 오름차순으로 정렬하시오. (5점)</p>\n<ul><li>사원(사원번호, 이름, 부서번호)</li><li>부서(부서번호, 부서명)</li><li>사원.부서번호는 부서.부서번호를 참조하며, 부서.부서번호는 기본키이다.</li></ul>\n<p>&lt;처리조건&gt;</p>\n<ul><li>두 테이블을 부서번호가 같은 행끼리 INNER JOIN한다.</li><li>출력 열의 순서는 이름, 부서명으로 한다.</li><li>사원 테이블의 별칭은 E, 부서 테이블의 별칭은 D로 한다.</li><li>문자열에는 작은따옴표를 사용한다.</li></ul>",
+        "answer": "<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT E.이름, D.부서명\nFROM 사원 E INNER JOIN 부서 D\nON E.부서번호 = D.부서번호\nWHERE D.부서명 = &#x27;개발&#x27;\nORDER BY E.사원번호 ASC;</code></pre>",
+        "explanation": "<p>ON에서 연결 조건을, WHERE에서 조회 조건을 지정한다. ASC는 생략해도 동일하다. 같은 결과를 내는 USING(부서번호) 형태도 가능하다.</p>",
+        "parts": [
+          "SELECT E.이름, D.부서명\nFROM 사원 E INNER JOIN 부서 D\nON E.부서번호 = D.부서번호\nWHERE D.부서명 = '개발'\nORDER BY E.사원번호 ASC;"
+        ],
+        "mode": "manual",
+        "source": "예상기출문제/1회/14.md"
+      },
+      {
+        "id": "mock_1_15",
+        "number": 15,
+        "body": "<p>통합 테스트에서 사용하는 임시 모듈에 관한 설명이다. 괄호(①, ②)에 들어갈 용어를 쓰시오. (5점)</p>\n<ul><li>하향식 통합 테스트에서 아직 구현되지 않은 하위 모듈을 대신하고, 상위 모듈의 호출에 대해 정해진 값을 돌려주는 모듈은 ( ① )이다.</li><li>상향식 통합 테스트에서 상위 모듈을 대신하여 테스트 대상 모듈을 호출하고 인수를 전달하는 모듈은 ( ② )이다.</li></ul>",
+        "answer": "<p>① 스텁(Stub)</p>\n<p>② 드라이버(Driver)</p>",
+        "explanation": "<p>스텁은 호출되는 하위 모듈을, 드라이버는 호출하는 상위 모듈을 대신한다.</p>",
+        "parts": [
+          "스텁(Stub)",
+          "드라이버(Driver)"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/15.md"
+      },
+      {
+        "id": "mock_1_16",
+        "number": 16,
+        "body": "<p>다음 Python 3로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">python</div><pre tabindex=\"0\"><code>a = [2, 4]\nb = a\nc = a[:]\nb.append(6)\nc[0] = 9\nprint(a)\nprint(c)</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>[2, 4, 6]\n[9, 4]</code></pre>",
+        "explanation": "<p>b는 a와 같은 리스트를 참조한다. c는 슬라이싱으로 만든 새 리스트이므로 c[0]의 변경은 a에 영향을 주지 않는다.</p>",
+        "parts": [
+          "[2, 4, 6]\n[9, 4]"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/1회/16.md"
+      },
+      {
+        "id": "mock_1_17",
+        "number": 17,
+        "body": "<p>부서(부서번호, 부서명)와 사원(사원번호, 이름, 부서번호) 테이블이 있다. 부서의 기본키인 부서번호에는 10과 20만 저장되어 있고, 사원의 부서번호는 이를 참조하는 외래키이다. 사원의 부서번호에는 NULL을 허용한다. (5점)</p>\n<ul><li>① 사원의 부서번호에 30을 저장하려 할 때 위반하는 무결성의 이름을 쓰시오.</li><li>② 외래키에 별도의 NOT NULL 제약조건이 없다면 사원의 부서번호에 NULL을 저장할 수 있는지 &#x27;가능&#x27; 또는 &#x27;불가능&#x27;으로 쓰시오.</li></ul>",
+        "answer": "<p>① 참조 무결성</p>\n<p>② 가능</p>",
+        "explanation": "<p>NULL이 아닌 외래키 값은 참조 대상 키에 존재해야 한다. 30은 없으므로 위반한다. 이 문제에서는 외래키 열의 NULL을 명시적으로 허용한다.</p>",
+        "parts": [
+          "참조 무결성",
+          "가능"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/17.md"
+      },
+      {
+        "id": "mock_1_18",
+        "number": 18,
+        "body": "<p>클래스 기반 IPv4 주소 체계를 적용할 때, 다음 주소의 클래스와 그 클래스의 기본 서브넷 마스크를 쓰시오. (단, 별도의 서브넷 분할은 하지 않는다.) (5점)</p>\n<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>172.24.8.10</code></pre>\n<ul><li>① 클래스:</li><li>② 기본 서브넷 마스크(점으로 구분한 10진수):</li></ul>",
+        "answer": "<p>① B 클래스</p>\n<p>② 255.255.0.0</p>",
+        "explanation": "<p>첫 옥텟 172는 B 클래스 범위인 128~191에 속한다. 클래스 기반 기본 네트워크 길이는 16비트이다.</p>",
+        "parts": [
+          "B 클래스",
+          "255.255.0.0"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/18.md"
+      },
+      {
+        "id": "mock_1_19",
+        "number": 19,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        int[] a = {4, 7, 2, 9, 6};\n        int sum = 0;\n        for (int i = 0; i &lt; a.length; i++) {\n            if (a[i] % 2 == 0) continue;\n            sum += a[i] - i;\n        }\n        System.out.print(sum);\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>12</code></pre>",
+        "explanation": "<p>홀수인 a[1]=7과 a[3]=9만 계산한다. (7-1)+(9-3)=12이다.</p>",
+        "parts": [
+          "12"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/1회/19.md"
+      },
+      {
+        "id": "mock_1_20",
+        "number": 20,
+        "body": "<p>세 프로세스가 모두 시각 0에 도착하여 준비 큐에 P1, P2, P3 순서로 들어 있다. 시간 할당량이 2인 라운드 로빈 스케줄링을 적용할 때 다음 물음에 답하시오. (단, 문맥 교환 시간은 0이며 입출력 대기는 없다.) (5점)</p>\n<div class=\"table-wrap\"><table><tr><th>프로세스</th><th>CPU 실행 시간</th></tr><tr><td>P1</td><td>5</td></tr><tr><td>P2</td><td>3</td></tr><tr><td>P3</td><td>1</td></tr></table></div>\n<ul><li>① 세 프로세스가 완료되는 순서를 쓰시오.</li><li>② P1의 완료 시각을 쓰시오.</li></ul>",
+        "answer": "<p>① P3 → P2 → P1</p>\n<p>② 9</p>",
+        "explanation": "<p>실행 구간은 P1(0~2), P2(2~4), P3(4~5), P1(5~7), P2(7~8), P1(8~9)이다. 완료 시각은 각각 P3=5, P2=8, P1=9이다.</p>",
+        "parts": [
+          "P3 → P2 → P1",
+          "9"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/1회/20.md"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "예상기출문제 2회",
+    "questions": [
+      {
+        "id": "mock_2_01",
+        "number": 1,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint calc(int n) {\n    if (n &lt;= 1) return 1;\n    return calc(n - 2) + n;\n}\nint main(void) {\n    printf(&quot;%d %d&quot;, calc(6), calc(5));\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>13 9</code></pre>",
+        "explanation": "<p>calc(6)=6+4+2+calc(0)=13, calc(5)=5+3+calc(1)=9이다.</p>",
+        "parts": [
+          "13 9"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/01.md"
+      },
+      {
+        "id": "mock_2_02",
+        "number": 2,
+        "body": "<p>클라이언트가 먼저 연결을 요청하는 일반적인 TCP 3-way handshake의 순서가 되도록 &lt;보기&gt;의 기호를 나열하시오. (단, 재전송과 동시 연결 요청은 없으며 각 항목은 한 번씩 사용한다.) (5점)</p>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 클라이언트가 서버로 ACK 세그먼트를 전송한다.</li><li>㉡ 서버가 클라이언트로 SYN과 ACK 플래그를 함께 설정한 세그먼트를 전송한다.</li><li>㉢ 클라이언트가 서버로 SYN 세그먼트를 전송한다.</li></ul>",
+        "answer": "<p>㉢ → ㉡ → ㉠</p>",
+        "explanation": "<p>연결 설정은 SYN, SYN+ACK, ACK 순서로 진행한다. FIN을 이용하는 연결 해제와 구분한다.</p>",
+        "parts": [
+          "㉢ → ㉡ → ㉠"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/02.md"
+      },
+      {
+        "id": "mock_2_03",
+        "number": 3,
+        "body": "<p>다음 &lt;매출&gt; 테이블에 SQL문을 실행한 결과를 열 이름과 함께 표로 쓰시오. (5점)</p>\n<div class=\"table-wrap\"><table><tr><th>번호</th><th>지점</th><th>금액</th></tr><tr><td>1</td><td>A</td><td>40</td></tr><tr><td>2</td><td>A</td><td>60</td></tr><tr><td>3</td><td>B</td><td>30</td></tr><tr><td>4</td><td>B</td><td>20</td></tr><tr><td>5</td><td>C</td><td>90</td></tr><tr><td>6</td><td>C</td><td>20</td></tr></table></div>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT 지점, SUM(금액) AS 합계\nFROM 매출\nGROUP BY 지점\nHAVING SUM(금액) &gt;= 100\nORDER BY 합계 DESC;</code></pre>",
+        "answer": "<div class=\"table-wrap\"><table><tr><th>지점</th><th>합계</th></tr><tr><td>C</td><td>110</td></tr><tr><td>A</td><td>100</td></tr></table></div>",
+        "explanation": "<p>지점별 합계는 A=100, B=50, C=110이다. HAVING에서 B를 제외하고 합계 내림차순으로 C, A를 출력한다.</p>",
+        "parts": [
+          "C 110\nA 100"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/03.md"
+      },
+      {
+        "id": "mock_2_04",
+        "number": 4,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static class Base {\n        static String tag() { return &quot;B&quot;; }\n        String name() { return &quot;base&quot;; }\n    }\n    static class Sub extends Base {\n        static String tag() { return &quot;S&quot;; }\n        String name() { return &quot;sub&quot;; }\n    }\n    public static void main(String[] args) {\n        Base x = new Sub();\n        Sub y = new Sub();\n        System.out.print(x.tag() + &quot;:&quot; + x.name() + &quot;:&quot; + y.tag());\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>B:sub:S</code></pre>",
+        "explanation": "<p>static 메서드는 참조 변수의 선언 타입으로 결정되므로 x.tag()는 B이다. 인스턴스 메서드 name()은 실제 객체 Sub의 구현을 호출하며, y.tag()는 S이다.</p>",
+        "parts": [
+          "B:sub:S"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/04.md"
+      },
+      {
+        "id": "mock_2_05",
+        "number": 5,
+        "body": "<p>회원(회원번호, 이메일, 이름) 릴레이션에서 회원번호와 이메일은 각각 모든 회원을 유일하게 식별하며 NULL을 허용하지 않는다. 이름은 중복될 수 있다. 회원번호를 기본키로 선택하였다. 다음 괄호(①~③)에 알맞은 키의 종류를 쓰시오. (5점)</p>\n<ul><li>회원번호와 이메일은 각각 유일성과 최소성을 만족하는 ( ① )이다.</li><li>기본키로 선택되지 않은 이메일은 ( ② )이다.</li><li>주문 테이블의 회원번호가 회원 테이블의 기본키를 참조하도록 정의되었다면, 주문 테이블의 회원번호는 ( ③ )이다.</li></ul>",
+        "answer": "<p>① 후보키</p>\n<p>② 대체키</p>\n<p>③ 외래키</p>",
+        "explanation": "<p>후보키 중 대표로 선택한 것이 기본키이며, 선택하지 않은 나머지 후보키가 대체키이다. 다른 테이블의 키를 참조하는 키는 외래키이다.</p>",
+        "parts": [
+          "후보키",
+          "대체키",
+          "외래키"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/05.md"
+      },
+      {
+        "id": "mock_2_06",
+        "number": 6,
+        "body": "<p>다음 Python 3로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">python</div><pre tabindex=\"0\"><code>a = [1, 2, 2, 3, 5]\nb = {2, 4, 5}\nx = set(a)\nprint(len(x | b), len(x &amp; b))\nprint(sorted(x - b))</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>5 2\n[1, 3]</code></pre>",
+        "explanation": "<p>x는 {1, 2, 3, 5}이다. 합집합은 원소 5개, 교집합은 {2, 5}의 2개이며, 차집합을 정렬하면 [1, 3]이다.</p>",
+        "parts": [
+          "5 2\n[1, 3]"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/06.md"
+      },
+      {
+        "id": "mock_2_07",
+        "number": 7,
+        "body": "<p>다음 테스트 기법을 블랙박스 테스트와 화이트박스 테스트로 구분하여 기호를 모두 쓰시오. (5점)</p>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 동치 분할 검사</li><li>㉡ 기초 경로 검사</li><li>㉢ 원인-효과 그래프 검사</li><li>㉣ 루프 검사</li><li>㉤ 경계값 분석</li><li>㉥ 조건 검사</li></ul>\n<ul><li>① 블랙박스 테스트:</li><li>② 화이트박스 테스트:</li></ul>",
+        "answer": "<p>① ㉠, ㉢, ㉤</p>\n<p>② ㉡, ㉣, ㉥</p>",
+        "explanation": "<p>블랙박스는 명세와 입출력 관계를 기준으로 설계한다. 화이트박스는 코드의 경로·반복·조건과 같은 내부 구조를 기준으로 설계한다.</p>",
+        "parts": [
+          "㉠, ㉢, ㉤",
+          "㉡, ㉣, ㉥"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/07.md"
+      },
+      {
+        "id": "mock_2_08",
+        "number": 8,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nvoid change(int *p, int value) {\n    *p += value;\n    value = 20;\n    p = &amp;value;\n    *p += 5;\n}\nint main(void) {\n    int x = 4, y = 3;\n    change(&amp;x, y);\n    printf(&quot;%d %d&quot;, x, y);\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>7 3</code></pre>",
+        "explanation": "<p>첫 문장은 x를 7로 바꾼다. value는 y의 복사본이고 p도 지역 매개변수이므로 이후 변경은 x와 y에 영향을 주지 않는다.</p>",
+        "parts": [
+          "7 3"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/08.md"
+      },
+      {
+        "id": "mock_2_09",
+        "number": 9,
+        "body": "<p>네트워크 관리 시스템이 라우터의 인터페이스 상태와 트래픽 통계를 조회한다. 관리 대상 장비의 에이전트는 관리 요청을 UDP 161번 포트에서 받고, 알림인 Trap을 관리 시스템의 UDP 162번 포트로 보낸다. 이에 해당하는 프로토콜을 영문 약어로 쓰시오. (5점)</p>",
+        "answer": "<p>SNMP</p>",
+        "explanation": "<p>SNMP(Simple Network Management Protocol)는 네트워크 장비의 관리 정보를 조회하거나 통지하는 데 사용된다. 일반적인 요청 수신 포트는 161, 알림 수신 포트는 162이다.</p>",
+        "parts": [
+          "SNMP"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/09.md"
+      },
+      {
+        "id": "mock_2_10",
+        "number": 10,
+        "body": "<p>다음 &lt;처리조건&gt;에 맞게 SQL문의 괄호(①~④)에 들어갈 예약어를 쓰시오. (5점)</p>\n<p>&lt;처리조건&gt;</p>\n<ul><li>재고 테이블에 상품번호 101, 상품명 &#x27;키보드&#x27;, 수량 5인 행을 추가한다.</li><li>상품번호가 101인 상품의 수량을 기존 값보다 3 증가시킨다.</li><li>수량이 0인 모든 행을 삭제한다.</li></ul>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>INSERT ( ① ) 재고 (상품번호, 상품명, 수량)\n( ② ) (101, &#x27;키보드&#x27;, 5);\n\nUPDATE 재고 ( ③ ) 수량 = 수량 + 3 WHERE 상품번호 = 101;\n\nDELETE ( ④ ) 재고 WHERE 수량 = 0;</code></pre>",
+        "answer": "<p>① INTO</p>\n<p>② VALUES</p>\n<p>③ SET</p>\n<p>④ FROM</p>",
+        "explanation": "<p>행 추가는 INSERT INTO … VALUES, 값 변경은 UPDATE … SET, 행 삭제는 DELETE FROM 구문을 사용한다.</p>",
+        "parts": [
+          "INTO",
+          "VALUES",
+          "SET",
+          "FROM"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/10.md"
+      },
+      {
+        "id": "mock_2_11",
+        "number": 11,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static int value = 2;\n    static int run() {\n        try {\n            value += 3;\n            return value;\n        } finally {\n            value *= 2;\n        }\n    }\n    public static void main(String[] args) {\n        int result = run();\n        System.out.print(result + &quot; &quot; + value);\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>5 10</code></pre>",
+        "explanation": "<p>return에서 반환할 int 값 5가 먼저 결정된다. finally에서 value는 10이 되지만 이미 결정한 반환값은 5이므로 result=5이다.</p>",
+        "parts": [
+          "5 10"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/11.md"
+      },
+      {
+        "id": "mock_2_12",
+        "number": 12,
+        "body": "<p>IPv4 네트워크의 전송 방식에 대한 다음 사례에서 괄호(①~③)에 들어갈 용어를 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<ul><li>( ① ): 한 송신자가 특정 수신자 한 명의 주소를 목적지로 지정하여 보낸다.</li><li>( ② ): 한 송신자가 특정 그룹에 가입한 수신자들을 대상으로 보낸다.</li><li>( ③ ): 한 송신자가 같은 브로드캐스트 도메인의 모든 호스트를 대상으로 보낸다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>브로드캐스트</li><li>멀티캐스트</li><li>유니캐스트</li></ul>",
+        "answer": "<p>① 유니캐스트</p>\n<p>② 멀티캐스트</p>\n<p>③ 브로드캐스트</p>",
+        "explanation": "<p>각각 일대일, 특정 그룹 대상, 같은 브로드캐스트 도메인 전체 대상 전송이다.</p>",
+        "parts": [
+          "유니캐스트",
+          "멀티캐스트",
+          "브로드캐스트"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/12.md"
+      },
+      {
+        "id": "mock_2_13",
+        "number": 13,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint main(void) {\n    int a[] = {7, 2, 9, 4, 1};\n    for (int i = 0; i &lt; 4; i++) {\n        int min = i;\n        for (int j = i + 1; j &lt; 5; j++) {\n            if (a[j] &lt; a[min]) min = j;\n        }\n        int temp = a[i];\n        a[i] = a[min];\n        a[min] = temp;\n    }\n    printf(&quot;%d %d %d&quot;, a[0], a[2], a[4]);\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>1 4 9</code></pre>",
+        "explanation": "<p>남은 구간의 최솟값을 앞으로 옮기는 선택 정렬이다. 최종 배열은 [1, 2, 4, 7, 9]이므로 인덱스 0, 2, 4의 값은 1, 4, 9이다.</p>",
+        "parts": [
+          "1 4 9"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/13.md"
+      },
+      {
+        "id": "mock_2_14",
+        "number": 14,
+        "body": "<p>같은 데이터베이스를 설명하는 다음 세 문서가 각각 어떤 스키마에 해당하는지 쓰시오. (5점)</p>\n<ul><li>① 인사 담당자에게 보여 줄 사원 이름·부서·직급으로 구성된 사용자 관점의 논리적 구조</li><li>② 회사 전체의 사원·부서·프로젝트와 그 관계 및 제약조건을 통합한 논리적 구조</li><li>③ 레코드의 저장 형식과 물리적 배치, 저장장치에서의 접근 경로를 정한 구조</li></ul>",
+        "answer": "<p>① 외부 스키마</p>\n<p>② 개념 스키마</p>\n<p>③ 내부 스키마</p>",
+        "explanation": "<p>외부는 사용자별 관점, 개념은 조직 전체의 통합된 논리 구조, 내부는 물리적 저장 구조를 나타낸다.</p>",
+        "parts": [
+          "외부 스키마",
+          "개념 스키마",
+          "내부 스키마"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/14.md"
+      },
+      {
+        "id": "mock_2_15",
+        "number": 15,
+        "body": "<p>다음 함수에 테스트 입력값 1과 2를 각각 한 번씩 적용했다. 두 if문의 True·False 분기를 각각 하나씩, 총 4개 분기로 셀 때 달성한 분기 커버리지를 백분율로 쓰시오. (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>int check(int x) {\n    int result = 0;\n    if (x &gt; 0) result += 1;\n    if (x % 2 == 0) result += 2;\n    return result;\n}</code></pre>\n<p>분기 커버리지 = (실행한 서로 다른 분기 수 / 전체 분기 수) × 100</p>",
+        "answer": "<p>75%</p>",
+        "explanation": "<p>x&gt;0은 두 입력 모두 True여서 1개 분기만 수행된다. 짝수 조건은 1에서 False, 2에서 True이므로 2개를 수행한다. 따라서 3/4×100=75%이다.</p>",
+        "parts": [
+          "75%"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/15.md"
+      },
+      {
+        "id": "mock_2_16",
+        "number": 16,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static class Box {\n        int value;\n        Box(int value) { this.value = value; }\n    }\n    public static void main(String[] args) {\n        Box first = new Box(4);\n        Box second = new Box(7);\n        Box[] boxes = {first, second};\n        boxes[1] = boxes[0];\n        boxes[1].value += 3;\n        second.value++;\n        System.out.print(first.value + &quot; &quot; + second.value + &quot; &quot; + boxes[1].value);\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>7 8 7</code></pre>",
+        "explanation": "<p>boxes의 두 원소는 first 객체를 함께 참조하므로 해당 객체의 value는 7이 된다. second 변수는 원래의 별도 객체를 계속 참조하므로 그 값은 8이다.</p>",
+        "parts": [
+          "7 8 7"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/16.md"
+      },
+      {
+        "id": "mock_2_17",
+        "number": 17,
+        "body": "<p>회원 테이블의 이메일 열에 중복되지 않는 값을 저장하도록 고유 인덱스 MemberEmail_idx를 생성하고자 한다. 괄호(①, ②)에 들어갈 예약어를 쓰시오. (단, 이메일 열은 이미 NOT NULL로 정의되어 있다.) (5점)</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>CREATE ( ① ) ( ② ) MemberEmail_idx ON 회원 (이메일);</code></pre>",
+        "answer": "<p>① UNIQUE</p>\n<p>② INDEX</p>",
+        "explanation": "<p><code>CREATE UNIQUE INDEX</code>로 지정한 열의 중복을 허용하지 않는 인덱스를 정의한다.</p>",
+        "parts": [
+          "UNIQUE",
+          "INDEX"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/17.md"
+      },
+      {
+        "id": "mock_2_18",
+        "number": 18,
+        "body": "<p>Windows 명령 프롬프트에서 수행할 다음 작업에 맞는 명령어 이름을 쓰시오. (단, 옵션이나 대상 주소는 쓰지 않는다.) (5점)</p>\n<ul><li>① ICMP 에코 요청을 보내 대상 호스트의 응답 여부와 왕복 시간을 확인한다.</li><li>② 목적지까지 도달하는 동안 거치는 라우터들의 경로를 추적한다.</li></ul>",
+        "answer": "<p>① ping</p>\n<p>② tracert</p>",
+        "explanation": "<p>Windows의 경로 추적 명령은 tracert이다. ping은 에코 응답을 이용해 연결 상태를 진단한다.</p>",
+        "parts": [
+          "ping",
+          "tracert"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/18.md"
+      },
+      {
+        "id": "mock_2_19",
+        "number": 19,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint add(int a, int b) { return a + b; }\nint sub(int a, int b) { return a - b; }\nint main(void) {\n    int (*fn[2])(int, int) = {add, sub};\n    int x = fn[0](3, 5);\n    printf(&quot;%d %d&quot;, x, fn[1](x, 2));\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>8 6</code></pre>",
+        "explanation": "<p>fn[0]은 add를 가리켜 8을 반환한다. fn[1]은 sub를 가리키므로 sub(8, 2)=6이다.</p>",
+        "parts": [
+          "8 6"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/2회/19.md"
+      },
+      {
+        "id": "mock_2_20",
+        "number": 20,
+        "body": "<p>개발팀은 소스 코드와 설계 문서에 식별자를 부여하고, 승인된 기준선을 설정하였다. 이후 변경 요청의 승인 여부를 기록하고, 버전별 변경 이력 및 산출물의 일치 여부를 관리한다. 이러한 활동을 포괄하는 용어를 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<p>&lt;보기&gt;</p>\n<ul><li>형상 관리</li><li>부하 테스트</li><li>데이터 정규화</li><li>프로세스 스케줄링</li></ul>",
+        "answer": "<p>형상 관리</p>",
+        "explanation": "<p>소프트웨어 형상 항목의 식별, 변경 통제, 상태 기록, 감사를 통해 산출물과 변경 이력을 체계적으로 관리하는 활동이다.</p>",
+        "parts": [
+          "형상 관리"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/2회/20.md"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "예상기출문제 3회",
+    "questions": [
+      {
+        "id": "mock_3_01",
+        "number": 1,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nint main(void) {\n    int i, sum = 0;\n    for (i = 1; i &lt;= 8; i++) {\n        if (i % 3 == 0) continue;\n        sum += i;\n    }\n    printf(&quot;%d %d&quot;, i, sum);\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>9 27</code></pre>",
+        "explanation": "<p>1~8의 합 36에서 3과 6을 제외하여 sum=27이다. 마지막 증가 후 i=9가 되어 반복 조건이 거짓이 된다.</p>",
+        "parts": [
+          "9 27"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/3회/01.md"
+      },
+      {
+        "id": "mock_3_02",
+        "number": 2,
+        "body": "<p>쇼핑몰 운영자는 HTTP 요청의 URL, 헤더, 본문을 검사하여 SQL Injection과 XSS 공격 패턴을 탐지하고 차단하는 장비를 도입하였다. 이러한 웹 애플리케이션 방화벽을 뜻하는 영문 약어를 쓰시오. (5점)</p>",
+        "answer": "<p>WAF</p>",
+        "explanation": "<p>WAF는 Web Application Firewall의 약어이다. 웹 요청의 내용을 분석하여 웹 애플리케이션 대상 공격을 탐지·차단한다.</p>",
+        "parts": [
+          "WAF"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/02.md"
+      },
+      {
+        "id": "mock_3_03",
+        "number": 3,
+        "body": "<p>다음 &lt;응시&gt; 테이블에서 SQL문 ①, ②가 반환하는 행의 수를 각각 쓰시오. (5점)</p>\n<div class=\"table-wrap\"><table><tr><th>번호</th><th>과목</th><th>점수</th></tr><tr><td>1</td><td>C</td><td>70</td></tr><tr><td>2</td><td>Java</td><td>80</td></tr><tr><td>3</td><td>C</td><td>90</td></tr><tr><td>4</td><td>Python</td><td>100</td></tr><tr><td>5</td><td>Java</td><td>90</td></tr></table></div>\n<p>①</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT 과목 FROM 응시 WHERE 점수 BETWEEN 80 AND 90;</code></pre>\n<p>②</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT DISTINCT 과목 FROM 응시 WHERE 점수 BETWEEN 80 AND 90;</code></pre>",
+        "answer": "<p>① 3행</p>\n<p>② 2행</p>",
+        "explanation": "<p>BETWEEN은 양 끝값을 포함하므로 번호 2, 3, 5가 선택된다. 과목은 Java, C, Java이며 중복을 제거하면 Java와 C 두 종류이다.</p>",
+        "parts": [
+          "3행",
+          "2행"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/03.md"
+      },
+      {
+        "id": "mock_3_04",
+        "number": 4,
+        "body": "<p>다음 Python 3로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">python</div><pre tabindex=\"0\"><code>values = [3, 6, 9, 12, 15, 18]\ntotal = 0\nfor value in values[1::2]:\n    if value &gt; 12:\n        break\n    total += value\nprint(values[-2], total)</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>15 18</code></pre>",
+        "explanation": "<p>슬라이스는 인덱스 1, 3, 5의 [6, 12, 18]이다. 18에서 break하므로 합은 18이며 뒤에서 두 번째 원소는 15이다.</p>",
+        "parts": [
+          "15 18"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/3회/04.md"
+      },
+      {
+        "id": "mock_3_05",
+        "number": 5,
+        "body": "<p>다음 &lt;도서&gt; 릴레이션을 보고 차수(Degree)와 카디널리티(Cardinality)를 각각 쓰시오. (단, 표의 제목 행은 튜플에 포함하지 않는다.) (5점)</p>\n<div class=\"table-wrap\"><table><tr><th>도서번호</th><th>도서명</th><th>분류</th><th>가격</th></tr><tr><td>B01</td><td>C 기초</td><td>언어</td><td>18000</td></tr><tr><td>B02</td><td>SQL 입문</td><td>DB</td><td>22000</td></tr><tr><td>B03</td><td>Java 연습</td><td>언어</td><td>24000</td></tr></table></div>\n<ul><li>① 차수:</li><li>② 카디널리티:</li></ul>\n<p>③ 동일한 릴레이션에서 두 튜플의 &#x27;분류&#x27; 속성값이 같아도 되는지 &#x27;가능&#x27; 또는 &#x27;불가능&#x27;으로 쓰시오. (단, 분류에는 UNIQUE 제약조건이 없다.)</p>",
+        "answer": "<p>① 4</p>\n<p>② 3</p>\n<p>③ 가능</p>",
+        "explanation": "<p>차수는 속성 수, 카디널리티는 튜플 수이다. 릴레이션에서 동일한 튜플 전체의 중복과 개별 비키 속성값의 중복은 구분해야 한다.</p>",
+        "parts": [
+          "4",
+          "3",
+          "가능"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/05.md"
+      },
+      {
+        "id": "mock_3_06",
+        "number": 6,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nvoid reverse(int *left, int *right) {\n    while (left &lt; right) {\n        int temp = *left;\n        *left = *right;\n        *right = temp;\n        left++;\n        right--;\n    }\n}\nint main(void) {\n    int a[] = {1, 3, 5, 7, 9};\n    reverse(a + 1, a + 4);\n    printf(&quot;%d %d %d&quot;, a[1], a[2], a[4]);\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>9 7 3</code></pre>",
+        "explanation": "<p>인덱스 1~4 구간 [3, 5, 7, 9]만 뒤집는다. 최종 배열은 [1, 9, 7, 5, 3]이다.</p>",
+        "parts": [
+          "9 7 3"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/3회/06.md"
+      },
+      {
+        "id": "mock_3_07",
+        "number": 7,
+        "body": "<p>다음 두 활동에 해당하는 용어를 &lt;보기&gt;에서 찾아 쓰시오. (5점)</p>\n<ul><li>① 설계 명세서에 기록된 계산식과 처리 규칙대로 프로그램을 구현했는지 확인한다.</li><li>② 완성된 프로그램이 실제 사용자의 업무 목적과 요구를 충족하는지 확인한다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>Verification</li><li>Validation</li><li>Authentication</li><li>Authorization</li></ul>",
+        "answer": "<p>① Verification</p>\n<p>② Validation</p>",
+        "explanation": "<p>Verification은 명세에 맞게 만들었는지를 검증하고, Validation은 사용자의 의도와 요구를 충족하는 제품인지를 확인한다.</p>",
+        "parts": [
+          "Verification",
+          "Validation"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/07.md"
+      },
+      {
+        "id": "mock_3_08",
+        "number": 8,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    static int value = init();\n    static {\n        value += 4;\n        System.out.print(&quot;B&quot;);\n    }\n    static int init() {\n        System.out.print(&quot;A&quot;);\n        return 2;\n    }\n    public static void main(String[] args) {\n        System.out.print(value);\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>AB6</code></pre>",
+        "explanation": "<p>main 실행 전 정적 필드 초기화가 init()을 호출하여 A를 출력하고 2를 저장한다. 이어 정적 블록이 4를 더하고 B를 출력한다. main은 6을 출력한다.</p>",
+        "parts": [
+          "AB6"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/3회/08.md"
+      },
+      {
+        "id": "mock_3_09",
+        "number": 9,
+        "body": "<p>다음 설명의 괄호(①, ②)에 들어갈 알맞은 답을 쓰시오. (5점)</p>\n<ul><li>( ① )는 목적지 IP 주소와 라우팅 테이블을 이용하여 서로 다른 네트워크 사이에 패킷을 전달하는 대표적인 장비이다.</li><li>( ② )는 홉 수를 경로 선택의 척도로 사용하는 거리 벡터 라우팅 프로토콜이다. 도달 가능한 경로의 최대 홉 수는 15이며, 16은 도달 불가능을 뜻한다. 영문 약어로 쓰시오.</li></ul>",
+        "answer": "<p>① 라우터(Router)</p>\n<p>② RIP</p>",
+        "explanation": "<p>라우터는 네트워크 계층에서 패킷을 전달한다. RIP는 홉 수를 이용하며 16을 무한대, 즉 도달 불가능으로 취급한다.</p>",
+        "parts": [
+          "라우터(Router)",
+          "RIP"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/09.md"
+      },
+      {
+        "id": "mock_3_10",
+        "number": 10,
+        "body": "<p>회원(회원번호, 이름, 지역, 구매금액) 테이블에서 다음 조건을 모두 만족하는 SQL문을 작성하시오. (5점)</p>\n<p>&lt;처리조건&gt;</p>\n<ul><li>구매금액이 100000 이상인 회원을 대상으로 한다.</li><li>이름이 &#x27;김&#x27;으로 시작하는 회원은 제외한다.</li><li>지역만 조회하되 중복은 제거한다.</li><li>지역의 오름차순으로 정렬한다.</li><li>모든 열에는 NULL이 없으며, 문자열에는 작은따옴표를 사용한다.</li></ul>",
+        "answer": "<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>SELECT DISTINCT 지역\nFROM 회원\nWHERE 구매금액 &gt;= 100000 AND 이름 NOT LIKE &#x27;김%&#x27;\nORDER BY 지역 ASC;</code></pre>",
+        "explanation": "<p>두 조건은 AND로 결합한다. &#x27;김%&#x27;는 김으로 시작하는 문자열이며 NOT LIKE로 제외한다. DISTINCT로 지역의 중복을 제거한다. ASC는 생략할 수 있다.</p>",
+        "parts": [
+          "SELECT DISTINCT 지역\nFROM 회원\nWHERE 구매금액 >= 100000 AND 이름 NOT LIKE '김%'\nORDER BY 지역 ASC;"
+        ],
+        "mode": "manual",
+        "source": "예상기출문제/3회/10.md"
+      },
+      {
+        "id": "mock_3_11",
+        "number": 11,
+        "body": "<p>다음 C 언어로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">c</div><pre tabindex=\"0\"><code>#include &lt;stdio.h&gt;\nstruct Point { double x; double y; };\nint main(void) {\n    struct Point a = {1.5, 2.0};\n    struct Point b = a;\n    struct Point *p = &amp;b;\n    p-&gt;x += 2.5;\n    p-&gt;y = a.x + b.x;\n    printf(&quot;%.1f %.2f&quot;, a.x, b.y);\n    return 0;\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>1.5 5.50</code></pre>",
+        "explanation": "<p>구조체 대입은 멤버 값을 복사하므로 b 변경으로 a는 바뀌지 않는다. b.x=4.0, b.y=1.5+4.0=5.5이며 %.2f는 소수 둘째 자리까지 표시한다.</p>",
+        "parts": [
+          "1.5 5.50"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/3회/11.md"
+      },
+      {
+        "id": "mock_3_12",
+        "number": 12,
+        "body": "<p>다음 설명에 해당하는 응용 계층 프로토콜을 영문 약어로 쓰시오. (5점)</p>\n<ul><li>① 웹에서 요청과 응답 메시지를 교환하며 GET, POST 등의 메서드를 사용한다. 암호화하지 않는 기본 서비스의 잘 알려진 포트는 80번이다.</li><li>② 파일 업로드·다운로드에 사용되며 제어 연결의 잘 알려진 포트는 TCP 21번이다. 파일 종류에 따라 ASCII 또는 Binary 전송 모드를 사용할 수 있다.</li></ul>",
+        "answer": "<p>① HTTP</p>\n<p>② FTP</p>",
+        "explanation": "<p>HTTP는 웹 자원을 요청·응답하는 프로토콜이다. FTP는 파일 전송 프로토콜이며 제어 연결과 데이터 연결을 구분한다.</p>",
+        "parts": [
+          "HTTP",
+          "FTP"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/12.md"
+      },
+      {
+        "id": "mock_3_13",
+        "number": 13,
+        "body": "<p>다음 Python 3로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">python</div><pre tabindex=\"0\"><code>def update(values):\n    values.append(4)\n    values = values + [5]\n    return sum(values)\n\ndata = [1, 2]\nresult = update(data)\nprint(data)\nprint(result)</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>[1, 2, 4]\n12</code></pre>",
+        "explanation": "<p>append는 원래 리스트를 바꾼다. 이후 + 연산은 새 리스트 [1, 2, 4, 5]를 만들어 지역 변수에 대입하므로 data에는 5가 추가되지 않는다. 반환값은 12이다.</p>",
+        "parts": [
+          "[1, 2, 4]\n12"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/3회/13.md"
+      },
+      {
+        "id": "mock_3_14",
+        "number": 14,
+        "body": "<p>재고 테이블에서 상품번호 1의 수량은 처음에 10으로 저장되어 있고 이미 커밋된 상태이다. 아래 작업을 순서대로 실행한 뒤 물음에 답하시오. (단, 자동 커밋은 꺼져 있고 다른 트랜잭션은 없으며, 각 UPDATE는 새 트랜잭션을 시작한다.) (5점)</p>\n<div class=\"code-label\">sql</div><pre tabindex=\"0\"><code>UPDATE 재고 SET 수량 = 수량 - 3 WHERE 상품번호 = 1;\nROLLBACK;\n\nUPDATE 재고 SET 수량 = 수량 + 2 WHERE 상품번호 = 1;\nCOMMIT;\n\nUPDATE 재고 SET 수량 = 0 WHERE 상품번호 = 1;\nROLLBACK;\n\nSELECT 수량 FROM 재고 WHERE 상품번호 = 1;</code></pre>\n<ul><li>① 마지막 SELECT가 출력하는 수량을 쓰시오.</li><li>② 변경 내용을 확정하는 SQL 명령어를 쓰시오.</li></ul>",
+        "answer": "<p>① 12</p>\n<p>② COMMIT</p>",
+        "explanation": "<p>첫 변경은 취소되어 10으로 돌아간다. 다음 변경으로 12가 되어 확정된다. 0으로 바꾼 마지막 변경은 취소되므로 12가 남는다.</p>",
+        "parts": [
+          "12",
+          "COMMIT"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/14.md"
+      },
+      {
+        "id": "mock_3_15",
+        "number": 15,
+        "body": "<p>다음 사례에 해당하는 테스트 수준을 &lt;보기&gt;에서 찾아 기호로 쓰시오. (각 보기는 한 번씩 사용한다.) (5점)</p>\n<ul><li>① 할인 금액을 계산하는 함수 하나를 다른 모듈과 분리하여 검사한다.</li><li>② 주문 모듈과 결제 모듈을 연결한 뒤, 전달되는 주문번호와 결제 결과가 일치하는지 검사한다.</li><li>③ 모든 모듈이 통합된 전체 시스템이 시스템 요구 명세를 만족하는지 검사한다.</li><li>④ 고객이 실제 업무 시나리오를 사용하여 시스템을 인수할 수 있는지 판단한다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 시스템 테스트</li><li>㉡ 인수 테스트</li><li>㉢ 단위 테스트</li><li>㉣ 통합 테스트</li></ul>",
+        "answer": "<p>① ㉢</p>\n<p>② ㉣</p>\n<p>③ ㉠</p>\n<p>④ ㉡</p>",
+        "explanation": "<p>테스트 대상과 목적에 따라 개별 단위, 모듈 간 상호작용, 전체 시스템, 고객의 인수 여부로 구분한다.</p>",
+        "parts": [
+          "㉢",
+          "㉣",
+          "㉠",
+          "㉡"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/15.md"
+      },
+      {
+        "id": "mock_3_16",
+        "number": 16,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        final int limit = 4;\n        final int[] values = {2, 3};\n        int n = limit;\n        n += 5;\n        values[0] += limit;\n        System.out.print(limit + &quot; &quot; + n + &quot; &quot; + values[0]);\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>4 9 6</code></pre>",
+        "explanation": "<p>n은 limit의 값을 복사한 별도 변수이므로 n만 9가 된다. final 배열 변수는 참조 재대입이 금지되지만 배열 원소 수정은 가능하므로 values[0]은 6이다.</p>",
+        "parts": [
+          "4 9 6"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/3회/16.md"
+      },
+      {
+        "id": "mock_3_17",
+        "number": 17,
+        "body": "<p>데이터베이스 설계에서 수행하는 다음 활동을 &lt;보기&gt;의 단계와 연결하여 기호로 쓰시오. (각 보기는 한 번씩 사용한다.) (5점)</p>\n<ul><li>① 특정 DBMS에 종속되지 않는 개체와 관계를 E-R 다이어그램으로 표현한다.</li><li>② 개념적 모델을 관계형 데이터 모델의 테이블 구조로 변환하고 정규화를 수행한다.</li><li>③ 저장장치 특성과 성능을 고려하여 인덱스, 파일 조직, 레코드 저장 방법을 결정한다.</li></ul>\n<p>&lt;보기&gt;</p>\n<ul><li>㉠ 논리적 설계</li><li>㉡ 물리적 설계</li><li>㉢ 개념적 설계</li></ul>",
+        "answer": "<p>① ㉢</p>\n<p>② ㉠</p>\n<p>③ ㉡</p>",
+        "explanation": "<p>개념적 설계는 현실 세계의 정보 구조를 모델링하고, 논리적 설계는 데이터 모델의 구조로 변환한다. 물리적 설계는 저장과 접근 방법을 결정한다.</p>",
+        "parts": [
+          "㉢",
+          "㉠",
+          "㉡"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/17.md"
+      },
+      {
+        "id": "mock_3_18",
+        "number": 18,
+        "body": "<p>데이터 비트가 <code>1011001</code>일 때, 데이터의 오른쪽에 패리티 비트 하나를 붙여 전송한다. 다음 물음에 답하시오. (5점)</p>\n<ul><li>① 짝수 패리티를 사용할 때 붙일 패리티 비트는 무엇인가?</li><li>② 홀수 패리티를 사용할 때 붙일 패리티 비트는 무엇인가?</li><li>③ 전송된 전체 비트열에서 서로 다른 두 비트가 각각 한 번씩 반전되었다. 단일 패리티 검사만으로 이 오류를 검출할 수 있는지 &#x27;가능&#x27; 또는 &#x27;불가능&#x27;으로 쓰시오.</li></ul>",
+        "answer": "<p>① 0</p>\n<p>② 1</p>\n<p>③ 불가능</p>",
+        "explanation": "<p>데이터에 1이 4개 있으므로 짝수 패리티는 0, 홀수 패리티는 1을 붙인다. 두 비트가 반전되면 1의 개수의 홀짝이 유지되어 단일 패리티로 검출할 수 없다.</p>",
+        "parts": [
+          "0",
+          "1",
+          "불가능"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/18.md"
+      },
+      {
+        "id": "mock_3_19",
+        "number": 19,
+        "body": "<p>다음 Java로 구현된 프로그램을 분석하여 실행 결과를 쓰시오. (단, 공백과 줄바꿈을 구분하여 쓰시오.) (5점)</p>\n<div class=\"code-label\">java</div><pre tabindex=\"0\"><code>public class Main {\n    public static void main(String[] args) {\n        int[] data = {5, 8, 2, 6};\n        int[] order = {2, 0, 3, 1};\n        int sum = 0;\n        for (int i = 0; i &lt; order.length; i++) {\n            if (i % 2 == 0) {\n                sum += data[order[i]];\n            } else {\n                sum -= data[order[i]];\n            }\n        }\n        System.out.print(sum);\n    }\n}</code></pre>",
+        "answer": "<div class=\"code-label\">text</div><pre tabindex=\"0\"><code>-5</code></pre>",
+        "explanation": "<p>order를 통해 읽는 값은 2, 5, 6, 8이다. 짝수 인덱스에서 더하고 홀수 인덱스에서 빼므로 2-5+6-8=-5이다.</p>",
+        "parts": [
+          "-5"
+        ],
+        "mode": "output",
+        "source": "예상기출문제/3회/19.md"
+      },
+      {
+        "id": "mock_3_20",
+        "number": 20,
+        "body": "<p>UNIX 계열 운영체제의 구성 요소에 관한 다음 설명의 괄호(①, ②)에 들어갈 용어를 쓰시오. (5점)</p>\n<ul><li>( ① )은 사용자로부터 입력받은 명령을 해석하고 프로그램을 실행한다. 명령을 파일에 모아 스크립트로 실행할 수도 있다.</li><li>( ② )은 운영체제의 핵심으로, 프로세스 스케줄링·메모리 관리·장치 제어 등 하드웨어 자원 관리를 담당한다.</li></ul>",
+        "answer": "<p>① 셸(Shell)</p>\n<p>② 커널(Kernel)</p>",
+        "explanation": "<p>셸은 명령 해석기이며, 커널은 시스템 자원을 관리하는 운영체제의 핵심이다.</p>",
+        "parts": [
+          "셸(Shell)",
+          "커널(Kernel)"
+        ],
+        "mode": "term",
+        "source": "예상기출문제/3회/20.md"
+      }
+    ]
+  }
+]
